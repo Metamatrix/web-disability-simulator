@@ -1,1 +1,1 @@
-# Web Disability simulator
+![alt text](UI/img/logo_disability_simulator.svg)
