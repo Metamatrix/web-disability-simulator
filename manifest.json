@@ -1,0 +1,15 @@
+{
+  "manifest_version": 1,
+
+  "name": "Web Disability Simulator",
+  "description": "Simulates how people with disabilities sees the web",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "UI/img/icon.png",
+    "default_popup": "UI/app.html"
+  },
+  "permissions": [
+    "tabs", "http://*/*", "https://*/*"
+  ]
+}

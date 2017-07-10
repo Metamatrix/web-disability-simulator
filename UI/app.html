@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+		<meta name="description" content="Web Disability Simulator">
+
+		<title>Web Disability Simulator</title>
+		
+		<script src="UI/vendor/jquery/jquery-2.0.3.min.js"></script>
+		<script src="UI/vendor/bootstrap/bootstrap.min.js"></script>
+		<script src="simulations/data.js"></script>
+		<script src="UI/js/app.js"></script>
+		
+		<link href="UI/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="UI/vendor/app.css" rel="stylesheet" media="screen">		
+	</head>
+	<body>
+		<div class="main-heading-container">
+			<h1 class="main-heading">Web Disability Simulator</h1>
+		</div>
+		<nav class="navbar navbar-default" role="navigation">
+			<h2 class="navbar-header">Välj funktionsnedsättning:</h2>
+			<div class="dropdown">
+				<button class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="menu-sight">
+					<span id="selected">Syn</span><span class="caret pull-right"></span></a>
+				</button>
+				<ul class="dropdown-menu dropdown-menu-sight" aria-labelledby="menu-sight">
+					<li><a href="#" class="menu-btn blurryVision" id="blurryVision">Suddig syn</a></li>
+					<li><a href="#" class="menu-btn colorBlindness" id="colorBlindness">Helt färgblind (Monokromasi/akromatopsi)</a></li>
+					<li><a href="#" class="menu-btn yellowBlueColorBlindness" id="yellowBlueColorBlindness">Gul-blå färgblindhet (Tritanopi)</a></li>
+					<li><a href="#" class="menu-btn farsightedness" id="farsightedness">Långsynthet, översynthet (Hyperopi)</a></li>
+				</ul>
+			</div>
+			<div class="dropdown">
+				<button class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="menu-motor">
+					<span id="selected">Motorik</span><span class="caret pull-right"></span></a>
+				</button>
+				<ul class="dropdown-menu dropdown-menu-motor" aria-labelledby="menu-motor">
+					<li><a href="#" class="menu-btn parkinsons" id="parkinsons">Parkinsons</a></li>
+				</ul>
+			</div>
+
+			<button class="btn btn-default btn-block dropdown-toggle menu-btn dyslexia" type="button" id="dyslexia"><span>Dyslexi</span></button>
+			<button class="btn btn-default btn-block dropdown-toggle menu-btn concentration" type="button" id="concentration"><span>Koncentration</span></button>
+			<button class="btn btn-default btn-block dropdown-toggle menu-btn memory" type="button" id="memory"><span>Minne</span></button>
+			<button class="btn btn-default btn-block dropdown-toggle menu-btn hearing" type="button" id="hearing"><span>Hörsel</span></button>
+		</nav>
+		<div class="footer">
+			<a href="" class="github-link pull-right">Github</a>
+		</div>
+
+		<div class="tool-tip">
+			<div class="tool-tip-content">
+				<div class="tool-tip-info-container">
+					<h2 class="" href="#">Om <span class="disability-info-heading"></span></h2>
+					<p class="disability-info-paragraph"></p>
+					<h2>Tänk på detta:</h2>
+					<ul class="advice-list">
+					</ul>
+					<h2 class="more-info-heading">Mer information:</h2>
+					<p class="more-info-paragraph"></p>
+				</div>
+			</div>
+			<div class="reset-btn-container">
+				<button class="btn btn-primary reset-btn" id="reset-btn">Återställ</button>
+			</div>
+		</div>
+
+	</body>
+</html>
