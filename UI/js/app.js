@@ -32,6 +32,8 @@ $(document).ready(function(){
     mainHeading.show();  
     mainHeading.append($(this).text());
 
+    $(this).closest(".dropdown").find(".selected").text($(this).text());
+
     var  id = $(this).attr( "id" );
 
     infoParagraph.append(data[id]);
@@ -58,7 +60,10 @@ $(document).ready(function(){
     mainHeading.hide(); 
     mainHeading.empty(); 
     logo.show();
-
+    
+    $(".dropdown").find("#Syn").text('Syn');
+    $(".dropdown").find("#Motorik").text('Motorik'); 
+  
   });
 
 });
