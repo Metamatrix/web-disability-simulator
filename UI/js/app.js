@@ -6,6 +6,8 @@ $(document).ready(function(){
   var adviceList = $( ".advice-list" ); 
   var moreInfoParagraph = $( ".more-info-paragraph" ); 
   var moreInfoHeading = $( ".more-info-heading" ); 
+  var mainHeading = $( ".main-heading" );
+  var logo = $(".logo"); 
   
   //menu button click
   
@@ -26,6 +28,9 @@ $(document).ready(function(){
     });
 
     infoHeading.append($(this).text());
+    logo.hide();
+    mainHeading.show();  
+    mainHeading.append($(this).text());
 
     var  id = $(this).attr( "id" );
 
@@ -50,10 +55,9 @@ $(document).ready(function(){
         tooltip.outerWidth() :
         0
     }); 
-
-    if ($(".dropdown-menu").hasClass("dropdown-menu-sight")){
-      $("#selected").text("Syn");
-    }
+    mainHeading.hide(); 
+    mainHeading.empty(); 
+    logo.show();
 
   });
 

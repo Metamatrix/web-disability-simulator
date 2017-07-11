@@ -6,24 +6,30 @@ body {
 	position: relative; 
 }
 
-h1.main-heading {
-	margin-top: 0; 
-	font-size: 20px;  
-	padding: 20px; 
-	background-color: #fff; 
-}
-
 h2 {
 	font-size: 18px; 
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
 }
 
 
 /* Logo */
 
+.logo-container {
+	height: 50px;
+	margin: 20px 10px;
+}
+
 .logo {
-	height: auto;
-	width: 70%; 
-	margin: 10px; 
+ height: 100%; 
+}
+
+.main-heading {
+	display: none; 
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+	font-size: 21px; 
+	font-weight: bold; 
+	margin: 20px 10px 0;  
+	padding-top: 10px; 
 }
 
 /* Buttons */
@@ -95,10 +101,6 @@ h2 {
 .tool-tip-content {
 	max-height: 400px; 
 	overflow-y: scroll; 
-}
-
-.tooltip-info-container {
-
 }
 
 .advice-list {

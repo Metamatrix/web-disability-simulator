@@ -20,7 +20,7 @@ var data= {
   'yellowBlueColorBlindness-moreInfo': "<a href='https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende'>Wikipedia om defekt färgseende</a>",
 
   'farsightedness': "Personer med Hyperopi ser suddigt på nära håll, men bra på långt håll. Nedsättningen uppstår på grund av att ljuset inte bryts rätt i ögat. Det är en av de vanligaste synnedsättningarna.",
-  'farsightedness-listitems': ["Undvik text i liten storlek.", 	
+  'farsightedness-listItems': ["Undvik text i liten storlek.", 	
               "Webbsidan ska gå att förstora (zoomas) till minst 200 % så att besökaren kan anpassa innehållets storlek efter sina behov.",
               "Erbjud uppläsning av innehållet."],
   'farsightedness-moreInfo': "<a href='https://webbriktlinjer.se/r/39-ge-webbplatsen-en-god-lasbarhet/'>Webbriktlinje Ge webbplatsen god läsbarhet</a>",
