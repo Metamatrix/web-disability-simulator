@@ -74,6 +74,6 @@ $(document).ready(function(){
     }).on('hidden.bs.collapse', function(){
       $(this).parent().find(".up-arrow").toggle();
       $(this).parent().find(".down-arrow").toggle();
-});
+  });
 
 });

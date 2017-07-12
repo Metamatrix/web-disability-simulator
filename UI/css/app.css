@@ -119,6 +119,10 @@ h2 {
 	display: none; 
 }
 
+.more-info-paragraph {
+	margin-bottom: 0; 
+}
+
 .panel-group .panel+.panel {
     margin-top: 15px;
 }
@@ -130,6 +134,11 @@ h2 {
 		color: #333;
     background-color: #f5f5f5;
     border-color: #ddd;
+		cursor: pointer; 
+}
+
+.panel-title a:hover {
+	text-decoration: none; 
 }
 
 .panel-body {
@@ -138,6 +147,10 @@ h2 {
 
 .dropup {
 	display: none; 		
+}
+
+.panel-heading {
+	padding: 10px 0 10px 15px; 
 }
 
 /* footer */
