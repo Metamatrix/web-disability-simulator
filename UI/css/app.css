@@ -95,15 +95,16 @@ h2 {
 	position: absolute; 
 	left: 100%; 
 	top: 12%;  
-	overflow-y: scroll ;
 }
 
 .tool-tip-content {
 	max-height: 400px; 
+	overflow-y: scroll;
+	padding: 0 10px;
 }
 
 .disability-info-paragraph {
-	margin-bottom: 20px; 
+	margin-bottom: 20px;  
 }
 
 .advice-list {
@@ -120,6 +121,23 @@ h2 {
 
 .panel-group .panel+.panel {
     margin-top: 15px;
+}
+
+.panel {
+    border-bottom: 1px solid transparent;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+		color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+
+.panel-body {
+	background-color: #fff; 
+}
+
+.dropup {
+	display: none; 		
 }
 
 /* footer */

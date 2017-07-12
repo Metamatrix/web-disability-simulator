@@ -59,11 +59,15 @@
 					
 					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-					<div class="panel panel-default">
+					<div class="panel panel-default" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
 							<div class="panel-heading" role="tab" id="headingOne">
 								<h2 class="panel-title">
-									<a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-										Tänk på detta:
+									<a role="button">
+										Tänk på detta
+										<span class="caret pull-right down-arrow"></span>
+										<span class="dropup pull-right up-arrow">
+    									<span class="caret"></span>
+										</span>
 									</a>
 								</h2>
 							</div>
@@ -74,11 +78,15 @@
 							</div>
 						</div>
 
-						<div class="panel panel-default" id="more-info-panel">
+						<div class="panel panel-default" id="more-info-panel" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 							<div class="panel-heading" role="tab" id="headingTwo">
 								<h2 class="panel-title">
-									<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-										Mer information:
+									<a role="button">
+										Mer information
+										<span class="caret pull-right down-arrow"></span>
+										<span class="dropup pull-right up-arrow">
+    									<span class="caret"></span>
+										</span>
 									</a>
 								</h2>
 							</div>
@@ -91,12 +99,10 @@
 
 					</div>
 
-
-
 				</div>
-				<div class="reset-btn-container">
-					<button class="btn btn-primary reset-btn" id="reset-btn">Återställ</button>
-				</div>
+			</div>
+			<div class="reset-btn-container">
+				<button class="btn btn-primary reset-btn" id="reset-btn">Återställ</button>
 			</div>
 		</div>
 

@@ -66,4 +66,14 @@ $(document).ready(function(){
 
   });
 
+  //panel collapse, show arrows: 
+
+  $('.collapse').on('shown.bs.collapse', function(){
+      $(this).parent().find(".down-arrow").toggle();
+      $(this).parent().find(".up-arrow").toggle(); 
+    }).on('hidden.bs.collapse', function(){
+      $(this).parent().find(".up-arrow").toggle();
+      $(this).parent().find(".down-arrow").toggle();
+});
+
 });
