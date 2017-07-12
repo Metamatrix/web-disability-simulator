@@ -61,9 +61,9 @@ $(document).ready(function(){
     mainHeading.empty(); 
     logo.show();
     
-    $(".dropdown").find("#Syn").text('Syn');
-    $(".dropdown").find("#Motorik").text('Motorik'); 
-  
+    $(".dropdown").find("#Syn").text("Syn");
+    $(".dropdown").find("#Motorik").text("Motorik"); 
+
   });
 
 });
