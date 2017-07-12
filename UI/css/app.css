@@ -28,7 +28,7 @@ h2 {
 	font-size: 21px; 
 	font-weight: bold; 
 	margin: 20px 10px 0;  
-	padding-top: 10px; 
+	padding-top: 10px;  
 }
 
 /* Buttons */
@@ -57,7 +57,7 @@ h2 {
 .reset-btn  {  
 	float: right; 
 	padding: 8px 25px; 
-	margin: 30px 10px 0 0; 
+	margin: 30px 0 20px 0; 
 }
 
 /* Nav */
@@ -95,11 +95,15 @@ h2 {
 	position: absolute; 
 	left: 100%; 
 	top: 12%;  
+	overflow-y: scroll ;
 }
 
 .tool-tip-content {
 	max-height: 400px; 
-	overflow-y: scroll; 
+}
+
+.disability-info-paragraph {
+	margin-bottom: 20px; 
 }
 
 .advice-list {
@@ -112,6 +116,10 @@ h2 {
 
 .more-info-heading {
 	display: none; 
+}
+
+.panel-group .panel+.panel {
+    margin-top: 15px;
 }
 
 /* footer */

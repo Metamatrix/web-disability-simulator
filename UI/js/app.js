@@ -5,7 +5,7 @@ $(document).ready(function(){
   var infoParagraph = $( ".disability-info-paragraph" ); 
   var adviceList = $( ".advice-list" ); 
   var moreInfoParagraph = $( ".more-info-paragraph" ); 
-  var moreInfoHeading = $( ".more-info-heading" ); 
+  var moreInfoPanel = $( "#more-info-panel" ); 
   var mainHeading = $( ".main-heading" );
   var logo = $(".logo"); 
   
@@ -19,7 +19,7 @@ $(document).ready(function(){
     infoParagraph.empty();
     adviceList.empty();
     moreInfoParagraph.empty(); 
-    moreInfoHeading.hide();
+    moreInfoPanel.hide();
 
     tooltip.animate({
       left: parseInt(tooltip.css('left'),10) == 0 ?
@@ -43,7 +43,7 @@ $(document).ready(function(){
     });
 
     if(data[id + "-moreInfo"]) {
-      moreInfoHeading.show();
+      moreInfoPanel.show();
       moreInfoParagraph.append(data[id + "-moreInfo"]);
     }
     

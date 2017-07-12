@@ -55,15 +55,48 @@
 				<div class="tool-tip-info-container">
 					<h2 class="" href="#">Om <span class="disability-info-heading"></span></h2>
 					<p class="disability-info-paragraph"></p>
-					<h2>Tänk på detta:</h2>
-					<ul class="advice-list">
-					</ul>
-					<h2 class="more-info-heading">Mer information:</h2>
-					<p class="more-info-paragraph"></p>
+					
+					
+					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+					<div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="headingOne">
+								<h2 class="panel-title">
+									<a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+										Tänk på detta:
+									</a>
+								</h2>
+							</div>
+							<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+								<div class="panel-body">
+									<ul class="advice-list">
+								</div>
+							</div>
+						</div>
+
+						<div class="panel panel-default" id="more-info-panel">
+							<div class="panel-heading" role="tab" id="headingTwo">
+								<h2 class="panel-title">
+									<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+										Mer information:
+									</a>
+								</h2>
+							</div>
+							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+								<div class="panel-body">
+									<p class="more-info-paragraph"></p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+
+
 				</div>
-			</div>
-			<div class="reset-btn-container">
-				<button class="btn btn-primary reset-btn" id="reset-btn">Återställ</button>
+				<div class="reset-btn-container">
+					<button class="btn btn-primary reset-btn" id="reset-btn">Återställ</button>
+				</div>
 			</div>
 		</div>
 
