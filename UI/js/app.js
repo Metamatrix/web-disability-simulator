@@ -46,6 +46,10 @@ $(document).ready(function(){
       moreInfoPanel.show();
       moreInfoParagraph.append(data[id + "-moreInfo"]);
     }
+
+    if ($(this).hasClass( "farsightedness" )) {
+      showBlurr();
+    } 
     
   });
 
@@ -64,6 +68,8 @@ $(document).ready(function(){
     $(".dropdown").find("#Syn").text("Syn");
     $(".dropdown").find("#Motorik").text("Motorik"); 
 
+    resetCSS();
+
   });
 
   //panel collapse, show arrows: 
@@ -77,3 +83,18 @@ $(document).ready(function(){
   });
 
 });
+
+  
+  //content scripts
+
+  function showBlurr(e) {
+    chrome.tabs.insertCSS({
+      file : "~/simulations/farsightedness/css/simulation.css"
+    });
+  }
+
+  function resetCSS(e) {
+    chrome.tabs.insertCSS({
+      file : "~/simulations/farsightedness/css/reset.css"
+    });
+  }
