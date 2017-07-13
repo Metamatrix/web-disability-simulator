@@ -1,1 +1,1 @@
-![Alt text](/UI/img/logo_disability_simulator.png?raw=true "Logo")
+![Alt text](src/UI/img/logo_disability_simulator.png?raw=true "Logo")
