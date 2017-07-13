@@ -6,8 +6,8 @@
   "version": "1.0",
 
   "browser_action": {
-    "default_icon": "UI/img/icon.png",
-    "default_popup": "UI/app.html"
+    "default_icon": "src/UI/img/icon.png",
+    "default_popup": "src/UI/app.html"
   },
   "permissions": [
     "tabs", "http://*/*", "https://*/*"
