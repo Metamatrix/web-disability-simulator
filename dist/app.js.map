@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/app.js"],"names":["test","require","console","log","port"],"mappings":";;AAAA,IAAIA,OAAOC,QAAQ,iDAAR,CAAX;AACAC,QAAQC,GAAR,CAAYH,KAAKI,IAAjB,E,CAAuB","file":"app.js","sourcesContent":["var test = require('../src/simulations/farsightedness/simulation.js')\r\nconsole.log(test.port) // 3000"]}

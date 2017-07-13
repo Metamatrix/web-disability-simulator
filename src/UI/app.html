@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+		<meta name="description" content="Web Disability Simulator">
+
+		<title>Web Disability Simulator</title>
+		
+		<script src="vendor/jquery/jquery-2.0.3.min.js"></script>
+		<script src="vendor/bootstrap/bootstrap.min.js"></script>
+		<script src="js/data.js"></script>
+		<script src="js/app.js"></script>
+		<script src="../../dist/bundle.js"></script>
+		
+		<link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/app.css" rel="stylesheet" media="screen">		
+	</head>
+	<body>
+		<div class="logo-container">
+      <img src="img/logo_disability_simulator.png" alt="logo" class="logo">
+			<h1 class="main-heading"></h1>
+		</div>
+		<nav class="navbar navbar-default" role="navigation">
+			<h2 class="navbar-header">Välj funktionsnedsättning:</h2>
+			<div class="dropdown">
+				<button class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="menu-sight">
+					<span class="selected" id="Syn">Syn</span><span class="caret pull-right"></span></a>
+				</button>
+				<ul class="dropdown-menu dropdown-menu-sight" aria-labelledby="menu-sight">
+					<li><a href="#" class="menu-btn blurryVision" id="blurryVision">Suddig syn</a></li>
+					<li><a href="#" class="menu-btn colorBlindness" id="colorBlindness">Helt färgblind (Monokromasi/akromatopsi)</a></li>
+					<li><a href="#" class="menu-btn yellowBlueColorBlindness" id="yellowBlueColorBlindness">Gul-blå färgblindhet (Tritanopi)</a></li>
+					<li><a href="#" class="menu-btn farsightedness" id="farsightedness">Långsynthet, översynthet (Hyperopi)</a></li>
+				</ul>
+			</div>
+			<div class="dropdown">
+				<button class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="menu-motor">
+					<span class="selected" id="Motorik">Motorik</span><span class="caret pull-right"></span></a>
+				</button>
+				<ul class="dropdown-menu dropdown-menu-motor" aria-labelledby="menu-motor">
+					<li><a href="#" class="menu-btn parkinsons" id="parkinsons">Parkinsons</a></li>
+				</ul>
+			</div>
+
+			<button class="btn btn-default btn-block dropdown-toggle menu-btn dyslexia" type="button" id="dyslexia"><span>Dyslexi</span></button>
+			<button class="btn btn-default btn-block dropdown-toggle menu-btn concentration" type="button" id="concentration"><span>Koncentration</span></button>
+			<button class="btn btn-default btn-block dropdown-toggle menu-btn memory" type="button" id="memory"><span>Minne</span></button>
+			<button class="btn btn-default btn-block dropdown-toggle menu-btn hearing" type="button" id="hearing"><span>Hörsel</span></button>
+		</nav>
+		<div class="footer">
+			<a href="https://github.com/Metamatrix/Web-Disability-Simulator" class="github-link pull-right">Github</a>
+		</div>
+
+		<div class="tool-tip">
+			<div class="tool-tip-content">
+				<div class="tool-tip-info-container">
+					<h2 class="" href="#">Om <span class="disability-info-heading"></span></h2>
+					<p class="disability-info-paragraph"></p>
+					
+					
+					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+					<div class="panel panel-default" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+							<div class="panel-heading" role="tab" id="headingOne">
+								<h2 class="panel-title">
+									<a role="button">
+										Tänk på detta
+										<span class="caret pull-right down-arrow"></span>
+										<span class="dropup pull-right up-arrow">
+    									<span class="caret"></span>
+										</span>
+									</a>
+								</h2>
+							</div>
+							<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+								<div class="panel-body">
+									<ul class="advice-list">
+								</div>
+							</div>
+						</div>
+
+						<div class="panel panel-default" id="more-info-panel" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							<div class="panel-heading" role="tab" id="headingTwo">
+								<h2 class="panel-title">
+									<a role="button">
+										Mer information
+										<span class="caret pull-right down-arrow"></span>
+										<span class="dropup pull-right up-arrow">
+    									<span class="caret"></span>
+										</span>
+									</a>
+								</h2>
+							</div>
+							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+								<div class="panel-body">
+									<p class="more-info-paragraph"></p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+			<div class="reset-btn-container">
+				<button class="btn btn-primary reset-btn" id="reset-btn">Återställ</button>
+			</div>
+		</div>
+
+	</body>
+</html>
