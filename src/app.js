@@ -1,4 +1,5 @@
 import {port} from '../../src/simulations/farsightedness/simulation.js'
+import {showBlurr} from '../../src/simulations/farsightedness/simulation.js'
 console.log(port) // 3000
 
 
@@ -52,7 +53,7 @@ $(document).ready(function(){
     }
 
     if ($(this).hasClass( "farsightedness" )) {
-      //showBlurr();
+      showBlurr();
     } 
     
   });

@@ -2,11 +2,10 @@
 
 export var port = 3000
   
-/*  function showBlurr(e) {
-
+ export function showBlurr(e) {
     console.log('import funkade!'); 
-/*    chrome.tabs.insertCSS({
-      file : "~/simulations/farsightedness/css/simulation.css"
+    chrome.tabs.insertCSS({
+      file : "../../src/simulations/farsightedness/css/simulation.css"
     });
   }
 
@@ -14,4 +13,4 @@ export var port = 3000
     chrome.tabs.insertCSS({
       file : "~/simulations/farsightedness/css/reset.css"
     });
-  }*/
+  }

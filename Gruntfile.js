@@ -62,7 +62,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
 
   // Default task(s).
-  grunt.registerTask('dev', ['babel', 'uglify', 'browserify']);
-  grunt.registerTask('dist', ['babel', 'uglify', 'browserify']);
+  grunt.registerTask('dev', ['babel', 'uglify:dev', 'browserify']);
+  grunt.registerTask('dist', ['babel', 'uglify:dist', 'browserify']);
 
 };

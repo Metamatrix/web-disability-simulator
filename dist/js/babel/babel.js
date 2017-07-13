@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-var _simulation = require("../../src/simulations/farsightedness/simulation.js");
+var _simulation = require('../../src/simulations/farsightedness/simulation.js');
 
 console.log(_simulation.port); // 3000
 
@@ -53,7 +53,7 @@ $(document).ready(function () {
     }
 
     if ($(this).hasClass("farsightedness")) {
-      //showBlurr();
+      (0, _simulation.showBlurr)();
     }
   });
 
