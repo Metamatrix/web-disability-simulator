@@ -1,8 +1,6 @@
   //content scripts
 
-module.exports = {
-  port: 3000
-}
+export var port = 3000
   
 /*  function showBlurr(e) {
 
