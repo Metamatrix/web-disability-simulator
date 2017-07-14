@@ -44,7 +44,7 @@ module.exports = function(grunt) {
     browserify: {
       dist: {
         files: {
-          'dist/js/script.min.browserify.js': ['dist/js/script.min.js']
+          'script.min.browserify.js': ['dist/js/script.min.js']
         },
 
       },

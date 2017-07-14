@@ -2,9 +2,6 @@
 
 var _simulation = require('../../src/simulations/farsightedness/simulation.js');
 
-console.log(_simulation.port); // 3000
-
-
 $(document).ready(function () {
 
   var tooltip = $(".tool-tip");
@@ -70,7 +67,7 @@ $(document).ready(function () {
     $(".dropdown").find("#Syn").text("Syn");
     $(".dropdown").find("#Motorik").text("Motorik");
 
-    resetCSS();
+    (0, _simulation.resetCSS)();
   });
 
   //panel collapse, show arrows: 

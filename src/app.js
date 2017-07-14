@@ -1,6 +1,6 @@
-import {port} from '../../src/simulations/farsightedness/simulation.js'
 import {showBlurr} from '../../src/simulations/farsightedness/simulation.js'
-console.log(port) // 3000
+import {resetCSS} from '../../src/simulations/farsightedness/simulation.js'
+
 
 
 $(document).ready(function(){
