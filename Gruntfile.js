@@ -52,6 +52,16 @@ module.exports = function(grunt) {
         browserifyOptions: { debug: true },
         transform: [["babelify", { "presets": ["es2015"] }]],
       }
+    },
+    watch: {
+      dev: {
+        files: 'src/**/**/*.js',
+        tasks: ['default'],
+      },
+      dist: {
+        files: 'src/**/**/*.js',
+        tasks: ['dist'],
+      }
     }
 
   });
@@ -60,9 +70,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-browserify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('dev', ['babel', 'uglify:dev', 'browserify']);
-  grunt.registerTask('dist', ['babel', 'uglify:dist', 'browserify']);
+  grunt.registerTask('default', ['babel', 'uglify:dev', 'browserify', 'watch:dev']);
+  grunt.registerTask('dist', ['babel', 'uglify:dist', 'browserify', 'watch:dist']);
 
 };
