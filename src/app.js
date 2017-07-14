@@ -1,8 +1,6 @@
 import {showBlurr} from '../../src/simulations/farsightedness/simulation.js'
 import {resetCSS} from '../../src/simulations/farsightedness/simulation.js'
 
-
-
 $(document).ready(function(){
     
   var tooltip = $( ".tool-tip" );

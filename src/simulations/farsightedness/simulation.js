@@ -1,6 +1,4 @@
-  //content scripts
-
-export var port = 3000
+//content scripts
   
  export function showBlurr(e) {
     console.log('import funkade!'); 
