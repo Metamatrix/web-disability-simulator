@@ -2,6 +2,8 @@
 
 var _simulation = require('../../src/simulations/farsightedness/simulation.js');
 
+var _simulation2 = require('../../src/simulations/tunnelVision/simulation.js');
+
 $(document).ready(function () {
 
   var tooltip = $(".tool-tip");
@@ -50,7 +52,11 @@ $(document).ready(function () {
     }
 
     if ($(this).hasClass("farsightedness")) {
-      (0, _simulation.showBlurr)();
+      (0, _simulation.farsightedness)();
+    }
+
+    if ($(this).hasClass("tunnelVision")) {
+      (0, _simulation2.tunnelVision)();
     }
   });
 

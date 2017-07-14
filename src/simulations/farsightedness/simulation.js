@@ -1,6 +1,6 @@
 //content scripts
   
- export function showBlurr(e) {
+ export function farsightedness(e) {
     console.log('import funkade!'); 
     chrome.tabs.insertCSS({
       file : "src/simulations/farsightedness/css/simulation.css"

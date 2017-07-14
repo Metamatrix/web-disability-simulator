@@ -27,6 +27,10 @@ var data= {
 
   'colorBlindness': "Defekt färgseende innebär att en person har svårt att skilja på vissa eller alla färger. Ett fullt fungerande öga har tre olika typer av tappar som tar upp olika färger: violett, grön och röd. Orsaken till defekt färgseende är att en eller flera av dessa typer av tappar saknas eller är defekta. Helt färgblind (Monokromasi/akromatopsi) är mycket sällsynt. Personer med denna synnedsättning ser inga färger utan ser endast i gråskala.",
   'colorBlindness-listItems': ["Använd inte färg som det enda sättet att förmedla information, indikera en handling eller identifiera element. Markera t.ex. inte ett felaktigt formulärfält endast med röd ram, komplettera även med text eller ikon.", 	
-              "Det kan vara en bra idé att erbjuda ett högkontrast-läge."]
+              "Det kan vara en bra idé att erbjuda ett högkontrast-läge."],
+
+  'tunnelVision': "Tunnelseende innebär...",
+  'tunnelVision-listItems': ["Listitem 1", 	
+              "Listitem 2."]
 
 };

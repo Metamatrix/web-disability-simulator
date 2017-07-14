@@ -1,5 +1,6 @@
-import {showBlurr} from '../../src/simulations/farsightedness/simulation.js'
+import {farsightedness} from '../../src/simulations/farsightedness/simulation.js'
 import {resetCSS} from '../../src/simulations/farsightedness/simulation.js'
+import {tunnelVision} from '../../src/simulations/tunnelVision/simulation.js'
 
 $(document).ready(function(){
     
@@ -51,7 +52,11 @@ $(document).ready(function(){
     }
 
     if ($(this).hasClass( "farsightedness" )) {
-      showBlurr();
+      farsightedness();
+    } 
+
+    if ($(this).hasClass( "tunnelVision" )) {
+      tunnelVision();
     } 
     
   });
