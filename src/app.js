@@ -1,6 +1,6 @@
-import {farsightedness} from '../../src/simulations/farsightedness/simulation.js'
-import {resetCSS} from '../../src/simulations/farsightedness/simulation.js'
-import {tunnelVision} from '../../src/simulations/tunnelVision/simulation.js'
+import {farsightedness} from '../../src/simulations/farsightedness/index.js'
+import {resetCSS} from '../../src/simulations/farsightedness/index.js'
+import {tunnelVision} from '../../src/simulations/tunnelVision/index.js'
 
 $(document).ready(function(){
     
