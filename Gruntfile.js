@@ -18,7 +18,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'build/js/script.min.js': 
+          'build/js/script.uglify.js': 
             [ 'src/UI/vendor/jquery/jquery-2.0.3.min.js',
               'src/UI/vendor/bootstrap/bootstrap.min.js',
               'src/UI/js/data.js',
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
           compress: false
         },
         files: {
-          'dist/js/script.min.js': 
+          'build/js/script.uglify.js': 
             [ 'src/UI/vendor/jquery/jquery-2.0.3.min.js',
               'src/UI/vendor/bootstrap/bootstrap.min.js',
               'src/UI/js/data.js',
@@ -45,7 +45,7 @@ module.exports = function(grunt) {
     browserify: {
       dist: {
         files: {
-          'script.min.browserify.js': ['build/js/script.min.js']
+          'script.min.js': ['build/js/script.uglify.js']
         },
 
       },
