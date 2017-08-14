@@ -3,6 +3,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    
     babel: {
       options: {
           sourceMap: true,
@@ -10,18 +11,18 @@ module.exports = function(grunt) {
       },
       dist: {
           files: {
-              'dist/js/babel/babel.js': 'src/app.js'
+              'build/js/babel/babel.js': 'src/app.js'
           }
       }
     },
     uglify: {
       dist: {
         files: {
-          'dist/js/script.min.js': 
+          'build/js/script.min.js': 
             [ 'src/UI/vendor/jquery/jquery-2.0.3.min.js',
               'src/UI/vendor/bootstrap/bootstrap.min.js',
               'src/UI/js/data.js',
-              'dist/js/babel/babel.js'                                
+              'build/js/babel/babel.js'                                
                                   ]
         }
       },
@@ -36,7 +37,7 @@ module.exports = function(grunt) {
             [ 'src/UI/vendor/jquery/jquery-2.0.3.min.js',
               'src/UI/vendor/bootstrap/bootstrap.min.js',
               'src/UI/js/data.js',
-              'dist/js/babel/babel.js'                                
+              'build/js/babel/babel.js'                                
                                   ]
         }
       }
@@ -44,7 +45,7 @@ module.exports = function(grunt) {
     browserify: {
       dist: {
         files: {
-          'script.min.browserify.js': ['dist/js/script.min.js']
+          'script.min.browserify.js': ['build/js/script.min.js']
         },
 
       },
