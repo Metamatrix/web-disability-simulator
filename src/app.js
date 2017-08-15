@@ -77,7 +77,6 @@ $(document).ready(function(){
     $(".dropdown").find("#Motorik").text("Motorik"); 
 
     resetCSS();
-
   });
 
   //panel collapse, show arrows: 

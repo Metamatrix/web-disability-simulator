@@ -1,4 +1,5 @@
-canvas {
+canvas { 
+  visibility: visible; 
   position: fixed; 
   left: 0; 
   right: 0; 

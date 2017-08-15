@@ -1,5 +1,9 @@
 //create canvas element
 
+if (document.body.contains(document.querySelector('canvas'))) {
+  document.querySelector('canvas').remove();
+};
+
 var canvas = document.createElement('canvas'); 
 canvas.setAttribute('width', document.documentElement.clientWidth);
 canvas.setAttribute('height', document.documentElement.clientHeight);
