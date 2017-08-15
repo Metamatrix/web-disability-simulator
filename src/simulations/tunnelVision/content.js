@@ -1,31 +1,86 @@
-
 //create canvas element
 
 var canvas = document.createElement('canvas'); 
 canvas.setAttribute('width', document.documentElement.clientWidth);
 canvas.setAttribute('height', document.documentElement.clientHeight);
+canvas.setAttribute('id', 'tunnelVisionCanvas');
 document.body.appendChild(canvas); 
-
-var mouseX = 200;
-var mouseY = 200;
-var size = 100;
 
 var context = canvas.getContext('2d');
 
-context.clearRect(0,0,document.documentElement.clientWidth, document.documentElement.clientHeight);
+var canvasPos = getPosition(canvas);
+var mouseX = 0;
+var mouseY = 0;
+ 
+canvas.addEventListener("mousemove", setMousePosition, false);
+ 
+function setMousePosition(e) {
+  mouseX = e.clientX - canvasPos.x;
+  mouseY = e.clientY - canvasPos.y;
+}
 
-context.fillStyle = 'black';
-context.rect(0,0,document.documentElement.clientWidth, document.documentElement.clientHeight);
-context.fill();
+function update() {
+  context.clearRect(0, 0, canvas.width, canvas.height);
+
+  context.fillStyle = 'black';
+  context.rect(0,0,document.documentElement.clientWidth, document.documentElement.clientHeight);
+  context.fill();
+
+  //context.globalCompositeOperation='destination-out';
+  context.beginPath();
+  context.arc(mouseX, mouseY, 100, 0, 2 * Math.PI, false);
+  context.fillStyle = "white";
+  context.fill();
+
+  requestAnimationFrame(update);
+}
+update();
+
+function getPosition(el) {
+  var xPosition = 0;
+  var yPosition = 0;
+ 
+  while (el) {
+    xPosition += (el.offsetLeft - el.scrollLeft + el.clientLeft);
+    yPosition += (el.offsetTop - el.scrollTop + el.clientTop);
+    el = el.offsetParent;
+  }
+  return {
+    x: xPosition,
+    y: yPosition
+  };
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//context.clearRect(0,0,document.documentElement.clientWidth, document.documentElement.clientHeight);
+
+//context.fillStyle = 'black';
+//context.rect(0,0,document.documentElement.clientWidth, document.documentElement.clientHeight);
+//context.fill();
 
 //create transparent circle
 
-context.globalCompositeOperation='destination-out';
+/*context.globalCompositeOperation='destination-out';
 context.beginPath();
-context.arc(mouseX, mouseY, size, 0, 2 * Math.PI, false);
-context.fill();
+context.arc(200, 200, 100, 0, 2 * Math.PI, false);
+context.fill();*/
 
-
+/*
 document.onmousemove = moveCircle; 
 
 
@@ -33,7 +88,7 @@ $(window).on('mousemove', function(e) {
   console.log(e.clientX, e.pageX)
 });
 
-
+*/
 
 
 /*    var span = document.createElement('span');
