@@ -9,32 +9,49 @@ document.body.appendChild(canvas);
 var context = canvas.getContext('2d');
 
 var canvasPos = getPosition(canvas);
-var mouseX = 0;
-var mouseY = 0;
- 
+var mouseX = 1000;
+var mouseY = 500;
+var size = Math.min(window.innerWidth*0.3, 300);
+
+window.addEventListener("resize", setSize, false);
+
+function setSize(e) {
+  canvas.setAttribute('width', document.documentElement.clientWidth);
+  canvas.setAttribute('height', document.documentElement.clientHeight);
+  size = Math.min(window.innerWidth*0.3, 300);
+  update(); 
+}
+
 canvas.addEventListener("mousemove", setMousePosition, false);
  
 function setMousePosition(e) {
-  mouseX = e.clientX - canvasPos.x;
-  mouseY = e.clientY - canvasPos.y;
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  update();
+  console.log('funktion körs', mouseX, mouseY); 
 }
 
 function update() {
-  context.clearRect(0, 0, canvas.width, canvas.height);
+ context.clearRect(0,0,window.innerWidth,window.innerHeight);
+ 
+ context.fillStyle = 'black';
+ context.rect(0,0,window.innerWidth,window.innerHeight);
+ context.fill();
 
-  context.fillStyle = 'black';
-  context.rect(0,0,document.documentElement.clientWidth, document.documentElement.clientHeight);
-  context.fill();
-
-  //context.globalCompositeOperation='destination-out';
-  context.beginPath();
-  context.arc(mouseX, mouseY, 100, 0, 2 * Math.PI, false);
-  context.fillStyle = "white";
-  context.fill();
-
-  requestAnimationFrame(update);
-}
-update();
+ context.save();
+ 
+ context.globalCompositeOperation='destination-out';
+ 
+ var gradient = context.createRadialGradient(mouseX, mouseY, size / 2, mouseX, mouseY, 0);
+ gradient.addColorStop(0, 'transparent');
+ gradient.addColorStop(.25, 'white');
+ gradient.addColorStop(1, 'white');
+ context.fillStyle = gradient;
+ context.fillRect(mouseX - size / 2, mouseY - size / 2, size, size);
+ 
+ context.restore();
+ 
+} 
 
 function getPosition(el) {
   var xPosition = 0;
@@ -49,64 +66,4 @@ function getPosition(el) {
     x: xPosition,
     y: yPosition
   };
-} 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//context.clearRect(0,0,document.documentElement.clientWidth, document.documentElement.clientHeight);
-
-//context.fillStyle = 'black';
-//context.rect(0,0,document.documentElement.clientWidth, document.documentElement.clientHeight);
-//context.fill();
-
-//create transparent circle
-
-/*context.globalCompositeOperation='destination-out';
-context.beginPath();
-context.arc(200, 200, 100, 0, 2 * Math.PI, false);
-context.fill();*/
-
-/*
-document.onmousemove = moveCircle; 
-
-
-$(window).on('mousemove', function(e) {
-  console.log(e.clientX, e.pageX)
-});
-
-*/
-
-
-/*    var span = document.createElement('span');
-    span.setAttribute('id', 'circle'); 
-    document.body.appendChild(span); 
-
-      document.onmousemove = moveCircle; 
-      function moveCircle(e) {
-        var circle = document.getElementById('circle'); 
-        console.log(circle); 
-        circle.style.left = e.pageX;
-        circle.style.top = e.pageY;
-      }
-
-//circle.style.top = '100px' funkar. Hur göra med e.pageX? 
-
-//jquery: 
-/*    $(this).mousemove(function(e){
-      console.log('fredag'); 
-      $(".circle").css({left:e.pageX, top:e.pageY});
-    });*/
+}
