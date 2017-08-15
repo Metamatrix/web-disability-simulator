@@ -1,8 +1,8 @@
 'use strict';
 
-var _simulation = require('../../src/simulations/farsightedness/simulation.js');
-
 var _general = require('../../src/simulations/general.js');
+
+var _simulation = require('../../src/simulations/farsightedness/simulation.js');
 
 var _simulation2 = require('../../src/simulations/tunnelVision/simulation.js');
 

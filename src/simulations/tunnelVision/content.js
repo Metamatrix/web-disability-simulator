@@ -28,7 +28,6 @@ function setMousePosition(e) {
   mouseX = e.clientX;
   mouseY = e.clientY;
   update();
-  console.log('funktion körs', mouseX, mouseY); 
 }
 
 function update() {
