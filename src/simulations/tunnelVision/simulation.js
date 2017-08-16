@@ -3,8 +3,6 @@ export function tunnelVision(e) {
 
     chrome.tabs.executeScript( {file: 'src/simulations/tunnelVision/content.js'} );
 
-    chrome.tabs.executeScript(null, {file:'src/simulations/tunnelVision/content.js'} );
-
     chrome.tabs.insertCSS({
       file : "src/simulations/tunnelVision/css/simulation.css"
     });

@@ -6,6 +6,8 @@ var _simulation = require('../../src/simulations/farsightedness/simulation.js');
 
 var _simulation2 = require('../../src/simulations/tunnelVision/simulation.js');
 
+var _simulation3 = require('../../src/simulations/redGreenColorBlindness/simulation.js');
+
 $(document).ready(function () {
 
   var tooltip = $(".tool-tip");
@@ -59,6 +61,10 @@ $(document).ready(function () {
 
     if ($(this).hasClass("tunnelVision")) {
       (0, _simulation2.tunnelVision)();
+    }
+
+    if ($(this).hasClass("redGreenColorBlindness")) {
+      (0, _simulation3.redGreenColorBlindness)();
     }
   });
 

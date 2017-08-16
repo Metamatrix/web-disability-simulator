@@ -1,6 +1,7 @@
 import {resetCSS} from '../../src/simulations/general.js'
 import {farsightedness} from '../../src/simulations/farsightedness/simulation.js'
 import {tunnelVision} from '../../src/simulations/tunnelVision/simulation.js'
+import {redGreenColorBlindness} from '../../src/simulations/redGreenColorBlindness/simulation.js'
 
 $(document).ready(function(){
     
@@ -57,6 +58,10 @@ $(document).ready(function(){
 
     if ($(this).hasClass( "tunnelVision" )) {
       tunnelVision();
+    } 
+
+    if ($(this).hasClass( "redGreenColorBlindness" )) {
+      redGreenColorBlindness();
     } 
     
   });
