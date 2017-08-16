@@ -1,6 +1,6 @@
 //create canvas element
 
-if (document.body.contains(document.querySelector('canvas'))) {
+if (document.body.contains(document.querySelector('#tunnelVisionCanvas'))) {
   document.querySelector('canvas').remove();
 };
 

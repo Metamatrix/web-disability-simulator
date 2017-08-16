@@ -19,6 +19,10 @@ var data= {
               "Undvik typsnitt med krångliga och komplexa figurer."],
   'yellowBlueColorBlindness-moreInfo': "<a href='https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende'>Wikipedia om defekt färgseende</a>",
 
+  'redGreenColorBlindness': "Personer med defekt färgseende har svårt att skilja på vissa eller alla färger. Ett fullt fungerande öga har tre olika tappar som tar upp färgerna violett, grön och röd. När en eller flera av tapparna saknas eller är defekta leder det till defekt färgseende. Röd-grön färgblindhet (Protanopi och Deuteranopi) är den vanligaste typen av färgblindhet. Den är vanligare hos män än kvinnor. Personer röd-grön färgblindhet har svårt att skilja på färgerna röd, grön, brun och orange.",
+  'redGreenColorBlindness-listItems': ["Använd inte färg som enda sättet att förmedla information, indikera en handling eller identifiera ett element. Markera till exempel inte ett felaktigt formulärfält endast med röd ram, komplettera även med text och gärna en  ikon.", "Erbjud gärna ett högkontrast-läge."],
+  'redGreenColorBlindness-moreInfo': "<a href='https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende'>Wikipedia om defekt färgseende</a>",
+
   'farsightedness': "Personer med Hyperopi ser suddigt på nära håll, men bra på långt håll. Nedsättningen uppstår på grund av att ljuset inte bryts rätt i ögat. Det är en av de vanligaste synnedsättningarna.",
   'farsightedness-listItems': ["Undvik text i liten storlek.", 	
               "Webbsidan ska gå att förstora (zoomas) till minst 200 % så att besökaren kan anpassa innehållets storlek efter sina behov.",
