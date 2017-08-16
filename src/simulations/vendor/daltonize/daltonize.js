@@ -1,10 +1,42 @@
-dalto('red', 'Tritanopia'); 
-dalto('blue', 'Tritanopia'); 
-dalto('green', 'Tritanopia'); 
-dalto('yellow', 'Tritanopia'); 
+
+// Input parameter color must be a string parsable by d3.rgb
+// returns string in the form "rgb(r,g,b)"
+
+// TODO:
+// Ideally it should be seamlessly integrated with d3, by overriding and wrapping
+// so that one could call, to set the daltonized scale
+
+//    (d3scale).daltonize(d3.daltonize.protanope)
+// Reset it 
+//    (d3scale).daltonize(null).
+// Get the output daltonized range 
+//    (d3scale).daltonizeRange()
+// but that remains to be implemented
+
+// Daltonize a single color
+//    d3.daltonize(color_as_string [, anomaly ])
+// Return list of anomalies
+//    d3.daltonize.anomalies()
+
+/*************************************************/
+
+/* Code adapted from http://web.archive.org/web/20081014161121/http://www.colorjack.com/labs/colormatrix/ */
+
+/* Usage:
+
+in D3: 
+element.style("background-color", function(d) {return dalto(d, anomaly);});
 
 
-//use 'daltonize' library to translate color values
+// DEBUG
+anomaly = 'Deuteranomaly';
+anomaly = 'Tritanopia';
+console.log(Blind[anomaly]);
+console.log(ColorMatrix({R:255, G:0, B:0, A:255}, Blind[anomaly]));
+console.log(ColorMatrix({R:12, G:100, B:26, A:255}, Blind[anomaly]));
+
+*/
+
 
 var Anomalies={
   'Normal':[1,0,0,0,0, 0,1,0,0,0, 0,0,1,0,0, 0,0,0,1,0, 0,0,0,0,1],
@@ -32,6 +64,12 @@ function dalto(color, anomaly) {
   var c  = d3.rgb(color),
       newC = ColorMatrix({R:c.r, G:c.g, B:c.b, A:255}, Anomalies[anomaly]),
       s = 'rgb('+newC.R+','+newC.G+','+newC.B+')';
-  console.log(s);
+  //console.log(s);
   return s;
 }
+
+//console.log(Anomalies);
+
+// ...
+// 2h + 1h = env. 3h au total avec le test
+// 3h nouveaux filtres + adaptation + colorbrewer

@@ -9,6 +9,13 @@
     "default_icon": "src/UI/img/icon.png",
     "default_popup": "src/UI/app.html"
   },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "css": [],
+      "js": ["src/simulations/vendor/D3/d3.js", "src/simulations/vendor/daltonize/daltonize.js"]
+    }
+  ],
   "permissions": [
     "tabs", "http://*/*", "https://*/*"
   ]
