@@ -1,0 +1,8 @@
+html, body {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+}
+
+canvas {
+    visibility: hidden; 
+}

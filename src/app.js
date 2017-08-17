@@ -1,7 +1,7 @@
 import {resetCSS} from '../../src/simulations/general.js'
-import {farsightedness} from '../../src/simulations/farsightedness/simulation.js'
-import {tunnelVision} from '../../src/simulations/tunnelVision/simulation.js'
-import {redGreenColorBlindness} from '../../src/simulations/redGreenColorBlindness/simulation.js'
+import {farsightedness} from '../../src/simulations/farsightedness/index.js'
+import {tunnelVision} from '../../src/simulations/tunnelVision/index.js'
+import {redGreenColorBlindness} from '../../src/simulations/redGreenColorBlindness/index.js'
 
 $(document).ready(function(){
     

@@ -3622,11 +3622,11 @@ var data = {
 
 var _general = require("../../src/simulations/general.js");
 
-var _simulation = require("../../src/simulations/farsightedness/simulation.js");
+var _index = require("../../src/simulations/farsightedness/index.js");
 
-var _simulation2 = require("../../src/simulations/tunnelVision/simulation.js");
+var _index2 = require("../../src/simulations/tunnelVision/index.js");
 
-var _simulation3 = require("../../src/simulations/redGreenColorBlindness/simulation.js");
+var _index3 = require("../../src/simulations/redGreenColorBlindness/index.js");
 
 $(document).ready(function() {
     var tooltip = $(".tool-tip");
@@ -3662,13 +3662,13 @@ $(document).ready(function() {
             moreInfoParagraph.append(data[id + "-moreInfo"]);
         }
         if ($(this).hasClass("farsightedness")) {
-            (0, _simulation.farsightedness)();
+            (0, _index.farsightedness)();
         }
         if ($(this).hasClass("tunnelVision")) {
-            (0, _simulation2.tunnelVision)();
+            (0, _index2.tunnelVision)();
         }
         if ($(this).hasClass("redGreenColorBlindness")) {
-            (0, _simulation3.redGreenColorBlindness)();
+            (0, _index3.redGreenColorBlindness)();
         }
     });
     $("#reset-btn").click(function() {
