@@ -2,7 +2,7 @@
 
 var allElements = $("*");
 
-allElements.each(function( index,value ) {
+allElements.each(function(index) {
   var element = allElements[index].nodeName.toLowerCase();
   var selector= $(element);
   //console.log(selector);
