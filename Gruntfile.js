@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    
+
     babel: {
       options: {
           sourceMap: true,
@@ -18,13 +18,11 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'build/js/script.uglify.js': 
+          'build/js/script.uglify.js':
             [ 'src/UI/vendor/jquery/jquery-2.0.3.min.js',
               'src/UI/vendor/bootstrap/bootstrap.min.js',
               'src/UI/js/data.js',
               'build/js/babel/babel.js'
-              //'src/simulations/vendor/D3/d3.js',
-              //'src/simulations/vendor/daltonize/daltonize.js'
             ]
         }
       },
@@ -35,13 +33,11 @@ module.exports = function(grunt) {
           compress: false
         },
         files: {
-          'build/js/script.uglify.js': 
+          'build/js/script.uglify.js':
             [ 'src/UI/vendor/jquery/jquery-2.0.3.min.js',
               'src/UI/vendor/bootstrap/bootstrap.min.js',
               'src/UI/js/data.js',
               'build/js/babel/babel.js'
-              //'src/simulations/vendor/D3/d3.js',
-              //'src/simulations/vendor/daltonize/daltonize.js'                             
             ]
         }
       }
@@ -71,13 +67,10 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
-          // includes files within path
           {expand: true, cwd: 'src/', src: ['UI/css/**'], dest: 'dist/', filter: 'isFile'},
           {expand: true, cwd: 'src/', src: ['UI/img/**'], dest: 'dist/', filter: 'isFile'},
-          {expand: true, cwd: 'src/', src: ['UI/vendor/bootstrap/bootstrap.min.css'], dest: 'dist/', filter: 'isFile'},
-          {expand: true, cwd: 'src/', src: ['UI/vendor/bootstrap/bootstrap.min.css'], dest: 'dist/', filter: 'isFile'},
+          {expand: true, cwd: 'src/', src: ['UI/vendor/**'], dest: 'dist/', filter: 'isFile'},
           {expand: true, cwd: 'src/', src: ['simulations/**'], dest: 'dist/', filter: 'isFile'},
-
           {expand: true, cwd: 'src/UI/', src: ['app.html'], dest: 'dist/UI', filter: 'isFile'},
           {expand: true, src: ['manifest.json'], dest: 'dist/', filter: 'isFile'},
         ],

@@ -7,9 +7,9 @@
 // so that one could call, to set the daltonized scale
 
 //    (d3scale).daltonize(d3.daltonize.protanope)
-// Reset it 
+// Reset it
 //    (d3scale).daltonize(null).
-// Get the output daltonized range 
+// Get the output daltonized range
 //    (d3scale).daltonizeRange()
 // but that remains to be implemented
 
@@ -24,7 +24,7 @@
 
 /* Usage:
 
-in D3: 
+in D3:
 element.style("background-color", function(d) {return dalto(d, anomaly);});
 
 
@@ -64,7 +64,7 @@ function dalto(color, anomaly) {
   var c  = d3.rgb(color),
       newC = ColorMatrix({R:c.r, G:c.g, B:c.b, A:255}, Anomalies[anomaly]),
       s = 'rgb('+newC.R+','+newC.G+','+newC.B+')';
-  console.log(s);
+  //console.log(s);
   return s;
 }
 
