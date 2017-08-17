@@ -3,35 +3,30 @@ dalto('blue', 'Tritanopia');
 dalto('green', 'Tritanopia'); 
 dalto('yellow', 'Tritanopia'); 
 
+//Loopa igenom alla element på sidan och byt ut color, backgroundColor, borderColor, osv... nyansen X mot nyansen Y
 
-//use 'daltonize' library to translate color values
+var allElements = $( "*" );
 
-var Anomalies={
-  'Normal':[1,0,0,0,0, 0,1,0,0,0, 0,0,1,0,0, 0,0,0,1,0, 0,0,0,0,1],
-  'Protanopia':[0.567,0.433,0,0,0, 0.558,0.442,0,0,0, 0,0.242,0.758,0,0, 0,0,0,1,0, 0,0,0,0,1],
-  'Protanomaly':[0.817,0.183,0,0,0, 0.333,0.667,0,0,0, 0,0.125,0.875,0,0, 0,0,0,1,0, 0,0,0,0,1],
-  'Deuteranopia':[0.625,0.375,0,0,0, 0.7,0.3,0,0,0, 0,0.3,0.7,0,0, 0,0,0,1,0, 0,0,0,0,1],
-  'Deuteranomaly':[0.8,0.2,0,0,0, 0.258,0.742,0,0,0, 0,0.142,0.858,0,0, 0,0,0,1,0, 0,0,0,0,1],
-  'Tritanopia':[0.95,0.05,0,0,0, 0,0.433,0.567,0,0, 0,0.475,0.525,0,0, 0,0,0,1,0, 0,0,0,0,1],
-  'Tritanomaly':[0.967,0.033,0,0,0, 0,0.733,0.267,0,0, 0,0.183,0.817,0,0, 0,0,0,1,0, 0,0,0,0,1],
-  'Achromatopsia':[0.299,0.587,0.114,0,0, 0.299,0.587,0.114,0,0, 0.299,0.587,0.114,0,0, 0,0,0,1,0, 0,0,0,0,1],
-  'Achromatomaly':[0.618,0.320,0.062,0,0, 0.163,0.775,0.062,0,0, 0.163,0.320,0.516,0,0,0,0,0,1,0,0,0,0,0]
-};
+allElements.each(function( index,value ) {
+  var element = allElements[index].nodeName.toLowerCase();
+  var selector= $(''+ element +'');
+  console.log(selector); 
 
-var fu = function(n) { var nn = Math.round(n); return(nn<0?0:(nn<255?nn:255)); }
+  $("button").click(function() {
+    var backgroundColor = selector.css( "background-color" );
+    var color = selector.css("color");
+    var borderColor = selector.css( "border-color" );
+    
+    console.log(color);
 
-var ColorMatrix = function(o,m) { // takes: RGBA object, Matrix array
-    var r=((o.R*m[0])+(o.G*m[1])+(o.B*m[2])+(o.A*m[3])+m[4]);
-    var g=((o.R*m[5])+(o.G*m[6])+(o.B*m[7])+(o.A*m[8])+m[9]);
-    var b=((o.R*m[10])+(o.G*m[11])+(o.B*m[12])+(o.A*m[13])+m[14]);
-    var a=((o.R*m[15])+(o.G*m[16])+(o.B*m[17])+(o.A*m[18])+m[19]);
-    return({'R':fu(r), 'G':fu(g), 'B':fu(b), 'A':fu(a)});
-};
+    var resultBackgroundColor = dalto(backgroundColor, 'Tritanopia');
+    var resultColor = dalto(color, 'Tritanopia');
 
-function dalto(color, anomaly) {
-  var c  = d3.rgb(color),
-      newC = ColorMatrix({R:c.r, G:c.g, B:c.b, A:255}, Anomalies[anomaly]),
-      s = 'rgb('+newC.R+','+newC.G+','+newC.B+')';
-  console.log(s);
-  return s;
-}
+    selector.css("background-color", resultBackgroundColor);
+    selector.css("color", resultColor);
+
+  }); 
+
+});
+
+

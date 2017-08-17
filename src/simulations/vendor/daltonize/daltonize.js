@@ -64,7 +64,7 @@ function dalto(color, anomaly) {
   var c  = d3.rgb(color),
       newC = ColorMatrix({R:c.r, G:c.g, B:c.b, A:255}, Anomalies[anomaly]),
       s = 'rgb('+newC.R+','+newC.G+','+newC.B+')';
-  //console.log(s);
+  console.log(s);
   return s;
 }
 
