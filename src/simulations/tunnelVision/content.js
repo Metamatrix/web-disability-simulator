@@ -53,8 +53,8 @@ function update() {
  context.fillRect(mouseX - size / 2, mouseY - size / 2, size, size);
  
  context.restore();
- 
-} 
+}
+update(); 
 
 function getPosition(el) {
   var xPosition = 0;
