@@ -1,0 +1,8 @@
+#svg-filter { 
+  display: none; 
+}
+
+img, svg {
+  -webkit-filter: url(#protanopia);
+  filter: url(#protanopia);
+}

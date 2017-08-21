@@ -16,6 +16,9 @@
       "js": ["UI/vendor/jquery/jquery-2.0.3.min.js","simulations/vendor/D3/d3.js", "simulations/vendor/daltonize/daltonize.js"]
     }
   ],
+  "web_accessible_resources": [
+    "simulations/redGreenColorBlindness/img/filters.svg"
+  ],
   "permissions": [
     "tabs", "http://*/*", "https://*/*"
   ]

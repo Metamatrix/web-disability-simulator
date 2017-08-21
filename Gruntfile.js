@@ -56,11 +56,11 @@ module.exports = function(grunt) {
     },
     watch: {
       dev: {
-        files: 'src/**/**/*.js',
+        files: 'src/**/**/**/*',
         tasks: ['default'],
       },
       dist: {
-        files: 'src/**/**/*.js',
+        files: 'src/**/**/**/*',
         tasks: ['dist'],
       }
     },

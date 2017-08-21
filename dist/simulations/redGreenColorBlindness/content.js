@@ -5,7 +5,6 @@ var allElements = $("*");
 allElements.each(function(index) {
   var element = allElements[index].nodeName.toLowerCase();
   var selector= $(element);
-  //console.log(selector);
 
   var backgroundColor = selector.css("background-color");
   var color = selector.css("color");
@@ -19,3 +18,6 @@ allElements.each(function(index) {
 });
 
 
+$.get(chrome.extension.getURL('/simulations/redGreenColorBlindness/img/filters.svg'), function(data) {
+    $(data).appendTo('body');
+});
