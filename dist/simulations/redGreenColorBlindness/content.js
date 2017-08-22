@@ -8,12 +8,20 @@ allElements.each(function(index) {
 
   var backgroundColor = selector.css("background-color");
   var color = selector.css("color");
+  var borderColor = selector.css("border-color"); 
+
+  console.log(selector.css("border-color"));
+
+  //var backgroundImage = selector.css("background-image");
+  //var resultBackgroundImage = lägg på  -webkit-filter: url(#protanopia); filter: url(#protanopia); på backgroundImage
 
   var resultBackgroundColor = dalto(backgroundColor, 'Protanopia');
   var resultColor = dalto(color, 'Protanopia');
+  var resultBorderColor = dalto(borderColor, 'Protanopia');
 
   selector.css("background-color", resultBackgroundColor);
   selector.css("color", resultColor);
+  selector.css("border-color", resultBorderColor);
 
 });
 
