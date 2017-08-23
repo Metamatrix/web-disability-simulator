@@ -4,6 +4,6 @@ html, body {
   filter: url(#protanopia);
 }
 
-svg {
+#svg-filter {
   display: none; 
 }
