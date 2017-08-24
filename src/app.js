@@ -3,20 +3,20 @@ import {farsightedness} from '../../src/simulations/farsightedness/index.js'
 import {tunnelVision} from '../../src/simulations/tunnelVision/index.js'
 import {redGreenColorBlindness} from '../../src/simulations/redGreenColorBlindness/index.js'
 
-$(document).ready(function(){
+$(document).ready(() => {
     
-  var tooltip = $( ".tool-tip" );
-  var infoHeading = $(".disability-info-heading"); 
-  var infoParagraph = $( ".disability-info-paragraph" ); 
-  var adviceList = $( ".advice-list" ); 
-  var moreInfoParagraph = $( ".more-info-paragraph" ); 
-  var moreInfoPanel = $( "#more-info-panel" ); 
+  const tooltip = $( ".tool-tip" );
+  const infoHeading = $(".disability-info-heading"); 
+  const infoParagraph = $( ".disability-info-paragraph" ); 
+  const adviceList = $( ".advice-list" ); 
+  const moreInfoParagraph = $( ".more-info-paragraph" ); 
+  const moreInfoPanel = $( "#more-info-panel" ); 
   
   //menu button click
   
   $(".menu-btn").click(function(){
 
-    var $this = $(this); 
+    const menuBtn = $(this); 
    
     infoHeading.empty();
     infoParagraph.empty();
@@ -30,32 +30,32 @@ $(document).ready(function(){
         0
     });
 
-    infoHeading.append($(this).text());
+    infoHeading.append(menuBtn.text());
 
-    $(this).closest(".dropdown").find(".selected").text($(this).text());
+    menuBtn.closest(".dropdown").find(".selected").text(menuBtn.text());
 
-    var  id = $(this).attr( "id" );
+    const id = menuBtn.attr("id");
 
     infoParagraph.append(data[id]);
       
-    $.each( data[id + "-listItems"], function( key, value ) {
-      adviceList.append('<li>' + value + '</li>');
+    $.each( data[`${id}-listItems`], (key, value) => {
+      adviceList.append(`<li>${value}</li>`);
     });
 
-    if(data[id + "-moreInfo"]) {
+    if(data[`${id}-moreInfo`]) {
       moreInfoPanel.show();
-      moreInfoParagraph.append(data[id + "-moreInfo"]);
+      moreInfoParagraph.append(data[`${id}-moreInfo`]);
     }
 
-    if ($(this).hasClass( "farsightedness" )) {
+    if (menuBtn.hasClass("farsightedness")) {
       farsightedness();
     } 
 
-    if ($(this).hasClass( "tunnelVision" )) {
+    if (menuBtn.hasClass("tunnelVision")) {
       tunnelVision();
     } 
 
-    if ($(this).hasClass( "redGreenColorBlindness" )) {
+    if (menuBtn.hasClass("redGreenColorBlindness")) {
       redGreenColorBlindness();
     } 
     
@@ -63,15 +63,15 @@ $(document).ready(function(){
 
   //reset-btn click
 
-  $("#reset-btn").click(function(){
+  $("#reset-btn").click(() => {
     tooltip.animate({
       left: parseInt(tooltip.css('marginLeft'),10) == 0 ?
         tooltip.outerWidth() :
         0
     }); 
     
-    $(".dropdown").find("#Syn").text("Syn");
-    $(".dropdown").find("#Motorik").text("Motorik"); 
+    $("#Syn").text("Syn");
+    $("#Motorik").text("Motorik"); 
 
     resetCSS();
   });
@@ -79,11 +79,9 @@ $(document).ready(function(){
   //panel collapse, show arrows: 
 
   $('.collapse').on('shown.bs.collapse', function(){
-      $(this).parent().find(".down-arrow").toggle();
-      $(this).parent().find(".up-arrow").toggle(); 
+      $(this).parent().find(".down-arrow, .up-arrow").toggle();
     }).on('hidden.bs.collapse', function(){
-      $(this).parent().find(".up-arrow").toggle();
-      $(this).parent().find(".down-arrow").toggle();
+      $(this).parent().find(".down-arrow, .up-arrow").toggle();
   });
 
 });

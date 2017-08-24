@@ -3636,7 +3636,7 @@ $(document).ready(function() {
     var moreInfoParagraph = $(".more-info-paragraph");
     var moreInfoPanel = $("#more-info-panel");
     $(".menu-btn").click(function() {
-        var $this = $(this);
+        var menuBtn = $(this);
         infoHeading.empty();
         infoParagraph.empty();
         adviceList.empty();
@@ -3645,9 +3645,9 @@ $(document).ready(function() {
         tooltip.animate({
             left: parseInt(tooltip.css("left"), 10) == 0 ? -tooltip.outerWidth() : 0
         });
-        infoHeading.append($(this).text());
-        $(this).closest(".dropdown").find(".selected").text($(this).text());
-        var id = $(this).attr("id");
+        infoHeading.append(menuBtn.text());
+        menuBtn.closest(".dropdown").find(".selected").text(menuBtn.text());
+        var id = menuBtn.attr("id");
         infoParagraph.append(data[id]);
         $.each(data[id + "-listItems"], function(key, value) {
             adviceList.append("<li>" + value + "</li>");
@@ -3656,13 +3656,13 @@ $(document).ready(function() {
             moreInfoPanel.show();
             moreInfoParagraph.append(data[id + "-moreInfo"]);
         }
-        if ($(this).hasClass("farsightedness")) {
+        if (menuBtn.hasClass("farsightedness")) {
             (0, _index.farsightedness)();
         }
-        if ($(this).hasClass("tunnelVision")) {
+        if (menuBtn.hasClass("tunnelVision")) {
             (0, _index2.tunnelVision)();
         }
-        if ($(this).hasClass("redGreenColorBlindness")) {
+        if (menuBtn.hasClass("redGreenColorBlindness")) {
             (0, _index3.redGreenColorBlindness)();
         }
     });
@@ -3670,15 +3670,13 @@ $(document).ready(function() {
         tooltip.animate({
             left: parseInt(tooltip.css("marginLeft"), 10) == 0 ? tooltip.outerWidth() : 0
         });
-        $(".dropdown").find("#Syn").text("Syn");
-        $(".dropdown").find("#Motorik").text("Motorik");
+        $("#Syn").text("Syn");
+        $("#Motorik").text("Motorik");
         (0, _general.resetCSS)();
     });
     $(".collapse").on("shown.bs.collapse", function() {
-        $(this).parent().find(".down-arrow").toggle();
-        $(this).parent().find(".up-arrow").toggle();
+        $(this).parent().find(".down-arrow, .up-arrow").toggle();
     }).on("hidden.bs.collapse", function() {
-        $(this).parent().find(".up-arrow").toggle();
-        $(this).parent().find(".down-arrow").toggle();
+        $(this).parent().find(".down-arrow, .up-arrow").toggle();
     });
 });
