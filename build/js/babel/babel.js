@@ -16,8 +16,6 @@ $(document).ready(function () {
   var adviceList = $(".advice-list");
   var moreInfoParagraph = $(".more-info-paragraph");
   var moreInfoPanel = $("#more-info-panel");
-  var mainHeading = $(".main-heading");
-  var logo = $(".logo");
 
   //menu button click
 
@@ -36,9 +34,6 @@ $(document).ready(function () {
     });
 
     infoHeading.append($(this).text());
-    logo.hide();
-    mainHeading.show();
-    mainHeading.append($(this).text());
 
     $(this).closest(".dropdown").find(".selected").text($(this).text());
 
@@ -74,9 +69,6 @@ $(document).ready(function () {
     tooltip.animate({
       left: parseInt(tooltip.css('marginLeft'), 10) == 0 ? tooltip.outerWidth() : 0
     });
-    mainHeading.hide();
-    mainHeading.empty();
-    logo.show();
 
     $(".dropdown").find("#Syn").text("Syn");
     $(".dropdown").find("#Motorik").text("Motorik");

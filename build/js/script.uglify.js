@@ -3635,8 +3635,6 @@ $(document).ready(function() {
     var adviceList = $(".advice-list");
     var moreInfoParagraph = $(".more-info-paragraph");
     var moreInfoPanel = $("#more-info-panel");
-    var mainHeading = $(".main-heading");
-    var logo = $(".logo");
     $(".menu-btn").click(function() {
         var $this = $(this);
         infoHeading.empty();
@@ -3648,9 +3646,6 @@ $(document).ready(function() {
             left: parseInt(tooltip.css("left"), 10) == 0 ? -tooltip.outerWidth() : 0
         });
         infoHeading.append($(this).text());
-        logo.hide();
-        mainHeading.show();
-        mainHeading.append($(this).text());
         $(this).closest(".dropdown").find(".selected").text($(this).text());
         var id = $(this).attr("id");
         infoParagraph.append(data[id]);
@@ -3675,9 +3670,6 @@ $(document).ready(function() {
         tooltip.animate({
             left: parseInt(tooltip.css("marginLeft"), 10) == 0 ? tooltip.outerWidth() : 0
         });
-        mainHeading.hide();
-        mainHeading.empty();
-        logo.show();
         $(".dropdown").find("#Syn").text("Syn");
         $(".dropdown").find("#Motorik").text("Motorik");
         (0, _general.resetCSS)();
