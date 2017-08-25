@@ -22,6 +22,9 @@ $(document).ready(function () {
   $(".menu-btn").click(function () {
 
     var menuBtn = $(this);
+    var menuBtnId = menuBtn[0].id;
+
+    localStorage.setItem('menubutton', menuBtnId);
 
     infoHeading.empty();
     infoParagraph.empty();
@@ -74,6 +77,7 @@ $(document).ready(function () {
     $("#Motorik").text("Motorik");
 
     (0, _general.resetCSS)();
+    localStorage.removeItem('menubutton');
   });
 
   //panel collapse, show arrows: 
@@ -83,5 +87,34 @@ $(document).ready(function () {
   }).on('hidden.bs.collapse', function () {
     $(this).parent().find(".down-arrow, .up-arrow").toggle();
   });
+
+  //keep chosen simulation fact tooltip when extension is closed and opened again. 
+
+  window.onload = function () {
+    var savedData = localStorage.getItem('menubutton');
+    //console.log(savedData, 'sparad data'); 
+
+    if (savedData != null) {
+
+      tooltip.css("left", "0");
+
+      infoHeading.append($('#' + savedData).text());
+
+      $('#' + savedData).closest(".dropdown").find(".selected").text($('#' + savedData).text());
+
+      var id = $('#' + savedData).attr("id");
+
+      infoParagraph.append(data[id]);
+
+      $.each(data[id + '-listItems'], function (key, value) {
+        adviceList.append('<li>' + value + '</li>');
+      });
+
+      if (data[id + '-moreInfo']) {
+        moreInfoPanel.show();
+        moreInfoParagraph.append(data[id + '-moreInfo']);
+      }
+    }
+  };
 });
 //# sourceMappingURL=babel.js.map

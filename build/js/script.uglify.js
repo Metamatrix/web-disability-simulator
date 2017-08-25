@@ -3637,6 +3637,8 @@ $(document).ready(function() {
     var moreInfoPanel = $("#more-info-panel");
     $(".menu-btn").click(function() {
         var menuBtn = $(this);
+        var menuBtnId = menuBtn[0].id;
+        localStorage.setItem("menubutton", menuBtnId);
         infoHeading.empty();
         infoParagraph.empty();
         adviceList.empty();
@@ -3673,10 +3675,28 @@ $(document).ready(function() {
         $("#Syn").text("Syn");
         $("#Motorik").text("Motorik");
         (0, _general.resetCSS)();
+        localStorage.removeItem("menubutton");
     });
     $(".collapse").on("shown.bs.collapse", function() {
         $(this).parent().find(".down-arrow, .up-arrow").toggle();
     }).on("hidden.bs.collapse", function() {
         $(this).parent().find(".down-arrow, .up-arrow").toggle();
     });
+    window.onload = function() {
+        var savedData = localStorage.getItem("menubutton");
+        if (savedData != null) {
+            tooltip.css("left", "0");
+            infoHeading.append($("#" + savedData).text());
+            $("#" + savedData).closest(".dropdown").find(".selected").text($("#" + savedData).text());
+            var id = $("#" + savedData).attr("id");
+            infoParagraph.append(data[id]);
+            $.each(data[id + "-listItems"], function(key, value) {
+                adviceList.append("<li>" + value + "</li>");
+            });
+            if (data[id + "-moreInfo"]) {
+                moreInfoPanel.show();
+                moreInfoParagraph.append(data[id + "-moreInfo"]);
+            }
+        }
+    };
 });

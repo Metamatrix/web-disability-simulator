@@ -4,7 +4,7 @@ import {tunnelVision} from '../../src/simulations/tunnelVision/index.js'
 import {redGreenColorBlindness} from '../../src/simulations/redGreenColorBlindness/index.js'
 
 $(document).ready(() => {
-    
+
   const tooltip = $( ".tool-tip" );
   const infoHeading = $(".disability-info-heading"); 
   const infoParagraph = $( ".disability-info-paragraph" ); 
@@ -17,7 +17,10 @@ $(document).ready(() => {
   $(".menu-btn").click(function(){
 
     const menuBtn = $(this); 
-   
+    const menuBtnId = menuBtn[0].id;
+
+    localStorage.setItem('menubutton', menuBtnId);
+
     infoHeading.empty();
     infoParagraph.empty();
     adviceList.empty();
@@ -74,6 +77,7 @@ $(document).ready(() => {
     $("#Motorik").text("Motorik"); 
 
     resetCSS();
+    localStorage.removeItem('menubutton');
   });
 
   //panel collapse, show arrows: 
@@ -83,5 +87,34 @@ $(document).ready(() => {
     }).on('hidden.bs.collapse', function(){
       $(this).parent().find(".down-arrow, .up-arrow").toggle();
   });
+
+  //keep chosen simulation fact tooltip when extension is closed and opened again. 
+
+  window.onload = () => {
+    const savedData = localStorage.getItem('menubutton');
+    //console.log(savedData, 'sparad data'); 
+
+    if (savedData != null) {
+
+      tooltip.css("left", "0");
+
+      infoHeading.append( $(`#${savedData}`).text() );
+
+      $(`#${savedData}`).closest(".dropdown").find(".selected").text($(`#${savedData}`).text());
+
+      const id = $(`#${savedData}`).attr("id");
+
+      infoParagraph.append(data[id]);
+        
+      $.each( data[`${id}-listItems`], (key, value) => {
+        adviceList.append(`<li>${value}</li>`);
+      });
+
+      if(data[`${id}-moreInfo`]) {
+        moreInfoPanel.show();
+        moreInfoParagraph.append(data[`${id}-moreInfo`]);
+      }
+    }
+  };
 
 });
