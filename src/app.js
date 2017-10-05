@@ -88,7 +88,7 @@ $(document).ready(() => {
       $(this).parent().find(".down-arrow, .up-arrow").toggle();
   });
 
-  //keep chosen simulation fact tooltip when extension is closed and opened again. 
+  /*//keep chosen simulation fact tooltip when extension is closed and opened again. 
 
   window.onload = () => {
     const savedData = localStorage.getItem('menubutton');
@@ -115,6 +115,6 @@ $(document).ready(() => {
         moreInfoParagraph.append(data[`${id}-moreInfo`]);
       }
     }
-  };
+  };*/
 
 });
