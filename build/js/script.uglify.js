@@ -3638,7 +3638,9 @@ $(document).ready(function() {
     $(".menu-btn").click(function() {
         var menuBtn = $(this);
         var menuBtnId = menuBtn[0].id;
-        localStorage.setItem("menubutton", menuBtnId);
+        chrome.storage.sync.set({
+            activeSimulation: menuBtnId
+        });
         infoHeading.empty();
         infoParagraph.empty();
         adviceList.empty();
@@ -3675,11 +3677,30 @@ $(document).ready(function() {
         $("#Syn").text("Syn");
         $("#Motorik").text("Motorik");
         (0, _general.resetCSS)();
-        localStorage.removeItem("menubutton");
+        chrome.storage.sync.remove("activeSimulation");
     });
     $(".collapse").on("shown.bs.collapse", function() {
         $(this).parent().find(".down-arrow, .up-arrow").toggle();
     }).on("hidden.bs.collapse", function() {
         $(this).parent().find(".down-arrow, .up-arrow").toggle();
     });
+    window.onload = function() {
+        chrome.storage.sync.get("activeSimulation", function(obj) {
+            var activeSimulation = obj.activeSimulation;
+            if (activeSimulation != null) {
+                tooltip.css("left", "0");
+                infoHeading.append($("#" + activeSimulation).text());
+                $("#" + activeSimulation).closest(".dropdown").find(".selected").text($("#" + activeSimulation).text());
+                var id = $("#" + activeSimulation).attr("id");
+                infoParagraph.append(data[id]);
+                $.each(data[id + "-listItems"], function(key, value) {
+                    adviceList.append("<li>" + value + "</li>");
+                });
+                if (data[id + "-moreInfo"]) {
+                    moreInfoPanel.show();
+                    moreInfoParagraph.append(data[id + "-moreInfo"]);
+                }
+            }
+        });
+    };
 });

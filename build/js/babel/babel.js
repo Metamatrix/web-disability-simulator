@@ -24,7 +24,7 @@ $(document).ready(function () {
     var menuBtn = $(this);
     var menuBtnId = menuBtn[0].id;
 
-    localStorage.setItem('menubutton', menuBtnId);
+    chrome.storage.sync.set({ 'activeSimulation': menuBtnId });
 
     infoHeading.empty();
     infoParagraph.empty();
@@ -77,7 +77,7 @@ $(document).ready(function () {
     $("#Motorik").text("Motorik");
 
     (0, _general.resetCSS)();
-    localStorage.removeItem('menubutton');
+    chrome.storage.sync.remove('activeSimulation');
   });
 
   //panel collapse, show arrows: 
@@ -88,25 +88,36 @@ $(document).ready(function () {
     $(this).parent().find(".down-arrow, .up-arrow").toggle();
   });
 
-  /*//keep chosen simulation fact tooltip when extension is closed and opened again. 
-    window.onload = () => {
-    const savedData = localStorage.getItem('menubutton');
-    //console.log(savedData, 'sparad data'); 
-      if (savedData != null) {
+  //keep chosen simulation fact tooltip when extension is closed and opened again. 
+
+  window.onload = function () {
+
+    chrome.storage.sync.get('activeSimulation', function (obj) {
+
+      var activeSimulation = obj.activeSimulation;
+
+      if (activeSimulation != null) {
+
         tooltip.css("left", "0");
-        infoHeading.append( $(`#${savedData}`).text() );
-        $(`#${savedData}`).closest(".dropdown").find(".selected").text($(`#${savedData}`).text());
-        const id = $(`#${savedData}`).attr("id");
+
+        infoHeading.append($('#' + activeSimulation).text());
+
+        $('#' + activeSimulation).closest(".dropdown").find(".selected").text($('#' + activeSimulation).text());
+
+        var id = $('#' + activeSimulation).attr("id");
+
         infoParagraph.append(data[id]);
-        
-      $.each( data[`${id}-listItems`], (key, value) => {
-        adviceList.append(`<li>${value}</li>`);
-      });
-        if(data[`${id}-moreInfo`]) {
-        moreInfoPanel.show();
-        moreInfoParagraph.append(data[`${id}-moreInfo`]);
+
+        $.each(data[id + '-listItems'], function (key, value) {
+          adviceList.append('<li>' + value + '</li>');
+        });
+
+        if (data[id + '-moreInfo']) {
+          moreInfoPanel.show();
+          moreInfoParagraph.append(data[id + '-moreInfo']);
+        }
       }
-    }
-  };*/
+    });
+  };
 });
 //# sourceMappingURL=babel.js.map

@@ -19,7 +19,7 @@ $(document).ready(() => {
     const menuBtn = $(this); 
     const menuBtnId = menuBtn[0].id;
 
-    localStorage.setItem('menubutton', menuBtnId);
+    chrome.storage.sync.set({'activeSimulation': menuBtnId});
 
     infoHeading.empty();
     infoParagraph.empty();
@@ -60,7 +60,7 @@ $(document).ready(() => {
 
     if (menuBtn.hasClass("redGreenColorBlindness")) {
       redGreenColorBlindness();
-    } 
+    }
     
   });
 
@@ -77,7 +77,7 @@ $(document).ready(() => {
     $("#Motorik").text("Motorik"); 
 
     resetCSS();
-    localStorage.removeItem('menubutton');
+    chrome.storage.sync.remove('activeSimulation');
   });
 
   //panel collapse, show arrows: 
@@ -88,33 +88,39 @@ $(document).ready(() => {
       $(this).parent().find(".down-arrow, .up-arrow").toggle();
   });
 
-  /*//keep chosen simulation fact tooltip when extension is closed and opened again. 
+  //keep chosen simulation fact tooltip when extension is closed and opened again. 
 
   window.onload = () => {
-    const savedData = localStorage.getItem('menubutton');
-    //console.log(savedData, 'sparad data'); 
+    
+    chrome.storage.sync.get('activeSimulation', obj => {
+    
+      const activeSimulation = obj.activeSimulation;
+      
+      if (activeSimulation != null) {
 
-    if (savedData != null) {
+        tooltip.css("left", "0");
 
-      tooltip.css("left", "0");
+        infoHeading.append( $(`#${activeSimulation}`).text() );
 
-      infoHeading.append( $(`#${savedData}`).text() );
+        $(`#${activeSimulation}`).closest(".dropdown").find(".selected").text($(`#${activeSimulation}`).text());
 
-      $(`#${savedData}`).closest(".dropdown").find(".selected").text($(`#${savedData}`).text());
+        const id = $(`#${activeSimulation}`).attr("id");
 
-      const id = $(`#${savedData}`).attr("id");
+        infoParagraph.append(data[id]);
+          
+        $.each( data[`${id}-listItems`], (key, value) => {
+          adviceList.append(`<li>${value}</li>`);
+        });
 
-      infoParagraph.append(data[id]);
-        
-      $.each( data[`${id}-listItems`], (key, value) => {
-        adviceList.append(`<li>${value}</li>`);
-      });
+        if(data[`${id}-moreInfo`]) {
+          moreInfoPanel.show();
+          moreInfoParagraph.append(data[`${id}-moreInfo`]);
+        }
 
-      if(data[`${id}-moreInfo`]) {
-        moreInfoPanel.show();
-        moreInfoParagraph.append(data[`${id}-moreInfo`]);
       }
-    }
-  };*/
+
+    }); 
+  
+  };
 
 });
