@@ -8,6 +8,12 @@ var _index2 = require('../../src/simulations/tunnelVision/index.js');
 
 var _index3 = require('../../src/simulations/redGreenColorBlindness/index.js');
 
+var _data = require('../../src/UI/data/data.json');
+
+var data = _interopRequireWildcard(_data);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 $(document).ready(function () {
 
   var tooltip = $(".tool-tip");
@@ -16,17 +22,24 @@ $(document).ready(function () {
   var adviceList = $(".advice-list");
   var moreInfoParagraph = $(".more-info-paragraph");
   var moreInfoPanel = $("#more-info-panel");
+  var dropdownListheading = data.UI[0].dropdownHeading;
+
+  $(".navbar-header").append(dropdownListheading);
 
   //menu button click
 
   $(".menu-btn").click(function () {
 
+    var menuBtn = $(this);
+    var menuBtnId = menuBtn[0].id;
+    var id = menuBtn.attr("id");
+    var fact = data.facts.find(findProperty).fact;
+    var listItems = data.facts.find(findProperty).listItems;
+    var moreInfo = data.facts.find(findProperty).moreInfo;
+
     chrome.browserAction.setIcon({
       path: "img/icon_active.png"
     });
-
-    var menuBtn = $(this);
-    var menuBtnId = menuBtn[0].id;
 
     chrome.storage.sync.set({ 'activeSimulation': menuBtnId });
 
@@ -44,17 +57,19 @@ $(document).ready(function () {
 
     menuBtn.closest(".dropdown").find(".selected").text(menuBtn.text());
 
-    var id = menuBtn.attr("id");
+    function findProperty(simulations) {
+      return simulations.name === id;
+    }
 
-    infoParagraph.append(data[id]);
+    infoParagraph.append(fact);
 
-    $.each(data[id + '-listItems'], function (key, value) {
+    $.each(listItems, function (i, value) {
       adviceList.append('<li>' + value + '</li>');
     });
 
-    if (data[id + '-moreInfo']) {
+    if (moreInfo) {
       moreInfoPanel.show();
-      moreInfoParagraph.append(data[id + '-moreInfo']);
+      moreInfoParagraph.append(moreInfo);
     }
 
     if (menuBtn.hasClass("farsightedness")) {
@@ -114,6 +129,10 @@ $(document).ready(function () {
 
       var activeSimulation = obj.activeSimulation;
 
+      function findProperty(simulations) {
+        return simulations.name === activeSimulation;
+      }
+
       if (activeSimulation != null) {
 
         tooltip.css("left", "0");
@@ -124,15 +143,19 @@ $(document).ready(function () {
 
         var id = $('#' + activeSimulation).attr("id");
 
-        infoParagraph.append(data[id]);
+        var fact = data.facts.find(findProperty).fact;
+        var listItems = data.facts.find(findProperty).listItems;
+        var moreInfo = data.facts.find(findProperty).moreInfo;
 
-        $.each(data[id + '-listItems'], function (key, value) {
+        infoParagraph.append(fact);
+
+        $.each(listItems, function (i, value) {
           adviceList.append('<li>' + value + '</li>');
         });
 
-        if (data[id + '-moreInfo']) {
+        if (moreInfo) {
           moreInfoPanel.show();
-          moreInfoParagraph.append(data[id + '-moreInfo']);
+          moreInfoParagraph.append(moreInfo);
         }
       }
     });

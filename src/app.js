@@ -2,6 +2,8 @@ import {resetCSS} from '../../src/simulations/general.js'
 import {farsightedness} from '../../src/simulations/farsightedness/index.js'
 import {tunnelVision} from '../../src/simulations/tunnelVision/index.js'
 import {redGreenColorBlindness} from '../../src/simulations/redGreenColorBlindness/index.js'
+import * as data from '../../src/UI/data/data.json';
+
 
 $(document).ready(() => {
 
@@ -11,17 +13,24 @@ $(document).ready(() => {
   const adviceList = $( ".advice-list" ); 
   const moreInfoParagraph = $( ".more-info-paragraph" ); 
   const moreInfoPanel = $( "#more-info-panel" ); 
-  
+  const dropdownListheading = data.UI[0].dropdownHeading; 
+
+  $(".navbar-header").append(dropdownListheading); 
+
   //menu button click
   
   $(".menu-btn").click(function(){
 
+    const menuBtn = $(this); 
+    const menuBtnId = menuBtn[0].id;
+    const id = menuBtn.attr("id");
+    const fact = data.facts.find(findProperty).fact; 
+    const listItems = data.facts.find(findProperty).listItems; 
+    const moreInfo = data.facts.find(findProperty).moreInfo; 
+
     chrome.browserAction.setIcon({
       path : "img/icon_active.png"
     });
-
-    const menuBtn = $(this); 
-    const menuBtnId = menuBtn[0].id;
 
     chrome.storage.sync.set({'activeSimulation': menuBtnId});
 
@@ -41,17 +50,19 @@ $(document).ready(() => {
 
     menuBtn.closest(".dropdown").find(".selected").text(menuBtn.text());
 
-    const id = menuBtn.attr("id");
+    function findProperty(simulations) { 
+      return simulations.name === id;
+    }
 
-    infoParagraph.append(data[id]);
+    infoParagraph.append(fact);
       
-    $.each( data[`${id}-listItems`], (key, value) => {
+    $.each(listItems, (i, value) => {
       adviceList.append(`<li>${value}</li>`);
     });
 
-    if(data[`${id}-moreInfo`]) {
+    if(moreInfo) {
       moreInfoPanel.show();
-      moreInfoParagraph.append(data[`${id}-moreInfo`]);
+      moreInfoParagraph.append(moreInfo);
     }
 
     if (menuBtn.hasClass("farsightedness")) {
@@ -93,7 +104,7 @@ $(document).ready(() => {
   });
 
   //github link click 
-  
+
   $(".github-link").click(() => {
     chrome.tabs.create({url: 'https://github.com/Metamatrix/Web-Disability-Simulator'}); 
   });
@@ -114,6 +125,10 @@ $(document).ready(() => {
     
       const activeSimulation = obj.activeSimulation;
       
+      function findProperty(simulations) { 
+        return simulations.name === activeSimulation;
+      }
+
       if (activeSimulation != null) {
 
         tooltip.css("left", "0");
@@ -124,18 +139,22 @@ $(document).ready(() => {
 
         const id = $(`#${activeSimulation}`).attr("id");
 
-        infoParagraph.append(data[id]);
-          
-        $.each( data[`${id}-listItems`], (key, value) => {
+        const fact = data.facts.find(findProperty).fact; 
+        const listItems = data.facts.find(findProperty).listItems; 
+        const moreInfo = data.facts.find(findProperty).moreInfo;
+
+        infoParagraph.append(fact);
+              
+        $.each(listItems, (i, value) => {
           adviceList.append(`<li>${value}</li>`);
         });
 
-        if(data[`${id}-moreInfo`]) {
+        if(moreInfo) {
           moreInfoPanel.show();
-          moreInfoParagraph.append(data[`${id}-moreInfo`]);
+          moreInfoParagraph.append(moreInfo);
         }
 
-      }
+     }
 
     }); 
   

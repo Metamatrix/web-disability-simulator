@@ -3597,27 +3597,6 @@ if ("undefined" == typeof jQuery) throw new Error("Bootstrap's JavaScript requir
     });
 }(jQuery);
 
-var data = {
-    dyslexia: "Dyslexi är en nedsättning som gör att hjärnan har svårt att automatisera tolkningen av ord. Detta gör att personer med denna nedsättning kan ha svårt att läsa och skriva. Dyslexi är inte kopplat till syn eller intelligens. Orsakerna till dyslexi är fortfarande oklart.",
-    "dyslexia-listItems": [ "Undvik text i liten storlek och långa texter. Se till att ha ordentligt med radavstånd.", "Undvik svåra ord och facktermer.", "Erbjud lättlästa versioner av facktexter.", "Undvik typsnitt med krångliga och komplexa figurer." ],
-    parkinsons: "Vid Parkinsons sjukdom förstörs cellerna i hjärnan som tillverkar dopamin vilket gör att hjärnan får en nedsatt förmåga att skicka signaler. Personer med Parkinsons kan drabbas av symptom som skakningar, stela muskler och sämre rörelseförmåga. Orsakerna till Parkinsons sjukdom är fortfarande oklart.",
-    "parkinsons-listItems": [ "Se till att webbplatsen kan användas med andra hjälpmedel än mus, till exempel tangentbordsnavigering.", "Ha tillräckligt med luft mellan komponenter", "Ha tillräckligt stora klickytor.", "Undvik typsnitt med krångliga och komplexa figurer." ],
-    "parkinsons-moreInfo": "<a href='http://www.parkinsonforbundet.se'>Parkinsonsförbundet</a>",
-    yellowBlueColorBlindness: "Personer med defekt färgseende har svårt att skilja på vissa eller alla färger. Ett fullt fungerande öga har tre olika tappar som tar upp färgerna violett, grön och röd. När en eller flera av tapparna saknas eller är defekta leder det till defekt färgseende. Gul-blå färgblindhet (Tritanopi) är sällsynt. Namnet är missledande då det inte är färgerna gul och blå som förväxlas, utan blå med grön och gul med lila.",
-    "yellowBlueColorBlindness-listItems": [ "Använd inte färg som det enda sättet att förmedla information, indikera en handling eller identifiera ett element. Markera till exempel inte ett felaktigt formulärfält endast med en röd ram utan komplettera även med text och gärna en ikon.", "Erbjud gärna ett högkontrast-läge.", "Ha tillräckligt stora klickytor.", "Undvik typsnitt med krångliga och komplexa figurer." ],
-    "yellowBlueColorBlindness-moreInfo": "<a href='https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende'>Wikipedia om defekt färgseende</a>",
-    redGreenColorBlindness: "Personer med defekt färgseende har svårt att skilja på vissa eller alla färger. Ett fullt fungerande öga har tre olika tappar som tar upp färgerna violett, grön och röd. När en eller flera av tapparna saknas eller är defekta leder det till defekt färgseende. Röd-grön färgblindhet (Protanopi och Deuteranopi) är den vanligaste typen av färgblindhet. Den är vanligare hos män än kvinnor. Personer röd-grön färgblindhet har svårt att skilja på färgerna röd, grön, brun och orange.",
-    "redGreenColorBlindness-listItems": [ "Använd inte färg som enda sättet att förmedla information, indikera en handling eller identifiera ett element. Markera till exempel inte ett felaktigt formulärfält endast med röd ram, komplettera även med text och gärna en  ikon.", "Erbjud gärna ett högkontrast-läge." ],
-    "redGreenColorBlindness-moreInfo": "<a href='https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende'>Wikipedia om defekt färgseende</a>",
-    farsightedness: "Personer med Hyperopi ser suddigt på nära håll, men bra på långt håll. Nedsättningen uppstår på grund av att ljuset inte bryts rätt i ögat. Det är en av de vanligaste synnedsättningarna.",
-    "farsightedness-listItems": [ "Undvik text i liten storlek.", "Webbsidan ska gå att förstora (zoomas) till minst 200 % så att besökaren kan anpassa innehållets storlek efter sina behov.", "Erbjud uppläsning av innehållet." ],
-    "farsightedness-moreInfo": "<a href='https://webbriktlinjer.se/r/39-ge-webbplatsen-en-god-lasbarhet/'>Webbriktlinje Ge webbplatsen god läsbarhet</a>",
-    colorBlindness: "Defekt färgseende innebär att en person har svårt att skilja på vissa eller alla färger. Ett fullt fungerande öga har tre olika typer av tappar som tar upp olika färger: violett, grön och röd. Orsaken till defekt färgseende är att en eller flera av dessa typer av tappar saknas eller är defekta. Helt färgblind (Monokromasi/akromatopsi) är mycket sällsynt. Personer med denna synnedsättning ser inga färger utan ser endast i gråskala.",
-    "colorBlindness-listItems": [ "Använd inte färg som det enda sättet att förmedla information, indikera en handling eller identifiera element. Markera t.ex. inte ett felaktigt formulärfält endast med röd ram, komplettera även med text eller ikon.", "Det kan vara en bra idé att erbjuda ett högkontrast-läge." ],
-    tunnelVision: "Tunnelseende innebär...",
-    "tunnelVision-listItems": [ "Listitem 1", "Listitem 2." ]
-};
-
 "use strict";
 
 var _general = require("../../src/simulations/general.js");
@@ -3628,6 +3607,25 @@ var _index2 = require("../../src/simulations/tunnelVision/index.js");
 
 var _index3 = require("../../src/simulations/redGreenColorBlindness/index.js");
 
+var _data = require("../../src/UI/data/data.json");
+
+var data = _interopRequireWildcard(_data);
+
+function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) {
+        return obj;
+    } else {
+        var newObj = {};
+        if (obj != null) {
+            for (var key in obj) {
+                if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];
+            }
+        }
+        newObj.default = obj;
+        return newObj;
+    }
+}
+
 $(document).ready(function() {
     var tooltip = $(".tool-tip");
     var infoHeading = $(".disability-info-heading");
@@ -3635,12 +3633,18 @@ $(document).ready(function() {
     var adviceList = $(".advice-list");
     var moreInfoParagraph = $(".more-info-paragraph");
     var moreInfoPanel = $("#more-info-panel");
+    var dropdownListheading = data.UI[0].dropdownHeading;
+    $(".navbar-header").append(dropdownListheading);
     $(".menu-btn").click(function() {
+        var menuBtn = $(this);
+        var menuBtnId = menuBtn[0].id;
+        var id = menuBtn.attr("id");
+        var fact = data.facts.find(findProperty).fact;
+        var listItems = data.facts.find(findProperty).listItems;
+        var moreInfo = data.facts.find(findProperty).moreInfo;
         chrome.browserAction.setIcon({
             path: "img/icon_active.png"
         });
-        var menuBtn = $(this);
-        var menuBtnId = menuBtn[0].id;
         chrome.storage.sync.set({
             activeSimulation: menuBtnId
         });
@@ -3654,14 +3658,16 @@ $(document).ready(function() {
         });
         infoHeading.append(menuBtn.text());
         menuBtn.closest(".dropdown").find(".selected").text(menuBtn.text());
-        var id = menuBtn.attr("id");
-        infoParagraph.append(data[id]);
-        $.each(data[id + "-listItems"], function(key, value) {
+        function findProperty(simulations) {
+            return simulations.name === id;
+        }
+        infoParagraph.append(fact);
+        $.each(listItems, function(i, value) {
             adviceList.append("<li>" + value + "</li>");
         });
-        if (data[id + "-moreInfo"]) {
+        if (moreInfo) {
             moreInfoPanel.show();
-            moreInfoParagraph.append(data[id + "-moreInfo"]);
+            moreInfoParagraph.append(moreInfo);
         }
         if (menuBtn.hasClass("farsightedness")) {
             (0, _index.farsightedness)();
@@ -3701,18 +3707,24 @@ $(document).ready(function() {
     window.onload = function() {
         chrome.storage.sync.get("activeSimulation", function(obj) {
             var activeSimulation = obj.activeSimulation;
+            function findProperty(simulations) {
+                return simulations.name === activeSimulation;
+            }
             if (activeSimulation != null) {
                 tooltip.css("left", "0");
                 infoHeading.append($("#" + activeSimulation).text());
                 $("#" + activeSimulation).closest(".dropdown").find(".selected").text($("#" + activeSimulation).text());
                 var id = $("#" + activeSimulation).attr("id");
-                infoParagraph.append(data[id]);
-                $.each(data[id + "-listItems"], function(key, value) {
+                var fact = data.facts.find(findProperty).fact;
+                var listItems = data.facts.find(findProperty).listItems;
+                var moreInfo = data.facts.find(findProperty).moreInfo;
+                infoParagraph.append(fact);
+                $.each(listItems, function(i, value) {
                     adviceList.append("<li>" + value + "</li>");
                 });
-                if (data[id + "-moreInfo"]) {
+                if (moreInfo) {
                     moreInfoPanel.show();
-                    moreInfoParagraph.append(data[id + "-moreInfo"]);
+                    moreInfoParagraph.append(moreInfo);
                 }
             }
         });

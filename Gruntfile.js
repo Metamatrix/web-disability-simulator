@@ -21,7 +21,7 @@ module.exports = function(grunt) {
           'build/js/script.uglify.js':
             [ 'src/UI/vendor/jquery/jquery-2.0.3.min.js',
               'src/UI/vendor/bootstrap/bootstrap.min.js',
-              'src/UI/js/data.js',
+              'src/UI/data/data.json',
               'build/js/babel/babel.js'
             ]
         }
