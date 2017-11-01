@@ -22,9 +22,13 @@ $(document).ready(function () {
   var adviceList = $(".advice-list");
   var moreInfoParagraph = $(".more-info-paragraph");
   var moreInfoPanel = $("#more-info-panel");
-  var dropdownListheading = data.UI[0].dropdownHeading;
+  var resetBtn = $("#reset-btn");
+  var navbarHeader = $(".navbar-header");
+  var resetBtnText = data.UI[0].resetBtnText;
+  var navbarHeaderText = data.UI[0].navbarHeaderText;
 
-  $(".navbar-header").append(dropdownListheading);
+  navbarHeader.append(navbarHeaderText);
+  resetBtn.append(resetBtnText);
 
   //menu button click
 

@@ -13,9 +13,13 @@ $(document).ready(() => {
   const adviceList = $( ".advice-list" ); 
   const moreInfoParagraph = $( ".more-info-paragraph" ); 
   const moreInfoPanel = $( "#more-info-panel" ); 
-  const dropdownListheading = data.UI[0].dropdownHeading; 
+  const resetBtn = $("#reset-btn"); 
+  const navbarHeader = $(".navbar-header");
+  const resetBtnText = data.UI[0].resetBtnText; 
+  const navbarHeaderText = data.UI[0].navbarHeaderText; 
 
-  $(".navbar-header").append(dropdownListheading); 
+  navbarHeader.append(navbarHeaderText); 
+  resetBtn.append(resetBtnText); 
 
   //menu button click
   

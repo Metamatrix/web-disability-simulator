@@ -3633,8 +3633,12 @@ $(document).ready(function() {
     var adviceList = $(".advice-list");
     var moreInfoParagraph = $(".more-info-paragraph");
     var moreInfoPanel = $("#more-info-panel");
-    var dropdownListheading = data.UI[0].dropdownHeading;
-    $(".navbar-header").append(dropdownListheading);
+    var resetBtn = $("#reset-btn");
+    var navbarHeader = $(".navbar-header");
+    var resetBtnText = data.UI[0].resetBtnText;
+    var navbarHeaderText = data.UI[0].navbarHeaderText;
+    navbarHeader.append(navbarHeaderText);
+    resetBtn.append(resetBtnText);
     $(".menu-btn").click(function() {
         var menuBtn = $(this);
         var menuBtnId = menuBtn[0].id;
