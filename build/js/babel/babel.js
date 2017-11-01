@@ -21,6 +21,10 @@ $(document).ready(function () {
 
   $(".menu-btn").click(function () {
 
+    chrome.browserAction.setIcon({
+      path: "img/icon_active.png"
+    });
+
     var menuBtn = $(this);
     var menuBtnId = menuBtn[0].id;
 
@@ -66,9 +70,11 @@ $(document).ready(function () {
     }
   });
 
-  //reset-btn click
+  function resetSimulation() {
+    chrome.browserAction.setIcon({
+      path: "img/icon.png"
+    });
 
-  $("#reset-btn").click(function () {
     tooltip.animate({
       left: parseInt(tooltip.css('marginLeft'), 10) == 0 ? tooltip.outerWidth() : 0
     });
@@ -78,6 +84,12 @@ $(document).ready(function () {
 
     (0, _general.resetCSS)();
     chrome.storage.sync.remove('activeSimulation');
+  }
+
+  //reset-btn click
+
+  $("#reset-btn").click(function () {
+    resetSimulation();
   });
 
   //panel collapse, show arrows: 
@@ -119,5 +131,10 @@ $(document).ready(function () {
       }
     });
   };
+
+  //function that runs when tab is reloaded
+  /*  chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+      resetSimulation();
+    });*/
 });
 //# sourceMappingURL=babel.js.map

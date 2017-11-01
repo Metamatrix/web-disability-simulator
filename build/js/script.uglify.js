@@ -3636,6 +3636,9 @@ $(document).ready(function() {
     var moreInfoParagraph = $(".more-info-paragraph");
     var moreInfoPanel = $("#more-info-panel");
     $(".menu-btn").click(function() {
+        chrome.browserAction.setIcon({
+            path: "img/icon_active.png"
+        });
         var menuBtn = $(this);
         var menuBtnId = menuBtn[0].id;
         chrome.storage.sync.set({
@@ -3670,7 +3673,10 @@ $(document).ready(function() {
             (0, _index3.redGreenColorBlindness)();
         }
     });
-    $("#reset-btn").click(function() {
+    function resetSimulation() {
+        chrome.browserAction.setIcon({
+            path: "img/icon.png"
+        });
         tooltip.animate({
             left: parseInt(tooltip.css("marginLeft"), 10) == 0 ? tooltip.outerWidth() : 0
         });
@@ -3678,6 +3684,9 @@ $(document).ready(function() {
         $("#Motorik").text("Motorik");
         (0, _general.resetCSS)();
         chrome.storage.sync.remove("activeSimulation");
+    }
+    $("#reset-btn").click(function() {
+        resetSimulation();
     });
     $(".collapse").on("shown.bs.collapse", function() {
         $(this).parent().find(".down-arrow, .up-arrow").toggle();

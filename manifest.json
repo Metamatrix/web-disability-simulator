@@ -20,7 +20,7 @@
     "simulations/redGreenColorBlindness/img/filters.svg"
   ],
   "permissions": [
-    "tabs", "http://*/*", "https://*/*", "storage"
+    "tabs", "http://*/*", "https://*/*", "storage", "activeTab"
   ]
 }
 

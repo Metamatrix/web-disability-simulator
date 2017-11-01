@@ -16,6 +16,10 @@ $(document).ready(() => {
   
   $(".menu-btn").click(function(){
 
+    chrome.browserAction.setIcon({
+      path : "img/icon_active.png"
+    });
+
     const menuBtn = $(this); 
     const menuBtnId = menuBtn[0].id;
 
@@ -64,9 +68,11 @@ $(document).ready(() => {
     
   });
 
-  //reset-btn click
+  function resetSimulation(){
+    chrome.browserAction.setIcon({
+      path : "img/icon.png"
+    });
 
-  $("#reset-btn").click(() => {
     tooltip.animate({
       left: parseInt(tooltip.css('marginLeft'),10) == 0 ?
         tooltip.outerWidth() :
@@ -78,6 +84,12 @@ $(document).ready(() => {
 
     resetCSS();
     chrome.storage.sync.remove('activeSimulation');
+  }
+
+  //reset-btn click
+
+  $("#reset-btn").click(() => {
+    resetSimulation(); 
   });
 
   //panel collapse, show arrows: 
@@ -91,8 +103,8 @@ $(document).ready(() => {
   //keep chosen simulation fact tooltip when extension is closed and opened again. 
 
   window.onload = () => {
-    
-    chrome.storage.sync.get('activeSimulation', obj => {
+
+      chrome.storage.sync.get('activeSimulation', obj => {
     
       const activeSimulation = obj.activeSimulation;
       
@@ -123,4 +135,9 @@ $(document).ready(() => {
   
   };
 
+//function that runs when tab is reloaded
+/*  chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+    resetSimulation();
+  });*/
+  
 });
