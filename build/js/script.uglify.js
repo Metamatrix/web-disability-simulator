@@ -3688,6 +3688,11 @@ $(document).ready(function() {
     $("#reset-btn").click(function() {
         resetSimulation();
     });
+    $(".github-link").click(function() {
+        chrome.tabs.create({
+            url: "https://github.com/Metamatrix/Web-Disability-Simulator"
+        });
+    });
     $(".collapse").on("shown.bs.collapse", function() {
         $(this).parent().find(".down-arrow, .up-arrow").toggle();
     }).on("hidden.bs.collapse", function() {

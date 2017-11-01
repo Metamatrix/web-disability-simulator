@@ -92,6 +92,12 @@ $(document).ready(function () {
     resetSimulation();
   });
 
+  //github link click 
+
+  $(".github-link").click(function () {
+    chrome.tabs.create({ url: 'https://github.com/Metamatrix/Web-Disability-Simulator' });
+  });
+
   //panel collapse, show arrows: 
 
   $('.collapse').on('shown.bs.collapse', function () {
