@@ -70,21 +70,24 @@
   "UI": [{
     "navbarHeaderText": "Välj funktionsnedsättning:",
     "resetBtnText": "Återställ",
+    "adviceDropdownText": "Tänk på detta",
+    "infoDropdownText": "Mer information",
     "simulations": [
       {
         "heading": "Syn",
         "choices": [
-          "Helt färgblind", 	
-          "Gul-blå färgblindhet",
-          "Röd-grön färgblindhet",
-          "Långsynthet, översynthet.",
-          "Tunnelseende"
-          ]
+          { "colorBlindness": "Helt färgblind" },
+          { "yellowBlueColorBlindness": "Gul-blå färgblindhet" },
+          { "redGreenColorBlindness": "Röd-grön färgblindhet" },
+          { "farsightedness": "Långsynthet, översynthet" },
+          { "tunnelVision": "Tunnelseende" }
+        ]
       },
       {
         "heading": "Motorik",
         "choices": [ 
-          "parkinsons"
+          { "parkinsons": "Parkinsons" }
+  
           ]
       },
       {

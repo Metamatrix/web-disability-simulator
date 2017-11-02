@@ -3637,8 +3637,23 @@ $(document).ready(function() {
     var navbarHeader = $(".navbar-header");
     var resetBtnText = data.UI[0].resetBtnText;
     var navbarHeaderText = data.UI[0].navbarHeaderText;
-    navbarHeader.append(navbarHeaderText);
-    resetBtn.append(resetBtnText);
+    var simulationHeadingText = data.UI[0].simulations[0].heading;
+    var adviceDropdown = $("#advice-dropdown");
+    var adviceDropdownText = data.UI[0].adviceDropdownText;
+    var infoDropdown = $("#info-dropdown");
+    var infoDropdownText = data.UI[0].infoDropdownText;
+    navbarHeader.text(navbarHeaderText);
+    resetBtn.text(resetBtnText);
+    infoDropdown.text(infoDropdownText);
+    adviceDropdown.text(adviceDropdownText);
+    $.each(data.UI[0].simulations, function(i, value) {
+        $("#" + value.heading).text(value.heading);
+        $.each(value.choices, function(i, value) {
+            for (var key in value) {
+                $("#" + key).text(value[key]);
+            }
+        });
+    });
     $(".menu-btn").click(function() {
         var menuBtn = $(this);
         var menuBtnId = menuBtn[0].id;

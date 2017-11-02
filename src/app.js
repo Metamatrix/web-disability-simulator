@@ -17,9 +17,31 @@ $(document).ready(() => {
   const navbarHeader = $(".navbar-header");
   const resetBtnText = data.UI[0].resetBtnText; 
   const navbarHeaderText = data.UI[0].navbarHeaderText; 
+  const simulationHeadingText = data.UI[0].simulations[0].heading; 
+  const adviceDropdown = $("#advice-dropdown");
+  const adviceDropdownText = data.UI[0].adviceDropdownText; 
+  const infoDropdown = $("#info-dropdown");
+  const infoDropdownText = data.UI[0].infoDropdownText;
 
-  navbarHeader.append(navbarHeaderText); 
-  resetBtn.append(resetBtnText); 
+
+  //Append UI texts
+
+  navbarHeader.text(navbarHeaderText); 
+  resetBtn.text(resetBtnText); 
+  infoDropdown.text(infoDropdownText);
+  adviceDropdown.text(adviceDropdownText);
+
+  $.each(data.UI[0].simulations, (i, value) => {
+
+    $(`#${value.heading}`).text(value.heading); 
+    
+    $.each(value.choices, (i, value) => {
+      for(var key in value) {
+        $(`#${key}`).text(value[key]);
+      }
+    });
+
+  });
 
   //menu button click
 
@@ -87,6 +109,8 @@ $(document).ready(() => {
     
   });
 
+  //reset extension
+  
   function resetSimulation(){
     
     chrome.browserAction.setIcon({
@@ -107,7 +131,7 @@ $(document).ready(() => {
     
   }
 
-  //btn and link click
+  //btn and links
 
   $("#reset-btn").click(() => {
     resetSimulation(); 

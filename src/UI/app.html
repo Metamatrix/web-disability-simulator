@@ -18,28 +18,28 @@
 			<h2 class="navbar-header"></h2>
 			<div class="dropdown">
 				<button class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="menu-sight">
-					<span class="selected" id="Syn">Syn</span><span class="caret pull-right"></span></a>
+					<span class="selected" id="Syn"></span><span class="caret pull-right"></span></a>
 				</button>
 				<ul class="dropdown-menu dropdown-menu-sight" aria-labelledby="menu-sight">
-					<li><a href="#" class="menu-btn colorBlindness" id="colorBlindness">Helt färgblind</a></li>
-					<li><a href="#" class="menu-btn yellowBlueColorBlindness" id="yellowBlueColorBlindness">Gul-blå färgblindhet</a></li>
-					<li><a href="#" class="menu-btn redGreenColorBlindness" id="redGreenColorBlindness">Röd-grön färgblindhet</a></li>
-					<li><a href="#" class="menu-btn farsightedness" id="farsightedness">Långsynthet, översynthet</a></li>
-					<li><a href="#" class="menu-btn tunnelVision" id="tunnelVision">Tunnelseende</a></li>
+					<li><a href="#" class="menu-btn colorBlindness" id="colorBlindness"></a></li>
+					<li><a href="#" class="menu-btn yellowBlueColorBlindness" id="yellowBlueColorBlindness"></a></li>
+					<li><a href="#" class="menu-btn redGreenColorBlindness" id="redGreenColorBlindness"></a></li>
+					<li><a href="#" class="menu-btn farsightedness" id="farsightedness"></a></li>
+					<li><a href="#" class="menu-btn tunnelVision" id="tunnelVision"></a></li>
 				</ul>
 			</div>
 			<div class="dropdown">
 				<button class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="menu-motor">
-					<span class="selected" id="Motorik">Motorik</span><span class="caret pull-right"></span></a>
+					<span class="selected" id="Motorik"></span><span class="caret pull-right"></span></a>
 				</button>
 				<ul class="dropdown-menu dropdown-menu-motor" aria-labelledby="menu-motor">
-					<li><a href="#" class="menu-btn parkinsons" id="parkinsons">Parkinsons</a></li>
+					<li><a href="#" class="menu-btn parkinsons" id="parkinsons"></a></li>
 				</ul>
 			</div>
 
-			<button class="btn btn-default btn-block dropdown-toggle menu-btn dyslexia" type="button" id="dyslexia"><span>Dyslexi</span></button>
-			<button class="btn btn-default btn-block dropdown-toggle menu-btn concentration" type="button" id="concentration"><span>Koncentration</span></button>
-			<button class="btn btn-default btn-block dropdown-toggle menu-btn memory" type="button" id="memory"><span>Minne</span></button>
+			<button class="btn btn-default btn-block dropdown-toggle menu-btn dyslexia" type="button" id="dyslexia"><span class="selected" id="Dyslexi"></span></button>
+			<button class="btn btn-default btn-block dropdown-toggle menu-btn concentration" type="button" id="concentration"><span class="selected" id="Koncentration"></span></button>
+			<button class="btn btn-default btn-block dropdown-toggle menu-btn memory" type="button" id="memory"><span class="selected" id="Minne"></span></button>
 		</nav>
 		<div class="footer">
 			<a href="https://github.com/Metamatrix/Web-Disability-Simulator" class="github-link pull-right">Github</a>
@@ -58,7 +58,7 @@
 							<div class="panel-heading" role="tab" id="headingOne">
 								<h2 class="panel-title">
 									<a role="button">
-										Tänk på detta
+										<span id="advice-dropdown"></span>
 										<span class="caret pull-right down-arrow"></span>
 										<span class="dropup pull-right up-arrow">
     									<span class="caret"></span>
@@ -77,7 +77,7 @@
 							<div class="panel-heading" role="tab" id="headingTwo">
 								<h2 class="panel-title">
 									<a role="button">
-										Mer information
+										<span id="info-dropdown"></span>
 										<span class="caret pull-right down-arrow"></span>
 										<span class="dropup pull-right up-arrow">
     									<span class="caret"></span>
