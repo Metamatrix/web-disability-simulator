@@ -19,7 +19,8 @@
         "Ha tillräckligt stora klickytor.",
         "Undvik typsnitt med krångliga och komplexa figurer."
       ],
-      "moreInfo": "<a href='http://www.parkinsonforbundet.se'>Parkinsonsförbundet</a>"
+      "moreInfoUrl": "http://www.parkinsonforbundet.se",
+      "moreInfoLinkText" : "Parkinsonsförbundet"
     },
     {
       "name": "yellowBlueColorBlindness",
@@ -28,13 +29,15 @@
         "Använd inte färg som det enda sättet att förmedla information, indikera en handling eller identifiera ett element. Markera till exempel inte ett felaktigt formulärfält endast med en röd ram utan komplettera även med text och gärna en ikon.", 	
         "Erbjud gärna ett högkontrast-läge."
       ],
-      "moreInfo": "<a href='https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende'>Wikipedia om defekt färgseende</a>"
+      "moreInfoUrl": "https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende",
+      "moreInfoLinkText" : "Wikipedia om defekt färgseende"
     },
     {
       "name": "redGreenColorBlindness",
       "fact": "Personer med defekt färgseende har svårt att skilja på vissa eller alla färger. Ett fullt fungerande öga har tre olika tappar som tar upp färgerna violett, grön och röd. När en eller flera av tapparna saknas eller är defekta leder det till defekt färgseende. Röd-grön färgblindhet (Protanopi och Deuteranopi) är den vanligaste typen av färgblindhet. Den är vanligare hos män än kvinnor. Personer röd-grön färgblindhet har svårt att skilja på färgerna röd, grön, brun och orange.",
       "listItems": ["Använd inte färg som enda sättet att förmedla information, indikera en handling eller identifiera ett element. Markera till exempel inte ett felaktigt formulärfält endast med röd ram, komplettera även med text och gärna en  ikon.", "Erbjud gärna ett högkontrast-läge."],
-      "moreInfo": "<a href='https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende'>Wikipedia om defekt färgseende</a>"
+      "moreInfoUrl": "https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende",
+      "moreInfoLinkText" : "Wikipedia om defekt färgseende"
     },
     {
       "name": "farsightedness",
@@ -44,7 +47,8 @@
         "Webbsidan ska gå att förstora (zoomas) till minst 200 % så att besökaren kan anpassa innehållets storlek efter sina behov.",
         "Erbjud uppläsning av innehållet."
       ],
-      "moreInfo": "<a href='https://webbriktlinjer.se/r/39-ge-webbplatsen-en-god-lasbarhet/'>Webbriktlinje Ge webbplatsen god läsbarhet</a>"
+      "moreInfoUrl": "https://webbriktlinjer.se/r/39-ge-webbplatsen-en-god-lasbarhet/",
+      "moreInfoLinkText" : "Webbriktlinje Ge webbplatsen god läsbarhet"
     },
     {
       "name": "colorBlindness",

@@ -11,7 +11,7 @@ $(document).ready(() => {
   const infoHeading = $(".disability-info-heading"); 
   const infoParagraph = $( ".disability-info-paragraph" ); 
   const adviceList = $( ".advice-list" ); 
-  const moreInfoParagraph = $( ".more-info-paragraph" ); 
+  const moreInfoLink = $( ".more-info-link" ); 
   const moreInfoPanel = $( "#more-info-panel" ); 
   const resetBtn = $("#reset-btn"); 
   const navbarHeader = $(".navbar-header");
@@ -22,7 +22,7 @@ $(document).ready(() => {
   resetBtn.append(resetBtnText); 
 
   //menu button click
-  
+
   $(".menu-btn").click(function(){
 
     const menuBtn = $(this); 
@@ -30,18 +30,24 @@ $(document).ready(() => {
     const id = menuBtn.attr("id");
     const fact = data.facts.find(findProperty).fact; 
     const listItems = data.facts.find(findProperty).listItems; 
-    const moreInfo = data.facts.find(findProperty).moreInfo; 
+    const moreInfo = data.facts.find(findProperty).moreInfoLinkText; 
+    const moreInfoUrl = data.facts.find(findProperty).moreInfoUrl; 
+
+    function findProperty(simulations) { 
+      return simulations.name === id;
+    }
 
     chrome.browserAction.setIcon({
       path : "img/icon_active.png"
     });
 
     chrome.storage.sync.set({'activeSimulation': menuBtnId});
+    chrome.storage.sync.set({'linkUrl': moreInfoUrl});
 
     infoHeading.empty();
     infoParagraph.empty();
     adviceList.empty();
-    moreInfoParagraph.empty(); 
+    moreInfoLink.empty(); 
     moreInfoPanel.hide();
 
     tooltip.animate({
@@ -54,10 +60,6 @@ $(document).ready(() => {
 
     menuBtn.closest(".dropdown").find(".selected").text(menuBtn.text());
 
-    function findProperty(simulations) { 
-      return simulations.name === id;
-    }
-
     infoParagraph.append(fact);
       
     $.each(listItems, (i, value) => {
@@ -66,8 +68,10 @@ $(document).ready(() => {
 
     if(moreInfo) {
       moreInfoPanel.show();
-      moreInfoParagraph.append(moreInfo);
+      moreInfoLink.append(moreInfo);
     }
+
+    moreInfoLink.attr("href",`${moreInfoUrl}`);
 
     if (menuBtn.hasClass("farsightedness")) {
       farsightedness();
@@ -84,6 +88,7 @@ $(document).ready(() => {
   });
 
   function resetSimulation(){
+    
     chrome.browserAction.setIcon({
       path : "img/icon.png"
     });
@@ -99,19 +104,24 @@ $(document).ready(() => {
 
     resetCSS();
     chrome.storage.sync.remove('activeSimulation');
+    
   }
 
-  //reset-btn click
+  //btn and link click
 
   $("#reset-btn").click(() => {
     resetSimulation(); 
   });
 
-  //github link click 
-
   $(".github-link").click(() => {
     chrome.tabs.create({url: 'https://github.com/Metamatrix/Web-Disability-Simulator'}); 
   });
+ 
+  $(".more-info-link").click(() => {
+    chrome.storage.sync.get('linkUrl', obj => {
+      chrome.tabs.create({url: `${obj.linkUrl}`}); 
+    }); 
+  }); 
 
   //panel collapse, show arrows: 
 
@@ -145,7 +155,8 @@ $(document).ready(() => {
 
         const fact = data.facts.find(findProperty).fact; 
         const listItems = data.facts.find(findProperty).listItems; 
-        const moreInfo = data.facts.find(findProperty).moreInfo;
+        const moreInfo = data.facts.find(findProperty).moreInfoLinkText;
+        const moreInfoUrl = data.facts.find(findProperty).moreInfoUrl;
 
         infoParagraph.append(fact);
               
@@ -155,18 +166,15 @@ $(document).ready(() => {
 
         if(moreInfo) {
           moreInfoPanel.show();
-          moreInfoParagraph.append(moreInfo);
+          moreInfoLink.append(moreInfo);
         }
+
+        moreInfoLink.attr("href",`${moreInfoUrl}`);
 
      }
 
     }); 
   
   };
-
-//function that runs when tab is reloaded
-/*  chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    resetSimulation();
-  });*/
   
 });
