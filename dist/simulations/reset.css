@@ -1,8 +1,8 @@
 html, body {
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
+    -webkit-filter: blur(0px) !important;
+    filter: blur(0px) !important;
 }
 
 canvas {
-    visibility: hidden; 
+    visibility: hidden !important; 
 }

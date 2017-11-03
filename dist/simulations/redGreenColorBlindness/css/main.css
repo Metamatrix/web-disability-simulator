@@ -1,9 +1,9 @@
 
 html, body {
-  -webkit-filter: url(#protanopia);
-  filter: url(#protanopia);
+  -webkit-filter: url(#protanopia) !important;
+  filter: url(#protanopia) !important;
 }
 
 #svg-filter {
-  display: none; 
+  display: none !important; 
 }

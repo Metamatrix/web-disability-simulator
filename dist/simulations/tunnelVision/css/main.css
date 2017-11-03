@@ -1,9 +1,9 @@
 canvas { 
-  visibility: visible; 
-  position: fixed; 
-  left: 0; 
-  right: 0; 
-  top: 0; 
-  bottom: 0; 
-  z-index: 9999999;
+  visibility: visible !important; 
+  position: fixed !important; 
+  left: 0 !important; 
+  right: 0 !important; 
+  top: 0 !important; 
+  bottom: 0 !important; 
+  z-index: 9999999 !important;
 }
