@@ -3,6 +3,6 @@ html, body {
     filter: blur(0px) !important;
 }
 
-canvas {
+#wds-tunnelVisionCanvas {
     visibility: hidden !important; 
 }

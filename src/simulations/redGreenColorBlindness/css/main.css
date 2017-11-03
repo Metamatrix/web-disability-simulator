@@ -4,6 +4,6 @@ html, body {
   filter: url(#protanopia) !important;
 }
 
-#svg-filter {
+#wds-colorBlindnessFilter {
   display: none !important; 
 }
