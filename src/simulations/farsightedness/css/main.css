@@ -1,11 +1,11 @@
 html, body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    -webkit-filter: blur(3px);
-    filter: blur(3px);
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    -webkit-filter: blur(3px) !important;
+    filter: blur(3px) !important;
 }
 
 body {
-    overflow-y: scroll; 
+    overflow-y: scroll !important; 
 }
