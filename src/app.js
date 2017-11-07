@@ -1,4 +1,5 @@
-import {resetCSS} from '../../src/simulations/general.js'
+import {resetCSS} from '../../src/simulations/general/reset/index.js'
+import {loadingModal} from '../../src/simulations/general/loading/index.js'
 import {farsightedness} from '../../src/simulations/farsightedness/index.js'
 import {tunnelVision} from '../../src/simulations/tunnelVision/index.js'
 import {redGreenColorBlindness} from '../../src/simulations/redGreenColorBlindness/index.js'
@@ -21,8 +22,7 @@ $(document).ready(() => {
   const adviceDropdown = $("#advice-dropdown");
   const adviceDropdownText = data.UI[0].adviceDropdownText; 
   const infoDropdown = $("#info-dropdown");
-  const infoDropdownText = data.UI[0].infoDropdownText;
-
+  const infoDropdownText = data.UI[0].infoDropdownText; 
 
   //Append UI texts
 
@@ -95,19 +95,29 @@ $(document).ready(() => {
 
     moreInfoLink.attr("href",`${moreInfoUrl}`);
 
-    if (menuBtn.hasClass("farsightedness")) {
-      farsightedness();
-    } 
+    loadingModal();
 
-    if (menuBtn.hasClass("tunnelVision")) {
-      tunnelVision();
-    } 
+    //when loading modal is closed, show chosen simulation
+  
+    chrome.runtime.onMessage.addListener(function(request) {
 
-    if (menuBtn.hasClass("redGreenColorBlindness")) {
-      redGreenColorBlindness();
-    }
+      if (request.type == "modalClosed")
+          
+        if (menuBtn.hasClass("farsightedness")) {
+          farsightedness();
+        } 
+
+        if (menuBtn.hasClass("tunnelVision")) {
+          tunnelVision();
+        } 
+
+        if (menuBtn.hasClass("redGreenColorBlindness")) {
+          redGreenColorBlindness();
+        }
+
+      });
     
-  });
+    });
 
   //reset extension
   

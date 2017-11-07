@@ -12,15 +12,15 @@
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
-      "css": [],
-      "js": ["UI/vendor/jquery/jquery-2.0.3.min.js","simulations/vendor/D3/d3.js", "simulations/vendor/daltonize/daltonize.js"]
+      "css": ["UI/vendor/bootstrap/bootstrap.min.css", "UI/css/loadingModal.css" ],
+      "js": ["UI/vendor/jquery/jquery-2.0.3.min.js", "UI/vendor/bootstrap/bootstrap.min.js"],
+      "run_at":"document_end"
     }
   ],
   "web_accessible_resources": [
-    "simulations/redGreenColorBlindness/img/filters.svg"
+    "simulations/redGreenColorBlindness/img/filters.svg", "UI/img/loading_icon.svg"
   ],
   "permissions": [
     "tabs", "http://*/*", "https://*/*", "storage", "activeTab"
   ]
 }
-

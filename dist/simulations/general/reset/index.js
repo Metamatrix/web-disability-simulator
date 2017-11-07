@@ -2,6 +2,6 @@
 
 export function resetCSS(e) {
     chrome.tabs.insertCSS({
-      file : "simulations/reset.css"
+      file : "simulations/general/reset/main.css"
     });
   }

@@ -3599,13 +3599,15 @@ if ("undefined" == typeof jQuery) throw new Error("Bootstrap's JavaScript requir
 
 "use strict";
 
-var _general = require("../../src/simulations/general.js");
+var _index = require("../../src/simulations/general/reset/index.js");
 
-var _index = require("../../src/simulations/farsightedness/index.js");
+var _index2 = require("../../src/simulations/general/loading/index.js");
 
-var _index2 = require("../../src/simulations/tunnelVision/index.js");
+var _index3 = require("../../src/simulations/farsightedness/index.js");
 
-var _index3 = require("../../src/simulations/redGreenColorBlindness/index.js");
+var _index4 = require("../../src/simulations/tunnelVision/index.js");
+
+var _index5 = require("../../src/simulations/redGreenColorBlindness/index.js");
 
 var _data = require("../../src/UI/data/data.json");
 
@@ -3693,15 +3695,18 @@ $(document).ready(function() {
             moreInfoLink.append(moreInfo);
         }
         moreInfoLink.attr("href", "" + moreInfoUrl);
-        if (menuBtn.hasClass("farsightedness")) {
-            (0, _index.farsightedness)();
-        }
-        if (menuBtn.hasClass("tunnelVision")) {
-            (0, _index2.tunnelVision)();
-        }
-        if (menuBtn.hasClass("redGreenColorBlindness")) {
-            (0, _index3.redGreenColorBlindness)();
-        }
+        (0, _index2.loadingModal)();
+        chrome.runtime.onMessage.addListener(function(request) {
+            if (request.type == "modalClosed") if (menuBtn.hasClass("farsightedness")) {
+                (0, _index3.farsightedness)();
+            }
+            if (menuBtn.hasClass("tunnelVision")) {
+                (0, _index4.tunnelVision)();
+            }
+            if (menuBtn.hasClass("redGreenColorBlindness")) {
+                (0, _index5.redGreenColorBlindness)();
+            }
+        });
     });
     function resetSimulation() {
         chrome.browserAction.setIcon({
@@ -3712,7 +3717,7 @@ $(document).ready(function() {
         });
         $("#Syn").text("Syn");
         $("#Motorik").text("Motorik");
-        (0, _general.resetCSS)();
+        (0, _index.resetCSS)();
         chrome.storage.sync.remove("activeSimulation");
     }
     $("#reset-btn").click(function() {
