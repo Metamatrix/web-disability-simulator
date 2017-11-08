@@ -37,7 +37,7 @@ $(document).ready(() => {
     $(`#${value.heading}`).text(value.heading); 
     
     $.each(value.choices, (i, value) => {
-      for(var key in value) {
+      for(const key in value) {
         $(`#${key}`).text(value[key]);
       }
     });
@@ -102,7 +102,7 @@ $(document).ready(() => {
 
   //when loading modal is closed, show chosen simulation
 
-  chrome.runtime.onMessage.addListener(function(request) {
+  chrome.runtime.onMessage.addListener(request => {
 
     if (request.type == "modalClosed"){
 
