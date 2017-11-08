@@ -97,24 +97,32 @@ $(document).ready(() => {
     moreInfoLink.attr("href",`${moreInfoUrl}`);
 
     loadingModal();
+    
+  });
 
-    //when loading modal is closed, show chosen simulation
+  //when loading modal is closed, show chosen simulation
 
-    setTimeout(() => { 
-      if (menuBtn.hasClass("farsightedness")) {
-        farsightedness();
-      } 
+  chrome.runtime.onMessage.addListener(function(request) {
 
-      if (menuBtn.hasClass("tunnelVision")) {
-        console.log('it has class tunnel vision'); 
-        tunnelVision();
-      } 
+    if (request.type == "modalClosed"){
 
-      if (menuBtn.hasClass("redGreenColorBlindness")) {
-        console.log('it has red green color blindness'); 
-        redGreenColorBlindness();
-      }
-    }, 1500);  
+      chrome.storage.sync.get('activeSimulation', obj => {
+
+        if(obj.activeSimulation == "farsightedness") {
+            farsightedness();
+        }
+
+        if (obj.activeSimulation == "tunnelVision") {
+          tunnelVision();
+        } 
+
+        if (obj.activeSimulation == "redGreenColorBlindness") {
+          redGreenColorBlindness();
+        }
+
+      }); 
+
+    }
 
   });
 

@@ -3696,19 +3696,21 @@ $(document).ready(function() {
         }
         moreInfoLink.attr("href", "" + moreInfoUrl);
         (0, _index2.loadingModal)();
-        setTimeout(function() {
-            if (menuBtn.hasClass("farsightedness")) {
-                (0, _index3.farsightedness)();
-            }
-            if (menuBtn.hasClass("tunnelVision")) {
-                console.log("it has class tunnel vision");
-                (0, _index4.tunnelVision)();
-            }
-            if (menuBtn.hasClass("redGreenColorBlindness")) {
-                console.log("it has red green color blindness");
-                (0, _index5.redGreenColorBlindness)();
-            }
-        }, 1500);
+    });
+    chrome.runtime.onMessage.addListener(function(request) {
+        if (request.type == "modalClosed") {
+            chrome.storage.sync.get("activeSimulation", function(obj) {
+                if (obj.activeSimulation == "farsightedness") {
+                    (0, _index3.farsightedness)();
+                }
+                if (obj.activeSimulation == "tunnelVision") {
+                    (0, _index4.tunnelVision)();
+                }
+                if (obj.activeSimulation == "redGreenColorBlindness") {
+                    (0, _index5.redGreenColorBlindness)();
+                }
+            });
+        }
     });
     function resetSimulation() {
         chrome.browserAction.setIcon({

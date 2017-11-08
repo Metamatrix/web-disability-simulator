@@ -7,6 +7,7 @@
 
     setTimeout(() => { 
         $('#wds-loadingModal').modal('hide');
+        chrome.runtime.sendMessage({type: "modalClosed"});
     }, 1500);
 
 }; 

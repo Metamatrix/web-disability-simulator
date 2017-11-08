@@ -1,8 +1,6 @@
 //create canvas element
 (function(){
 
-console.log('tunnel vision function running'); 
-
 const canvas = document.createElement('canvas'); 
 canvas.setAttribute('width', document.documentElement.clientWidth);
 canvas.setAttribute('height', document.documentElement.clientHeight);
