@@ -1,4 +1,5 @@
 import {resetCSS} from '../../src/simulations/general/reset/index.js'
+import {resetHtmlElements} from '../../src/simulations/general/reset/index.js'
 import {loadingModal} from '../../src/simulations/general/loading/index.js'
 import {farsightedness} from '../../src/simulations/farsightedness/index.js'
 import {tunnelVision} from '../../src/simulations/tunnelVision/index.js'
@@ -98,26 +99,24 @@ $(document).ready(() => {
     loadingModal();
 
     //when loading modal is closed, show chosen simulation
-  
-    chrome.runtime.onMessage.addListener(function(request) {
 
-      if (request.type == "modalClosed")
-          
-        if (menuBtn.hasClass("farsightedness")) {
-          farsightedness();
-        } 
+    setTimeout(() => { 
+      if (menuBtn.hasClass("farsightedness")) {
+        farsightedness();
+      } 
 
-        if (menuBtn.hasClass("tunnelVision")) {
-          tunnelVision();
-        } 
+      if (menuBtn.hasClass("tunnelVision")) {
+        console.log('it has class tunnel vision'); 
+        tunnelVision();
+      } 
 
-        if (menuBtn.hasClass("redGreenColorBlindness")) {
-          redGreenColorBlindness();
-        }
+      if (menuBtn.hasClass("redGreenColorBlindness")) {
+        console.log('it has red green color blindness'); 
+        redGreenColorBlindness();
+      }
+    }, 1500);  
 
-      });
-    
-    });
+  });
 
   //reset extension
   
@@ -137,6 +136,7 @@ $(document).ready(() => {
     $("#Motorik").text("Motorik"); 
 
     resetCSS();
+    resetHtmlElements(); 
     chrome.storage.sync.remove('activeSimulation');
     
   }

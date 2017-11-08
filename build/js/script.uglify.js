@@ -3696,17 +3696,19 @@ $(document).ready(function() {
         }
         moreInfoLink.attr("href", "" + moreInfoUrl);
         (0, _index2.loadingModal)();
-        chrome.runtime.onMessage.addListener(function(request) {
-            if (request.type == "modalClosed") if (menuBtn.hasClass("farsightedness")) {
+        setTimeout(function() {
+            if (menuBtn.hasClass("farsightedness")) {
                 (0, _index3.farsightedness)();
             }
             if (menuBtn.hasClass("tunnelVision")) {
+                console.log("it has class tunnel vision");
                 (0, _index4.tunnelVision)();
             }
             if (menuBtn.hasClass("redGreenColorBlindness")) {
+                console.log("it has red green color blindness");
                 (0, _index5.redGreenColorBlindness)();
             }
-        });
+        }, 1500);
     });
     function resetSimulation() {
         chrome.browserAction.setIcon({
@@ -3718,6 +3720,7 @@ $(document).ready(function() {
         $("#Syn").text("Syn");
         $("#Motorik").text("Motorik");
         (0, _index.resetCSS)();
+        (0, _index.resetHtmlElements)();
         chrome.storage.sync.remove("activeSimulation");
     }
     $("#reset-btn").click(function() {

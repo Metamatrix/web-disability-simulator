@@ -1,8 +1,7 @@
 //create canvas element
+(function(){
 
-if (document.body.contains(document.querySelector('#wds-tunnelVisionCanvas'))) {
-  document.querySelector('canvas').remove();
-}
+console.log('tunnel vision function running'); 
 
 const canvas = document.createElement('canvas'); 
 canvas.setAttribute('width', document.documentElement.clientWidth);
@@ -54,3 +53,5 @@ function update() {
   context.restore();
 }
 update(); 
+
+})()
