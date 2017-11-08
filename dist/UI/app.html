@@ -12,12 +12,12 @@
 	</head>
 	<body>
 		<div class="logo-container">
-      <img src="img/logo_disability_simulator.png" alt="logo" class="logo">
+      <img src="img/logo_disability_simulator.png" alt="web disability simulator" class="logo">
 		</div>
 		<nav class="navbar navbar-default" role="navigation">
 			<h2 class="navbar-header"></h2>
 			<div class="dropdown">
-				<button class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="menu-sight">
+				<button class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="menu-sight">
 					<span class="selected" id="Syn"></span><span class="caret pull-right"></span></a>
 				</button>
 				<ul class="dropdown-menu dropdown-menu-sight" aria-labelledby="menu-sight">
@@ -29,7 +29,7 @@
 				</ul>
 			</div>
 			<div class="dropdown">
-				<button class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="menu-motor">
+				<button class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="menu-motor">
 					<span class="selected" id="Motorik"></span><span class="caret pull-right"></span></a>
 				</button>
 				<ul class="dropdown-menu dropdown-menu-motor" aria-labelledby="menu-motor">
@@ -45,7 +45,7 @@
 			<a href="https://github.com/Metamatrix/Web-Disability-Simulator" class="github-link pull-right">Github</a>
 		</div>
 
-		<div class="tool-tip">
+		<div class="tool-tip" role="region" aria-live="polite">
 			<div class="tool-tip-content">
 				<div class="tool-tip-info-container">
 					<h2 class="disability-info-heading"></h2>
@@ -54,8 +54,8 @@
 
 					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-					<div class="panel panel-default" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-							<div class="panel-heading" role="tab" id="headingOne">
+					<div class="panel panel-default" data-toggle="collapse" href="#adviceCollapse" aria-expanded="false" aria-controls="adviceCollapse">
+							<div class="panel-heading" role="tab" id="adviceHeading">
 								<h2 class="panel-title">
 									<a role="button">
 										<span id="advice-dropdown"></span>
@@ -66,15 +66,15 @@
 									</a>
 								</h2>
 							</div>
-							<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+							<div id="adviceCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="adviceHeading">
 								<div class="panel-body">
 									<ul class="advice-list">
 								</div>
 							</div>
 						</div>
 
-						<div class="panel panel-default" id="more-info-panel" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-							<div class="panel-heading" role="tab" id="headingTwo">
+						<div class="panel panel-default" id="more-info-panel" data-toggle="collapse" href="#infoCollapse" aria-expanded="false" aria-controls="infoCollapse">
+							<div class="panel-heading" role="tab" id="infoHeading">
 								<h2 class="panel-title">
 									<a role="button">
 										<span id="info-dropdown"></span>
@@ -85,7 +85,7 @@
 									</a>
 								</h2>
 							</div>
-							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+							<div id="infoCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="infoHeading">
 								<div class="panel-body">
 									<a class="more-info-link"></a>
 								</div>
