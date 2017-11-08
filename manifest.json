@@ -12,7 +12,7 @@
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
-      "css": ["UI/vendor/bootstrap/bootstrap.min.css", "UI/css/loadingModal.css" ],
+      "css": ["UI/vendor/bootstrap/bootstrap.min.css", "simulations/general/loading/main.css" ],
       "js": ["UI/vendor/jquery/jquery-2.0.3.min.js", "UI/vendor/bootstrap/bootstrap.min.js"],
       "run_at":"document_end"
     }
