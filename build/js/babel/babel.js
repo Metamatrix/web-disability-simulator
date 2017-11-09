@@ -143,8 +143,7 @@ $(document).ready(function () {
     $("#Syn").text("Syn");
     $("#Motorik").text("Motorik");
 
-    (0, _index.resetCSS)();
-    (0, _index.resetHtmlElements)();
+    (0, _index.reset)();
     chrome.storage.sync.remove('activeSimulation');
   }
 

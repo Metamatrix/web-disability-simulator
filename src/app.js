@@ -1,5 +1,4 @@
-import {resetCSS} from '../../src/simulations/general/reset/index.js'
-import {resetHtmlElements} from '../../src/simulations/general/reset/index.js'
+import {reset} from '../../src/simulations/general/reset/index.js'
 import {loadingModal} from '../../src/simulations/general/loading/index.js'
 import {farsightedness} from '../../src/simulations/farsightedness/index.js'
 import {tunnelVision} from '../../src/simulations/tunnelVision/index.js'
@@ -143,8 +142,7 @@ $(document).ready(() => {
     $("#Syn").text("Syn");
     $("#Motorik").text("Motorik"); 
 
-    resetCSS();
-    resetHtmlElements(); 
+    reset();
     chrome.storage.sync.remove('activeSimulation');
     
   }

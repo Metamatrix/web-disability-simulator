@@ -1,4 +1,4 @@
 
-$.get(chrome.extension.getURL('/simulations/redGreenColorBlindness/img/filters.svg'), function(data) {
+$.get(chrome.extension.getURL('/simulations/redGreenColorBlindness/img/filters.svg'), data => {
     $(data).appendTo('body');
 });
