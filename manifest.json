@@ -18,7 +18,7 @@
     }
   ],
   "web_accessible_resources": [
-    "simulations/redGreenColorBlindness/img/filters.svg", "simulations/general/loading/loadingModal.html"
+    "simulations/colorBlindness/img/filters.svg", "simulations/general/loading/loadingModal.html"
   ],
   "permissions": [
     "tabs", "http://*/*", "https://*/*", "storage", "activeTab"

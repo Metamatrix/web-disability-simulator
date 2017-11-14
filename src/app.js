@@ -2,7 +2,9 @@ import {reset} from '../../src/simulations/general/reset/index.js'
 import {loadingModal} from '../../src/simulations/general/loading/index.js'
 import {farsightedness} from '../../src/simulations/farsightedness/index.js'
 import {tunnelVision} from '../../src/simulations/tunnelVision/index.js'
-import {redGreenColorBlindness} from '../../src/simulations/redGreenColorBlindness/index.js'
+import {redGreenColorBlindness} from '../../src/simulations/colorBlindness/redGreenColorBlindness/index.js'
+import {yellowBlueColorBlindness} from '../../src/simulations/colorBlindness/yellowBlueColorBlindness/index.js'
+import {totalColorBlindness} from '../../src/simulations/colorBlindness/totalColorBlindness/index.js'
 import * as data from '../../src/UI/data/data.json';
 
 
@@ -117,6 +119,18 @@ $(document).ready(() => {
 
         if (obj.activeSimulation == "redGreenColorBlindness") {
           redGreenColorBlindness();
+        }
+
+        if (obj.activeSimulation == "yellowBlueColorBlindness") {
+          yellowBlueColorBlindness();
+        }
+
+        if (obj.activeSimulation == "yellowBlueColorBlindness") {
+          yellowBlueColorBlindness();
+        }
+
+        if (obj.activeSimulation == "totalColorBlindness") {
+          totalColorBlindness();
         }
 
       }); 

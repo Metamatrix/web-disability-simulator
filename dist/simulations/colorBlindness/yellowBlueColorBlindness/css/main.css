@@ -1,0 +1,9 @@
+
+html, body {
+  -webkit-filter: url(#tritanopia) !important;
+  filter: url(#tritanopia) !important;
+}
+
+#wds-colorBlindnessFilter {
+  display: none !important; 
+}

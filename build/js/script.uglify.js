@@ -3607,7 +3607,11 @@ var _index3 = require("../../src/simulations/farsightedness/index.js");
 
 var _index4 = require("../../src/simulations/tunnelVision/index.js");
 
-var _index5 = require("../../src/simulations/redGreenColorBlindness/index.js");
+var _index5 = require("../../src/simulations/colorBlindness/redGreenColorBlindness/index.js");
+
+var _index6 = require("../../src/simulations/colorBlindness/yellowBlueColorBlindness/index.js");
+
+var _index7 = require("../../src/simulations/colorBlindness/totalColorBlindness/index.js");
 
 var _data = require("../../src/UI/data/data.json");
 
@@ -3708,6 +3712,15 @@ $(document).ready(function() {
                 }
                 if (obj.activeSimulation == "redGreenColorBlindness") {
                     (0, _index5.redGreenColorBlindness)();
+                }
+                if (obj.activeSimulation == "yellowBlueColorBlindness") {
+                    (0, _index6.yellowBlueColorBlindness)();
+                }
+                if (obj.activeSimulation == "yellowBlueColorBlindness") {
+                    (0, _index6.yellowBlueColorBlindness)();
+                }
+                if (obj.activeSimulation == "totalColorBlindness") {
+                    (0, _index7.totalColorBlindness)();
                 }
             });
         }
