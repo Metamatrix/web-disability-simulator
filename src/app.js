@@ -5,6 +5,7 @@ import {tunnelVision} from '../../src/simulations/tunnelVision/index.js'
 import {redGreenColorBlindness} from '../../src/simulations/colorBlindness/redGreenColorBlindness/index.js'
 import {yellowBlueColorBlindness} from '../../src/simulations/colorBlindness/yellowBlueColorBlindness/index.js'
 import {totalColorBlindness} from '../../src/simulations/colorBlindness/totalColorBlindness/index.js'
+import {concentration} from '../../src/simulations/concentration/index.js'
 import * as data from '../../src/UI/data/data.json';
 
 
@@ -109,7 +110,7 @@ $(document).ready(() => {
 
       chrome.storage.sync.get('activeSimulation', obj => {
 
-        if(obj.activeSimulation == "farsightedness") {
+      if(obj.activeSimulation == "farsightedness") {
             farsightedness();
         }
 
@@ -125,12 +126,12 @@ $(document).ready(() => {
           yellowBlueColorBlindness();
         }
 
-        if (obj.activeSimulation == "yellowBlueColorBlindness") {
-          yellowBlueColorBlindness();
-        }
-
         if (obj.activeSimulation == "totalColorBlindness") {
           totalColorBlindness();
+        }
+
+        if (obj.activeSimulation == "concentration") {
+          concentration();
         }
 
       }); 

@@ -3613,6 +3613,8 @@ var _index6 = require("../../src/simulations/colorBlindness/yellowBlueColorBlind
 
 var _index7 = require("../../src/simulations/colorBlindness/totalColorBlindness/index.js");
 
+var _index8 = require("../../src/simulations/concentration/index.js");
+
 var _data = require("../../src/UI/data/data.json");
 
 var data = _interopRequireWildcard(_data);
@@ -3716,11 +3718,11 @@ $(document).ready(function() {
                 if (obj.activeSimulation == "yellowBlueColorBlindness") {
                     (0, _index6.yellowBlueColorBlindness)();
                 }
-                if (obj.activeSimulation == "yellowBlueColorBlindness") {
-                    (0, _index6.yellowBlueColorBlindness)();
-                }
                 if (obj.activeSimulation == "totalColorBlindness") {
                     (0, _index7.totalColorBlindness)();
+                }
+                if (obj.activeSimulation == "concentration") {
+                    (0, _index8.concentration)();
                 }
             });
         }

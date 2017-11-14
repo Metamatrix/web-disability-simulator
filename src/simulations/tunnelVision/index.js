@@ -1,4 +1,4 @@
-export function tunnelVision(e) {
+export function tunnelVision() {
 
     chrome.tabs.executeScript( {file: 'simulations/tunnelVision/content.js'} );
 
