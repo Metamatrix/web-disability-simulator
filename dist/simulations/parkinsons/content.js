@@ -5,8 +5,6 @@
 
   document.body.appendChild(cursor);
 
-  console.log(navigator.appVersion);
-
   const appVersion = navigator.appVersion; 
   let cursorImgUrl = ""; 
 
@@ -21,8 +19,9 @@
   cursor.style.background = `url(${cursorImgUrl})`
 
 
-
-  //Bilden ska följa muspekaren
+  $(document).mousemove(e => {
+    $("#wds-parkinsonsCursor").css({left:e.pageX, top:e.pageY});
+  });
 
 
   //Skakeffekt för muspekaren

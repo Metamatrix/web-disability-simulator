@@ -1,10 +1,10 @@
 html, body {
-  /*cursor: none; */
+  cursor: none !important;
 }
 
 #wds-parkinsonsCursor { 
   position: absolute !important; 
   z-index: 9999999 !important;
-	width: 22px;
-	height: 22px; 
+	width: 21px;
+	height: 21px; 
 }
