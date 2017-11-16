@@ -3615,6 +3615,8 @@ var _index7 = require("../../src/simulations/colorBlindness/totalColorBlindness/
 
 var _index8 = require("../../src/simulations/concentration/index.js");
 
+var _index9 = require("../../src/simulations/parkinsons/index.js");
+
 var _data = require("../../src/UI/data/data.json");
 
 var data = _interopRequireWildcard(_data);
@@ -3723,6 +3725,9 @@ $(document).ready(function() {
                 }
                 if (obj.activeSimulation == "concentration") {
                     (0, _index8.concentration)();
+                }
+                if (obj.activeSimulation == "parkinsons") {
+                    (0, _index9.parkinsons)();
                 }
             });
         }

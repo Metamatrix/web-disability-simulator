@@ -6,6 +6,7 @@ import {redGreenColorBlindness} from '../../src/simulations/colorBlindness/redGr
 import {yellowBlueColorBlindness} from '../../src/simulations/colorBlindness/yellowBlueColorBlindness/index.js'
 import {totalColorBlindness} from '../../src/simulations/colorBlindness/totalColorBlindness/index.js'
 import {concentration} from '../../src/simulations/concentration/index.js'
+import {parkinsons} from '../../src/simulations/parkinsons/index.js'
 import * as data from '../../src/UI/data/data.json';
 
 
@@ -132,6 +133,10 @@ $(document).ready(() => {
 
         if (obj.activeSimulation == "concentration") {
           concentration();
+        }
+
+        if (obj.activeSimulation == "parkinsons") {
+          parkinsons();
         }
 
       }); 
