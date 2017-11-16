@@ -3,7 +3,7 @@
 
   "name": "Web Disability Simulator",
   "description": "Simulates how people with disabilities sees the web",
-  "version": "1.0",
+  "version": "0.1",
 
   "browser_action": {
     "default_icon": "UI/img/icon.png",
@@ -13,7 +13,7 @@
     {
       "matches": ["http://*/*", "https://*/*"],
       "css": ["UI/vendor/bootstrap/bootstrap.min.css"],
-      "js": ["UI/vendor/jquery/jquery-2.0.3.min.js", "UI/vendor/bootstrap/bootstrap.min.js"],
+      "js": [ "UI/vendor/jquery/jquery-2.0.3.min.js", "UI/vendor/bootstrap/bootstrap.min.js"],
       "run_at":"document_end"
     }
   ],

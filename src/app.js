@@ -9,6 +9,24 @@ import {concentration} from '../../src/simulations/concentration/index.js'
 import {parkinsons} from '../../src/simulations/parkinsons/index.js'
 import * as data from '../../src/UI/data/data.json';
 
+function saveState(name, value) {
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(
+      tabs[0].id, { type: "setState", name: name, value: value }, 
+      function(response) { }
+    );
+  });
+}
+
+function getState(name, callback) {
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, {type: "getState"}, function(response) {
+      if(response && response.name) {
+        callback(response.name, response.value);
+      }
+    });
+  });
+}
 
 $(document).ready(() => {
 
@@ -67,8 +85,9 @@ $(document).ready(() => {
       path : "img/icon_active.png"
     });
 
-    chrome.storage.sync.set({'activeSimulation': menuBtnId});
-    chrome.storage.sync.set({'linkUrl': moreInfoUrl});
+    //setState('activeSimulation', menuBtnId);
+    chrome.storage.local.set({'activeSimulation': menuBtnId});
+    chrome.storage.local.set({'linkUrl': moreInfoUrl});
 
     infoHeading.empty();
     infoParagraph.empty();
@@ -109,7 +128,7 @@ $(document).ready(() => {
 
     if (request.type == "modalClosed"){
 
-      chrome.storage.sync.get('activeSimulation', obj => {
+      chrome.storage.local.get('activeSimulation', obj => {
 
       if(obj.activeSimulation == "farsightedness") {
             farsightedness();
@@ -163,7 +182,7 @@ $(document).ready(() => {
     $("#Motorik").text("Motorik"); 
 
     reset();
-    chrome.storage.sync.remove('activeSimulation');
+    chrome.storage.local.remove('activeSimulation');
     
   }
 
@@ -178,7 +197,7 @@ $(document).ready(() => {
   });
  
   $(".more-info-link").click(() => {
-    chrome.storage.sync.get('linkUrl', obj => {
+    chrome.storage.local.get('linkUrl', obj => {
       chrome.tabs.create({url: `${obj.linkUrl}`}); 
     }); 
   }); 
@@ -195,7 +214,7 @@ $(document).ready(() => {
 
   window.onload = () => {
 
-      chrome.storage.sync.get('activeSimulation', obj => {
+      chrome.storage.local.get('activeSimulation', obj => {
     
       const activeSimulation = obj.activeSimulation;
       
