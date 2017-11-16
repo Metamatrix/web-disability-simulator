@@ -18,7 +18,10 @@
     }
   ],
   "web_accessible_resources": [
-    "simulations/colorBlindness/img/filters.svg", "simulations/general/loading/loadingModal.html"
+    "simulations/colorBlindness/img/filters.svg", 
+    "simulations/general/loading/loadingModal.html", 
+    "simulations/parkinsons/img/cursor_windows.svg",
+    "simulations/parkinsons/img/cursor_mac.svg"
   ],
   "permissions": [
     "tabs", "http://*/*", "https://*/*", "storage", "activeTab"
