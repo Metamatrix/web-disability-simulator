@@ -1,7 +1,5 @@
 (() => {
 
-  console.log('HELLO2');
-
   function getTextNodes(node){
     let all = [];
     for (node=node.firstChild;node;node=node.nextSibling){
