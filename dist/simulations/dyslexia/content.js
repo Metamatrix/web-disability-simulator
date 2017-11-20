@@ -50,6 +50,8 @@
 
   textNodes.forEach((el) => {
 
+    el._wdsOriginalText = el.textContent;
+
     setInterval(() => {
 
       const words = el.textContent.split(/\s/);

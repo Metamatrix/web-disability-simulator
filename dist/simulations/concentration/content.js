@@ -5,6 +5,7 @@
 
   const width = document.documentElement.clientWidth;
   const height = document.documentElement.clientHeight;
+  const velocity = 15;
 
   document.body.appendChild(circleElement);
 
@@ -14,6 +15,10 @@
     return num; 
   }
 
+  function randomVelocity() {
+    return random(velocity - 2, velocity + 2);
+  }
+
   class Circle {
     constructor(x, y, velX, velY, size) {
       this.x = x;
@@ -21,28 +26,30 @@
       this.velX = velX;
       this.velY = velY; 
       this.size = size; 
+
+      circleElement.style.left = 0;
+      circleElement.style.top = 0;
     }
 
     move() {
-      circleElement.style.left= `${this.x}px`
-      circleElement.style.top= `${this.y}px`
+      circleElement.style.transform = `translate3d(${this.x}px, ${this.y}px, 0)`;
     }
 
     update() {
-      if ((this.x + this.size) >= width) {
-        this.velX = -(this.velX);
+      if ((this.x + this.size) >= width - 2) {
+        this.velX = -randomVelocity();
       }
 
-      if ((this.x - this.size) <= 0) {
-        this.velX = -(this.velX);
+      if ((this.x) <= 0) {
+        this.velX = randomVelocity();
       }
 
-      if ((this.y + this.size) >= height) {
-        this.velY = -(this.velY);
+      if ((this.y + this.size) >= height - 2) {
+        this.velY = -randomVelocity();
       }
 
-      if ((this.y - this.size) <= 0) {
-        this.velY = -(this.velY);
+      if ((this.y) <= 0) {
+        this.velY = randomVelocity();
       }
 
       this.x += this.velX;
@@ -53,8 +60,8 @@
   const circle = new Circle(
       random(0,width),
       random(0,height),
-      15,
-      15,
+      velocity,
+      velocity,
       100
     );
 
