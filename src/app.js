@@ -1,3 +1,4 @@
+import {dyslexia} from '../../src/simulations/dyslexia/index.js'
 import {reset} from '../../src/simulations/general/reset/index.js'
 import {loadingModal} from '../../src/simulations/general/loading/index.js'
 import {farsightedness} from '../../src/simulations/farsightedness/index.js'
@@ -8,25 +9,6 @@ import {totalColorBlindness} from '../../src/simulations/colorBlindness/totalCol
 import {concentration} from '../../src/simulations/concentration/index.js'
 import {parkinsons} from '../../src/simulations/parkinsons/index.js'
 import * as data from '../../src/UI/data/data.json';
-
-function saveState(name, value) {
-  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    chrome.tabs.sendMessage(
-      tabs[0].id, { type: "setState", name: name, value: value }, 
-      function(response) { }
-    );
-  });
-}
-
-function getState(name, callback) {
-  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    chrome.tabs.sendMessage(tabs[0].id, {type: "getState"}, function(response) {
-      if(response && response.name) {
-        callback(response.name, response.value);
-      }
-    });
-  });
-}
 
 $(document).ready(() => {
 
@@ -85,7 +67,6 @@ $(document).ready(() => {
       path : "img/icon_active.png"
     });
 
-    //setState('activeSimulation', menuBtnId);
     chrome.storage.local.set({'activeSimulation': menuBtnId});
     chrome.storage.local.set({'linkUrl': moreInfoUrl});
 
@@ -156,6 +137,10 @@ $(document).ready(() => {
 
         if (obj.activeSimulation == "parkinsons") {
           parkinsons();
+        }
+
+        if (obj.activeSimulation == "dyslexia") {
+          dyslexia();
         }
 
       }); 
