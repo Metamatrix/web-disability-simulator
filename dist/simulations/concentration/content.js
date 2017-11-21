@@ -19,6 +19,12 @@
     return random(velocity - 2, velocity + 2);
   }
 
+  function size() {
+    const size = (width * 0.1); 
+    return size; 
+  }
+
+
   class Circle {
     constructor(x, y, velX, velY, size) {
       this.x = x;
@@ -29,6 +35,13 @@
 
       circleElement.style.left = 0;
       circleElement.style.top = 0;
+
+      circleElement.style.width = `${size}px`;
+      circleElement.style.height = `${size}px`;
+      
+      //fick ej denna att funka
+      //circleElement.style.transform = `scale(${size}, ${size})`;
+
     }
 
     move() {
@@ -62,7 +75,7 @@
       random(0,height),
       velocity,
       velocity,
-      100
+      size()
     );
 
   //animation loop
@@ -75,5 +88,3 @@
   }
   loop();
 }))()
-
-
