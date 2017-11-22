@@ -38,9 +38,6 @@
 
       circleElement.style.width = `${size}px`;
       circleElement.style.height = `${size}px`;
-      
-      //fick ej denna att funka
-      //circleElement.style.transform = `scale(${size}, ${size})`;
 
     }
 

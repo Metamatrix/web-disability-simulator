@@ -24,7 +24,6 @@
     return size; 
   }
 
-
   class Circle {
     constructor(x, y, velX, velY, size) {
       this.x = x;
@@ -38,9 +37,6 @@
 
       circleElement.style.width = `${size}px`;
       circleElement.style.height = `${size}px`;
-      
-      //fick ej denna att funka
-      //circleElement.style.transform = `scale(${size}, ${size})`;
 
     }
 
