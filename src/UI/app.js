@@ -79,12 +79,6 @@ $(document).ready(() => {
     moreInfoLink.empty(); 
     moreInfoPanel.hide();
 
-    tooltip.animate({
-      left: parseInt(tooltip.css('left'),10) == 0 ?
-        -tooltip.outerWidth() :
-        0
-    });
-
     infoHeading.append(menuBtn.text());
 
     menuBtn.closest(".dropdown").find(".selected").text(menuBtn.text());
@@ -102,9 +96,21 @@ $(document).ready(() => {
 
     moreInfoLink.attr("href",`${moreInfoUrl}`);
 
-    // loadingModal();
+    $('#panel1').removeClass("in");
+    $('#panel2').removeClass("hide").addClass("in");
 
-    runSimulation();
+    setTimeout(() => {
+      runSimulation();
+    }, 500);
+
+    setTimeout(() => {
+      $('#panel2').removeClass("in");
+      tooltip.addClass("in");
+    }, 1000);
+
+    setTimeout(() => {
+      $('#panel2').addClass("hide");
+    }, 1500);
     
   });
 
@@ -158,11 +164,8 @@ $(document).ready(() => {
       path : "img/icon.png"
     });
 
-    tooltip.animate({
-      left: parseInt(tooltip.css('marginLeft'),10) == 0 ?
-        tooltip.outerWidth() :
-        0
-    }); 
+    tooltip.removeClass("in");
+    $("#panel1").addClass("in");
     
     $("#Syn").text("Syn");
     $("#Motorik").text("Motorik"); 

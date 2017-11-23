@@ -1,5 +1,11 @@
 /* General */
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
 body {
 	min-width: 450px;  
 	color: #333; 
@@ -76,14 +82,29 @@ h2 {
 
 /* tool-tip with info */
 
+.tool-tip,
+#panel1,
+#panel2 { 
+  background-color: #fff; 
+  width: 100vw; 
+  height: 100vh; 
+  position: absolute; 
+  left: 0; 
+  top: 0; 
+}
+
 .tool-tip {
 	padding: 0 20px; 
-	background-color: #fff; 
 	width: 100%; 
 	height: 100%; 
 	position: absolute; 
 	left: 100%; 
 	top: 0;  
+  transition: transform .3s ease-in-out;
+}
+
+.tool-tip.in {
+  transform: translateX(-100%);
 }
 
 .tool-tip-content {
@@ -152,4 +173,26 @@ h2 {
 .github-link {
 	padding: 50px 10px 10px 10px; 
 	font-size: 12px; 
+}
+
+.wds-loading-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  transform: translate(-25%, -25%);
+}
+
+.wds-loading-icon svg {
+  animation: spin 1.25s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }
