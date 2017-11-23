@@ -104,13 +104,13 @@ $(document).ready(() => {
 
     // loadingModal();
 
-    runtSimulation();
+    runSimulation();
     
   });
 
   //when loading modal is closed, show chosen simulation
 
-  function runtSimulation() {
+  function runSimulation() {
 
     chrome.storage.local.get('activeSimulation', obj => {
 
