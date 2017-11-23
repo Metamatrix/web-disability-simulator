@@ -6,3 +6,9 @@ export function appendHTML(el, html) {
     el.appendChild(tmpEl.firstChild);
   }
 }
+
+export function setStyle(element, style) {
+  for (var s in style) {
+    element.style[s] = style[s];
+  }
+}

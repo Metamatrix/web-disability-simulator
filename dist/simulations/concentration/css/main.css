@@ -2,7 +2,5 @@
   position: fixed !important; 
   background-color: red; 
   z-index: 9999999 !important;
-  border-radius: 50%;
-	width: 100px;
-	height: 100px; 
+  border-radius: 50%; 
 }

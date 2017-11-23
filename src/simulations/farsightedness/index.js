@@ -1,7 +1,5 @@
-//content scripts
-  
- export function farsightedness(e) { 
-    chrome.tabs.insertCSS({
-      file : "simulations/farsightedness/css/main.css"
-    });
-  }
+export function farsightedness(e) { 
+  chrome.tabs.insertCSS({
+    file : "simulations/farsightedness/css/main.css"
+  });
+}
