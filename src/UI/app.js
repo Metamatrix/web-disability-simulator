@@ -1,14 +1,14 @@
-import {dyslexia} from '../../src/simulations/dyslexia/index.js'
-import {reset} from '../../src/simulations/general/reset/index.js'
-import {loadingModal} from '../../src/simulations/general/loading/index.js'
-import {farsightedness} from '../../src/simulations/farsightedness/index.js'
-import {tunnelVision} from '../../src/simulations/tunnelVision/index.js'
-import {redGreenColorBlindness} from '../../src/simulations/colorBlindness/redGreenColorBlindness/index.js'
-import {yellowBlueColorBlindness} from '../../src/simulations/colorBlindness/yellowBlueColorBlindness/index.js'
-import {totalColorBlindness} from '../../src/simulations/colorBlindness/totalColorBlindness/index.js'
-import {concentration} from '../../src/simulations/concentration/index.js'
-import {parkinsons} from '../../src/simulations/parkinsons/index.js'
-import * as data from '../../src/UI/data/data.json';
+import {dyslexia} from '../simulations/dyslexia/index.js'
+import {reset} from '../simulations/general/reset/index.js'
+// import {loadingModal} from '../simulations/general/loading/index.js'
+import {farsightedness} from '../simulations/farsightedness/index.js'
+import {tunnelVision} from '../simulations/tunnelVision/index.js'
+import {redGreenColorBlindness} from '../simulations/colorBlindness/redGreenColorBlindness/index.js'
+import {yellowBlueColorBlindness} from '../simulations/colorBlindness/yellowBlueColorBlindness/index.js'
+import {totalColorBlindness} from '../simulations/colorBlindness/totalColorBlindness/index.js'
+import {concentration} from '../simulations/concentration/index.js'
+import {parkinsons} from '../simulations/parkinsons/index.js'
+import * as data from './data/data.json';
 
 $(document).ready(() => {
 
@@ -27,6 +27,8 @@ $(document).ready(() => {
   const adviceDropdownText = data.UI[0].adviceDropdownText; 
   const infoDropdown = $("#info-dropdown");
   const infoDropdownText = data.UI[0].infoDropdownText; 
+
+  let activeSimulation;
 
   //Append UI texts
 
@@ -57,7 +59,7 @@ $(document).ready(() => {
     const fact = data.facts.find(findProperty).fact; 
     const listItems = data.facts.find(findProperty).listItems; 
     const moreInfo = data.facts.find(findProperty).moreInfoLinkText; 
-    const moreInfoUrl = data.facts.find(findProperty).moreInfoUrl; 
+    const moreInfoUrl = data.facts.find(findProperty).moreInfoUrl;
 
     function findProperty(simulations) { 
       return simulations.name === id;
@@ -67,6 +69,7 @@ $(document).ready(() => {
       path : "img/icon_active.png"
     });
 
+    activeSimulation = menuBtnId;
     chrome.storage.local.set({'activeSimulation': menuBtnId});
     chrome.storage.local.set({'linkUrl': moreInfoUrl});
 
@@ -99,55 +102,53 @@ $(document).ready(() => {
 
     moreInfoLink.attr("href",`${moreInfoUrl}`);
 
-    loadingModal();
+    // loadingModal();
+
+    runtSimulation();
     
   });
 
   //when loading modal is closed, show chosen simulation
 
-  chrome.runtime.onMessage.addListener(request => {
+  function runtSimulation() {
 
-    if (request.type == "modalClosed"){
-
-      chrome.storage.local.get('activeSimulation', obj => {
+    chrome.storage.local.get('activeSimulation', obj => {
 
       if(obj.activeSimulation == "farsightedness") {
-            farsightedness();
-        }
+        farsightedness();
+      }
 
-        if (obj.activeSimulation == "tunnelVision") {
-          tunnelVision();
-        } 
+      if (obj.activeSimulation == "tunnelVision") {
+        tunnelVision();
+      } 
 
-        if (obj.activeSimulation == "redGreenColorBlindness") {
-          redGreenColorBlindness();
-        }
+      if (obj.activeSimulation == "redGreenColorBlindness") {
+        redGreenColorBlindness();
+      }
 
-        if (obj.activeSimulation == "yellowBlueColorBlindness") {
-          yellowBlueColorBlindness();
-        }
+      if (obj.activeSimulation == "yellowBlueColorBlindness") {
+        yellowBlueColorBlindness();
+      }
 
-        if (obj.activeSimulation == "totalColorBlindness") {
-          totalColorBlindness();
-        }
+      if (obj.activeSimulation == "totalColorBlindness") {
+        totalColorBlindness();
+      }
 
-        if (obj.activeSimulation == "concentration") {
-          concentration();
-        }
+      if (obj.activeSimulation == "concentration") {
+        concentration();
+      }
 
-        if (obj.activeSimulation == "parkinsons") {
-          parkinsons();
-        }
+      if (obj.activeSimulation == "parkinsons") {
+        parkinsons();
+      }
 
-        if (obj.activeSimulation == "dyslexia") {
-          dyslexia();
-        }
+      if (obj.activeSimulation == "dyslexia") {
+        startSimulation('dyslexia');
+      }
 
-      }); 
+    }); 
 
-    }
-
-  });
+  }
 
   //reset extension
   
@@ -165,10 +166,30 @@ $(document).ready(() => {
     
     $("#Syn").text("Syn");
     $("#Motorik").text("Motorik"); 
+   
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        chrome.tabs.sendMessage(
+          tabs[0].id, 
+          { action: 'stopSimulation', simulation: activeSimulation }, 
+          function() { 
+            activeSimulation = null;
+            chrome.storage.local.remove('activeSimulation');
+          });
+    });
 
-    reset();
-    chrome.storage.local.remove('activeSimulation');
-    
+    // reset();
+
+
+  }
+
+  function startSimulation(simulation) {
+    console.log('startSimulation');
+    dyslexia();
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, 
+          { action: 'startSimulation', simulation: simulation }, 
+          function() { });
+    });
   }
 
   //btn and links

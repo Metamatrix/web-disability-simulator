@@ -6,6 +6,6 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
   });
 
   // Clear state on reload or navigation
-  chrome.storage.sync.remove('activeSimulation');
+  chrome.storage.local.remove('activeSimulation');
 
 });
