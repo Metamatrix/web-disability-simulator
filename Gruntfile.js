@@ -64,10 +64,7 @@ module.exports = function(grunt) {
           {expand: true, cwd: 'src/', src: ['simulations/**/*.css'], dest: 'dist/', filter: 'isFile'},
           {expand: true, cwd: 'src/', src: ['simulations/**/*.svg'], dest: 'dist/', filter: 'isFile'},
           {expand: true, cwd: 'src/UI/', src: ['app.html'], dest: 'dist/UI', filter: 'isFile'},
-          // {expand: true, cwd: 'src/', src: ['background.js'], dest: 'dist/', filter: 'isFile' },
-          // {expand: true, cwd: 'src/', src: ['session.js'], dest: 'dist/', filter: 'isFile' },
-          {expand: true, src: ['manifest.json'], dest: 'dist/', filter: 'isFile'}
-          
+          {expand: true, cwd: 'src/', src: ['manifest.json'], dest: 'dist/', filter: 'isFile'}
         ]
       }
     }

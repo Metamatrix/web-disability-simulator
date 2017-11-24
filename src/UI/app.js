@@ -1,13 +1,12 @@
-import {dyslexia} from '../simulations/dyslexia/index.js'
-import {reset} from '../simulations/general/reset/index.js'
-// import {loadingModal} from '../simulations/general/loading/index.js'
-import {farsightedness} from '../simulations/farsightedness/index.js'
-import {tunnelVision} from '../simulations/tunnelVision/index.js'
-import {redGreenColorBlindness} from '../simulations/colorBlindness/redGreenColorBlindness/index.js'
-import {yellowBlueColorBlindness} from '../simulations/colorBlindness/yellowBlueColorBlindness/index.js'
-import {totalColorBlindness} from '../simulations/colorBlindness/totalColorBlindness/index.js'
-import {concentration} from '../simulations/concentration/index.js'
-import {parkinsons} from '../simulations/parkinsons/index.js'
+import * as dyslexia from '../simulations/dyslexia/index.js'
+// import {reset} from '../simulations/general/reset/index.js'
+import * as farsightedness from '../simulations/farsightedness/index.js'
+import * as tunnelVision from '../simulations/tunnelVision/index.js'
+import * as redGreenColorBlindness from '../simulations/colorBlindness/redGreenColorBlindness/index.js'
+import * as yellowBlueColorBlindness from '../simulations/colorBlindness/yellowBlueColorBlindness/index.js'
+import * as totalColorBlindness from '../simulations/colorBlindness/totalColorBlindness/index.js'
+import * as concentration from '../simulations/concentration/index.js'
+import * as parkinsons from '../simulations/parkinsons/index.js'
 import * as data from './data/data.json';
 
 $(document).ready(() => {
@@ -48,6 +47,49 @@ $(document).ready(() => {
     });
 
   });
+
+  // Set active state
+  chrome.storage.local.get('activeSimulation', obj => {
+
+    const activeSimulation = obj.activeSimulation;
+    
+    function findProperty(simulations) { 
+      return simulations.name === activeSimulation;
+    }
+
+    console.log('activeSimulation', activeSimulation)
+
+    if (activeSimulation != null) {
+
+      tooltip.addClass("in");
+
+      infoHeading.append( $(`#${activeSimulation}`).text() );
+
+      $(`#${activeSimulation}`).closest(".dropdown").find(".selected").text($(`#${activeSimulation}`).text());
+
+      const id = $(`#${activeSimulation}`).attr("id");
+
+      const fact = data.facts.find(findProperty).fact; 
+      const listItems = data.facts.find(findProperty).listItems; 
+      const moreInfo = data.facts.find(findProperty).moreInfoLinkText;
+      const moreInfoUrl = data.facts.find(findProperty).moreInfoUrl;
+
+      infoParagraph.append(fact);
+            
+      $.each(listItems, (i, value) => {
+        adviceList.append(`<li>${value}</li>`);
+      });
+
+      if(moreInfo) {
+        moreInfoPanel.show();
+        moreInfoLink.append(moreInfo);
+      }
+
+      moreInfoLink.attr("href",`${moreInfoUrl}`);
+
+   }
+
+  }); 
 
   //menu button click
 
@@ -97,10 +139,14 @@ $(document).ready(() => {
     moreInfoLink.attr("href",`${moreInfoUrl}`);
 
     $('#panel1').removeClass("in");
-    $('#panel2').removeClass("hide").addClass("in");
+    $('#panel2').removeClass("hide");
 
     setTimeout(() => {
-      runSimulation();
+      $('#panel2').addClass("in");
+    }, 100);
+
+    setTimeout(() => {
+      startSimulation();
     }, 500);
 
     setTimeout(() => {
@@ -116,40 +162,43 @@ $(document).ready(() => {
 
   //when loading modal is closed, show chosen simulation
 
-  function runSimulation() {
+  function startSimulation() {
 
+    // TODO: Clean up
     chrome.storage.local.get('activeSimulation', obj => {
 
+      console.log('startSimulation', obj);
+
       if(obj.activeSimulation == "farsightedness") {
-        farsightedness();
+        farsightedness.start();
       }
 
       if (obj.activeSimulation == "tunnelVision") {
-        tunnelVision();
+        tunnelVision.start();
       } 
 
       if (obj.activeSimulation == "redGreenColorBlindness") {
-        redGreenColorBlindness();
+        redGreenColorBlindness.start();
       }
 
       if (obj.activeSimulation == "yellowBlueColorBlindness") {
-        yellowBlueColorBlindness();
+        yellowBlueColorBlindness.start();
       }
 
       if (obj.activeSimulation == "totalColorBlindness") {
-        totalColorBlindness();
+        totalColorBlindness.start();
       }
 
       if (obj.activeSimulation == "concentration") {
-        concentration();
+        concentration.start();
       }
 
       if (obj.activeSimulation == "parkinsons") {
-        parkinsons();
+        parkinsons.start();
       }
 
       if (obj.activeSimulation == "dyslexia") {
-        startSimulation('dyslexia');
+        dyslexia.start();
       }
 
     }); 
@@ -166,33 +215,48 @@ $(document).ready(() => {
 
     tooltip.removeClass("in");
     $("#panel1").addClass("in");
-    
+
+    // TODO: Change this    
     $("#Syn").text("Syn");
     $("#Motorik").text("Motorik"); 
    
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        chrome.tabs.sendMessage(
-          tabs[0].id, 
-          { action: 'stopSimulation', simulation: activeSimulation }, 
-          function() { 
-            activeSimulation = null;
-            chrome.storage.local.remove('activeSimulation');
-          });
-    });
+    // TODO: Clean up
+    chrome.storage.local.get('activeSimulation', obj => {
 
-    // reset();
+      if(obj.activeSimulation == "farsightedness") {
+        farsightedness.stop();
+      }
 
+      if (obj.activeSimulation == "tunnelVision") {
+        tunnelVision.stop();
+      } 
 
-  }
+      if (obj.activeSimulation == "redGreenColorBlindness") {
+        redGreenColorBlindness.stop();
+      }
 
-  function startSimulation(simulation) {
-    console.log('startSimulation');
-    dyslexia();
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, 
-          { action: 'startSimulation', simulation: simulation }, 
-          function() { });
-    });
+      if (obj.activeSimulation == "yellowBlueColorBlindness") {
+        yellowBlueColorBlindness.stop();
+      }
+
+      if (obj.activeSimulation == "totalColorBlindness") {
+        totalColorBlindness.stop();
+      }
+
+      if (obj.activeSimulation == "concentration") {
+        concentration.stop();
+      }
+
+      if (obj.activeSimulation == "parkinsons") {
+        parkinsons.stop();
+      }
+
+      if (obj.activeSimulation == "dyslexia") {
+        dyslexia.stop();
+      }
+
+    }); 
+
   }
 
   //btn and links
@@ -218,51 +282,5 @@ $(document).ready(() => {
     }).on('hidden.bs.collapse', function(){
       $(this).parent().find(".down-arrow, .up-arrow").toggle();
   });
-
-  //keep chosen simulation fact tooltip when extension is closed and opened again. 
-
-  window.onload = () => {
-
-      chrome.storage.local.get('activeSimulation', obj => {
-    
-      const activeSimulation = obj.activeSimulation;
-      
-      function findProperty(simulations) { 
-        return simulations.name === activeSimulation;
-      }
-
-      if (activeSimulation != null) {
-
-        tooltip.css("left", "0");
-
-        infoHeading.append( $(`#${activeSimulation}`).text() );
-
-        $(`#${activeSimulation}`).closest(".dropdown").find(".selected").text($(`#${activeSimulation}`).text());
-
-        const id = $(`#${activeSimulation}`).attr("id");
-
-        const fact = data.facts.find(findProperty).fact; 
-        const listItems = data.facts.find(findProperty).listItems; 
-        const moreInfo = data.facts.find(findProperty).moreInfoLinkText;
-        const moreInfoUrl = data.facts.find(findProperty).moreInfoUrl;
-
-        infoParagraph.append(fact);
-              
-        $.each(listItems, (i, value) => {
-          adviceList.append(`<li>${value}</li>`);
-        });
-
-        if(moreInfo) {
-          moreInfoPanel.show();
-          moreInfoLink.append(moreInfo);
-        }
-
-        moreInfoLink.attr("href",`${moreInfoUrl}`);
-
-     }
-
-    }); 
-  
-  };
   
 });

@@ -1,11 +1,37 @@
-export function parkinsons() {
+const name = 'parkinsons';
 
-  chrome.tabs.executeScript({
-    file: 'simulations/parkinsons/content.js'
-  });
+function load(callback) {
+  chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+    const activeTab = tabs[0];
 
-  chrome.tabs.insertCSS({
-    file : "simulations/parkinsons/css/main.css"
-  });
-  
+    chrome.tabs.executeScript(activeTab.id, 
+      { file: 'simulations/parkinsons/content.js' },
+      () => {
+        if(callback) {
+          callback(name);
+        }
+      });
+  });  
 }
+
+function start() {
+  load(() => {
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+      const activeTab = tabs[0];
+
+      chrome.tabs.sendMessage(activeTab.id, 
+        { action: 'startSimulation', simulation: name });
+    });    
+  });
+}
+
+function stop() {
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    const activeTab = tabs[0];
+
+    chrome.tabs.sendMessage(activeTab.id, 
+      { action: 'stopSimulation', simulation: name });
+  });
+}
+
+export { start, stop };

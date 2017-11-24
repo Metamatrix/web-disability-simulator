@@ -13,10 +13,16 @@
     "scripts" : ["background.js"]
   },
   "web_accessible_resources": [
-    "simulations/colorBlindness/img/filters.svg", 
-    "simulations/general/loading/loadingModal.html", 
+    "simulations/colorBlindness/img/filters.svg",
+    "simulations/colorBlindness/totalColorBlindness/css/main.css",
+    "simulations/colorBlindness/redGreenColorBlindness/css/main.css",
+    "simulations/colorBlindness/yellowBlueColorBlindness/css/main.css",
+    "simulations/concentration/css/main.css",
+    "simulations/farsightedness/css/main.css",
+    "simulations/parkinsons/css/main.css",
     "simulations/parkinsons/img/cursor_windows.svg",
-    "simulations/parkinsons/img/cursor_mac.svg"
+    "simulations/parkinsons/img/cursor_mac.svg",
+    "simulations/tunnelVision/css/main.css"
   ],
   "permissions": [
     "tabs", "http://*/*", "https://*/*", "storage", "activeTab"

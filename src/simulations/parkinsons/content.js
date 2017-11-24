@@ -1,70 +1,88 @@
 import {random, pointInRect, inRange} from '../../utils/math.js';
-import {setStyle} from '../../utils/dom.js';
+import {addCss, removeElement, setStyle} from '../../utils/dom.js';
 
-((() => {
+const name = 'parkinsons';
+const cssUrl = chrome.extension.getURL('/simulations/parkinsons/css/main.css');
+const shakeSpeed = 60;
+const shakePositionInterval = 1500;
+const appVersion = navigator.appVersion; 
 
-  const shakeSpeed = 60;
-  const shakePositionInterval = 1500;
+let cursorImgUrl = '',
+  cursor = null,
+  posInterval = null,
+  cursorPosX = 0,
+  cursorPosY = 0,
+  offsetX = 0,
+  offsetY = 0,
+  css = null;
 
-  let cursor = document.createElement('div');
-  let offsetX = 0;
-  let offsetY = 0;
-  let mousePosX = 0;
-  let mousePosY = 0;
+function mousemoveHandler(e) {
+  cursorPosX = (e.pageX + offsetX);
+  cursorPosY = (e.pageY + offsetY); 
+  setStyle(cursor, {left: cursorPosX + 'px', top: cursorPosY + 'px', transition: 'left 0.05s, top 0.05s'});
+}
 
+function elementClickHandler(e) {
+  // TODO: Make this work
+  const currentElement = e.target,
+    elementRect = currentElement.getBoundingClientRect(),
+    clickHit = pointInRect(cursorPosX, cursorPosY, elementRect);
+
+  if(!clickHit) {
+    e.preventDefault(); 
+  }
+}
+
+function setOffset() { 
+  offsetX = random(-shakeSpeed, shakeSpeed);
+  offsetY = random(-shakeSpeed, shakeSpeed); 
+}
+
+function start() {
+
+  let cursorImg = appVersion.includes('Mac') ? 'cursor_mac.svg' : 'cursor_windows.svg';
+  const cursorImgUrl = chrome.extension.getURL('/simulations/parkinsons/img/' + cursorImg);
+
+  css = addCss(cssUrl);
+  
+  cursor = document.createElement('div');
+
+  cursor.style.background = `url(${cursorImgUrl})`
   cursor.setAttribute('id', 'wds-parkinsonsCursor');
 
   document.body.appendChild(cursor);
-
-  const appVersion = navigator.appVersion; 
-  let cursorImgUrl = ''; 
-
-  if(appVersion.includes('Mac')){
-    cursorImgUrl = chrome.extension.getURL('/simulations/parkinsons/img/cursor_mac.svg');
-  }
-  else {
-    cursorImgUrl = chrome.extension.getURL('/simulations/parkinsons/img/cursor_windows.svg');
-  }
-
-  cursor.style.background = `url(${cursorImgUrl})`
-
-  document.addEventListener('mousemove', (e) => {
-
-    mousePosX = (e.pageX + offsetX);
-    mousePosY = (e.pageY + offsetY); 
- 
-    console.log({left: mousePosX + 'px', top: mousePosY + 'px', transition: 'left 0.05s, top 0.05s'})
-
-    setStyle(cursor, {left: mousePosX + 'px', top: mousePosY + 'px', transition: 'left 0.05s, top 0.05s'});
-    
-  });
-
-  setInterval(() => { 
-    offsetX = random(-shakeSpeed, shakeSpeed);
-    offsetY = random(-shakeSpeed, shakeSpeed); 
-  }, shakePositionInterval);
+  
+  document.addEventListener('mousemove', mousemoveHandler);
 
   document.querySelectorAll('*', (el) => {
-
-    el.addEventListener('click', function(e) {
-
-      const currentElement = e.target,
-        elementRect = e.target.getBoundingClientRect();
-        cursorRect = cursor.getBoundingClientRect(),
-        offset  = cursorRect.top - elementRect.top,
-        clickHit = pointInRect(mousePosX, mousePosY, elementRect);
-
-      if(!clickHit) {
-        e.preventDefault(); 
-      }
-
-    });
-
+    el.addEventListener('click', elementClickHandler);
   });
 
-}))()
+  posInterval = setInterval(setOffset, shakePositionInterval);
 
+}
 
+function stop() {
 
+  removeElement(cursor);
 
+  if(css) {
+    removeElement(css);
+  }
 
+  if(posInterval) {
+    clearInterval(posInterval);
+  }
+
+  // TODO: remove listeners
+
+}
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action === 'startSimulation' && request.simulation === name) {
+    start();
+  }
+  else if (request.action === 'stopSimulation' && request.simulation === name) {
+    stop();
+  }
+});

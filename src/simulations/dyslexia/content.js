@@ -1,20 +1,9 @@
 import * as math from '../../utils/math.js';
+import {getTextNodes} from '../../utils/dom.js';
+import {isLetter} from '../../utils/string.js';
 
 let textNodes = [],
   intervals = [];
-
-function getTextNodes(node){
-  let all = [];
-  for (node=node.firstChild;node;node=node.nextSibling){
-    if (node.nodeType==3) all.push(node);
-    else all = all.concat(getTextNodes(node));
-  }
-  return all;
-}
-
-function isLetter(c) {
-  return c.toLowerCase() !== c.toUpperCase();
-}
 
 function getRandomLetterIndex(txt) {
   let l = '';
@@ -28,7 +17,7 @@ function getRandomLetterIndex(txt) {
   return i;
 }
 
-function shuffleString(txt) {
+export function shuffle(txt) {
   const a = txt.split('');
   const n = a.length;
 
@@ -63,13 +52,13 @@ function start() {
         }
 
         if(word.length <= 3) {
-          return shuffleString(word);
+          return shuffle(word);
         }
 
         const lettersToKeep = Math.max(Math.round(word.length / 5), 1);
 
         return word.substring(0, 2) +
-          shuffleString(word.substring(2, word.length - 2)) +
+          shuffle(word.substring(2, word.length - 2)) +
           word.substring(word.length - 2)
       }).join(' ');
 
