@@ -1,6 +1,6 @@
 {
   "name": "Web-disability-simulator",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Web disability simulator",
   "main": "index.js",
   "scripts": {

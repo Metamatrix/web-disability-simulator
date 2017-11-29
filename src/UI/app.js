@@ -1,12 +1,3 @@
-// import * as dyslexia from '../simulations/dyslexia/index.js'
-// // import {reset} from '../simulations/general/reset/index.js'
-// import * as farsightedness from '../simulations/farsightedness/index.js'
-// import * as tunnelVision from '../simulations/tunnelVision/index.js'
-// import * as redGreenColorBlindness from '../simulations/colorBlindness/redGreenColorBlindness/index.js'
-// import * as yellowBlueColorBlindness from '../simulations/colorBlindness/yellowBlueColorBlindness/index.js'
-// import * as totalColorBlindness from '../simulations/colorBlindness/totalColorBlindness/index.js'
-// import * as concentration from '../simulations/concentration/index.js'
-// import * as parkinsons from '../simulations/parkinsons/index.js'
 import * as data from './data/data.json';
 import * as simulationLoader from '../utils/simulationLoader.js';
 
