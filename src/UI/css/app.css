@@ -152,8 +152,8 @@ h2 {
 		cursor: pointer; 
 }
 
-.panel-title a:hover {
-	text-decoration: none; 
+.panel-title a {
+	display: block;
 }
 
 .panel-body {

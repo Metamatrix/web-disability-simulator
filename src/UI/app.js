@@ -1,34 +1,45 @@
 import * as data from './data/data.json';
 import * as simulationLoader from '../utils/simulationLoader.js';
 
-$(document).ready(() => {
+function startSimulation() {
 
-  const tooltip = $( ".tool-tip" );
-  const infoHeading = $(".disability-info-heading"); 
-  const infoParagraph = $( ".disability-info-paragraph" ); 
-  const adviceList = $( ".advice-list" ); 
-  const moreInfoLink = $( ".more-info-link" ); 
-  const moreInfoPanel = $( "#more-info-panel" ); 
-  const resetBtn = $("#reset-btn"); 
-  const navbarHeader = $(".navbar-header");
-  const resetBtnText = data.UI[0].resetBtnText; 
-  const navbarHeaderText = data.UI[0].navbarHeaderText; 
-  const simulationHeadingText = data.UI[0].simulations[0].heading; 
-  const adviceDropdown = $("#advice-dropdown");
-  const adviceDropdownText = data.UI[0].adviceDropdownText; 
-  const infoDropdown = $("#info-dropdown");
-  const infoDropdownText = data.UI[0].infoDropdownText; 
+  chrome.storage.local.get('activeSimulation', obj => {
+    simulationLoader.start(obj.activeSimulation);
+  }); 
 
-  let activeSimulation;
+}
 
-  //Append UI texts
+function resetSimulation(tooltip){
+  
+  chrome.browserAction.setIcon({
+    path : "img/icon.png"
+  });
 
-  navbarHeader.text(navbarHeaderText); 
-  resetBtn.text(resetBtnText); 
-  infoDropdown.text(infoDropdownText);
-  adviceDropdown.text(adviceDropdownText);
+  tooltip.removeClass("in");
+  $("#panel1").addClass("in");
 
-  $.each(data.UI[0].simulations, (i, value) => {
+  // TODO: Change this    
+  // $("#Syn").text("Syn");
+  // $("#Motorik").text("Motorik"); 
+ 
+  chrome.storage.local.get('activeSimulation', obj => {
+    simulationLoader.stop(obj.activeSimulation);
+  }); 
+
+}
+
+function setTexts() { 
+  $(".more-info-link").text(data.UI.moreInfo);
+  $("#reset-btn").text(data.UI.reset);
+  $(".navbar-header").text(data.UI.selectSimulation);
+  $("#advice-dropdown").text(data.UI.advice);
+  $("#info-dropdown").text(data.UI.moreInfo);
+  $("#sight").text(data.UI.sight);
+  $("#mobility").text(data.UI.mobility);
+  $("#readWrite").text(data.UI.readAndWrite);
+  $("#concentration").text(data.UI.concentration);
+
+  $.each(data.UI.simulations, (i, value) => {
 
     $(`#${value.heading}`).text(value.heading); 
     
@@ -39,65 +50,54 @@ $(document).ready(() => {
     });
 
   });
+}
+
+function setTooltipTexts(activeSimulation) {
+  const infoHeading = $(".disability-info-heading");
+  const infoParagraph = $(".disability-info-paragraph"); 
+  const adviceList = $(".advice-list");
+  const moreInfoList = $(".more-info-list");
+  const moreInfoPanel = $(".more-info-panel");
+  const texts = data.facts[activeSimulation];
+
+  infoHeading.empty();
+  infoParagraph.empty();
+  adviceList.empty();
+
+  infoHeading.text(texts.heading);
+  infoParagraph.text(texts.fact);
+
+  $.each(texts.listItems, (i, value) => {
+    adviceList.append(`<li>${value}</li>`);
+  });
+
+  // TODO: More info links
+}
+
+$(document).ready(() => {
+
+  const tooltip = $(".tool-tip");
+
+  let activeSimulation;
+
+  setTexts();
 
   // Set active state
   chrome.storage.local.get('activeSimulation', obj => {
 
-    const activeSimulation = obj.activeSimulation;
-    
-    function findProperty(simulations) { 
-      return simulations.name === activeSimulation;
-    }
-
-    console.log('activeSimulation', activeSimulation)
+    activeSimulation = obj.activeSimulation;
 
     if (activeSimulation != null) {
-
       tooltip.addClass("in");
-
-      infoHeading.append( $(`#${activeSimulation}`).text() );
-
-      $(`#${activeSimulation}`).closest(".dropdown").find(".selected").text($(`#${activeSimulation}`).text());
-
-      const id = $(`#${activeSimulation}`).attr("id");
-
-      const fact = data.facts.find(findProperty).fact; 
-      const listItems = data.facts.find(findProperty).listItems; 
-      const moreInfo = data.facts.find(findProperty).moreInfoLinkText;
-      const moreInfoUrl = data.facts.find(findProperty).moreInfoUrl;
-
-      infoParagraph.append(fact);
-            
-      $.each(listItems, (i, value) => {
-        adviceList.append(`<li>${value}</li>`);
-      });
-
-      if(moreInfo) {
-        moreInfoPanel.show();
-        moreInfoLink.append(moreInfo);
-      }
-
-      moreInfoLink.attr("href",`${moreInfoUrl}`);
-
-   }
+      setTooltipTexts(activeSimulation);
+    }
 
   }); 
-
-  //menu button click
 
   $(".menu-btn").click(function(){
 
     const menuBtn = $(this); 
     const menuBtnId = menuBtn[0].id;
-    const id = menuBtn.attr("id");
-    const fact = data.facts.find(findProperty).fact; 
-    const listItems = data.facts.find(findProperty).listItems; 
-    const moreInfo = data.facts.find(findProperty).moreInfoLinkText; 
-    const moreInfoUrl = data.facts.find(findProperty).moreInfoUrl;
-
-    function findProperty(simulations) { 
-      return simulations.name === id;
-    }
 
     chrome.browserAction.setIcon({
       path : "img/icon_active.png"
@@ -105,30 +105,8 @@ $(document).ready(() => {
 
     activeSimulation = menuBtnId;
     chrome.storage.local.set({'activeSimulation': menuBtnId});
-    chrome.storage.local.set({'linkUrl': moreInfoUrl});
 
-    infoHeading.empty();
-    infoParagraph.empty();
-    adviceList.empty();
-    moreInfoLink.empty(); 
-    moreInfoPanel.hide();
-
-    infoHeading.append(menuBtn.text());
-
-    menuBtn.closest(".dropdown").find(".selected").text(menuBtn.text());
-
-    infoParagraph.append(fact);
-      
-    $.each(listItems, (i, value) => {
-      adviceList.append(`<li>${value}</li>`);
-    });
-
-    if(moreInfo) {
-      moreInfoPanel.show();
-      moreInfoLink.append(moreInfo);
-    }
-
-    moreInfoLink.attr("href",`${moreInfoUrl}`);
+    setTooltipTexts(activeSimulation);
 
     $('#panel1').removeClass("in");
     $('#panel2').removeClass("hide");
@@ -152,41 +130,9 @@ $(document).ready(() => {
     
   });
 
-  //when loading modal is closed, show chosen simulation
-
-  function startSimulation() {
-
-    chrome.storage.local.get('activeSimulation', obj => {
-      simulationLoader.start(obj.activeSimulation);
-    }); 
-
-  }
-
-  //reset extension
-  
-  function resetSimulation(){
-    
-    chrome.browserAction.setIcon({
-      path : "img/icon.png"
-    });
-
-    tooltip.removeClass("in");
-    $("#panel1").addClass("in");
-
-    // TODO: Change this    
-    $("#Syn").text("Syn");
-    $("#Motorik").text("Motorik"); 
-   
-    chrome.storage.local.get('activeSimulation', obj => {
-      simulationLoader.stop(obj.activeSimulation);
-    }); 
-
-  }
-
   //btn and links
-
   $("#reset-btn").click(() => {
-    resetSimulation(); 
+    resetSimulation(tooltip); 
   });
 
   $(".github-link").click(() => {
@@ -200,7 +146,6 @@ $(document).ready(() => {
   }); 
 
   //panel collapse, show arrows: 
-
   $('.collapse').on('shown.bs.collapse', function(){
       $(this).parent().find(".down-arrow, .up-arrow").toggle();
     }).on('hidden.bs.collapse', function(){
