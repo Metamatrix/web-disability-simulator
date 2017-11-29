@@ -13,10 +13,12 @@
     "scripts" : ["background.js"]
   },
   "web_accessible_resources": [
-    "simulations/colorBlindness/img/filters.svg",
-    "simulations/colorBlindness/totalColorBlindness/css/main.css",
-    "simulations/colorBlindness/redGreenColorBlindness/css/main.css",
-    "simulations/colorBlindness/yellowBlueColorBlindness/css/main.css",
+    "simulations/totalColorBlindness/img/filters.svg",
+    "simulations/totalColorBlindness/css/main.css",
+    "simulations/redGreenColorBlindness/img/filters.svg",
+    "simulations/redGreenColorBlindness/css/main.css",
+    "simulations/yellowBlueColorBlindness/img/filters.svg",
+    "simulations/yellowBlueColorBlindness/css/main.css",
     "simulations/concentration/css/main.css",
     "simulations/farsightedness/css/main.css",
     "simulations/parkinsons/css/main.css",

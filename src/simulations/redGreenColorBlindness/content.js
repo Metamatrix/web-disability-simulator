@@ -1,15 +1,13 @@
 import {appendHTML, addCss, removeElement} from '../../utils/dom.js';
 
-const name = 'totalColorBlindness';
-const url = chrome.extension.getURL('/simulations/colorBlindness/img/filters.svg');
+const name = 'redGreenColorBlindness';
+const url = chrome.extension.getURL(`/simulations/${name}/img/filters.svg`);
 
 let css = null;
 
-function start(simulation) {
+function start() {
 
-  const cssUrl = chrome.extension.getURL(`/simulations/colorBlindness/${simulation}/css/main.css`);
-
-  console.log(cssUrl);
+  const cssUrl = chrome.extension.getURL(`/simulations/${name}/css/main.css`);
 
   css = addCss(cssUrl);
 
@@ -34,10 +32,10 @@ function stop() {
 }
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.action === 'startSimulation' && request.simulationType === 'colorBlindness') {
+  if (request.action === 'startSimulation' && request.simulation === name) {
     start(request.simulation);
   }
-  else if (request.action === 'stopSimulation' && request.simulationType === 'colorBlindness') {
+  else if (request.action === 'stopSimulation' && request.simulation === name) {
     stop();
   }
 });

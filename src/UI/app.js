@@ -1,13 +1,14 @@
-import * as dyslexia from '../simulations/dyslexia/index.js'
-// import {reset} from '../simulations/general/reset/index.js'
-import * as farsightedness from '../simulations/farsightedness/index.js'
-import * as tunnelVision from '../simulations/tunnelVision/index.js'
-import * as redGreenColorBlindness from '../simulations/colorBlindness/redGreenColorBlindness/index.js'
-import * as yellowBlueColorBlindness from '../simulations/colorBlindness/yellowBlueColorBlindness/index.js'
-import * as totalColorBlindness from '../simulations/colorBlindness/totalColorBlindness/index.js'
-import * as concentration from '../simulations/concentration/index.js'
-import * as parkinsons from '../simulations/parkinsons/index.js'
+// import * as dyslexia from '../simulations/dyslexia/index.js'
+// // import {reset} from '../simulations/general/reset/index.js'
+// import * as farsightedness from '../simulations/farsightedness/index.js'
+// import * as tunnelVision from '../simulations/tunnelVision/index.js'
+// import * as redGreenColorBlindness from '../simulations/colorBlindness/redGreenColorBlindness/index.js'
+// import * as yellowBlueColorBlindness from '../simulations/colorBlindness/yellowBlueColorBlindness/index.js'
+// import * as totalColorBlindness from '../simulations/colorBlindness/totalColorBlindness/index.js'
+// import * as concentration from '../simulations/concentration/index.js'
+// import * as parkinsons from '../simulations/parkinsons/index.js'
 import * as data from './data/data.json';
+import * as simulationLoader from '../utils/simulationLoader.js';
 
 $(document).ready(() => {
 
@@ -164,43 +165,8 @@ $(document).ready(() => {
 
   function startSimulation() {
 
-    // TODO: Clean up
     chrome.storage.local.get('activeSimulation', obj => {
-
-      console.log('startSimulation', obj);
-
-      if(obj.activeSimulation == "farsightedness") {
-        farsightedness.start();
-      }
-
-      if (obj.activeSimulation == "tunnelVision") {
-        tunnelVision.start();
-      } 
-
-      if (obj.activeSimulation == "redGreenColorBlindness") {
-        redGreenColorBlindness.start();
-      }
-
-      if (obj.activeSimulation == "yellowBlueColorBlindness") {
-        yellowBlueColorBlindness.start();
-      }
-
-      if (obj.activeSimulation == "totalColorBlindness") {
-        totalColorBlindness.start();
-      }
-
-      if (obj.activeSimulation == "concentration") {
-        concentration.start();
-      }
-
-      if (obj.activeSimulation == "parkinsons") {
-        parkinsons.start();
-      }
-
-      if (obj.activeSimulation == "dyslexia") {
-        dyslexia.start();
-      }
-
+      simulationLoader.start(obj.activeSimulation);
     }); 
 
   }
@@ -220,41 +186,8 @@ $(document).ready(() => {
     $("#Syn").text("Syn");
     $("#Motorik").text("Motorik"); 
    
-    // TODO: Clean up
     chrome.storage.local.get('activeSimulation', obj => {
-
-      if(obj.activeSimulation == "farsightedness") {
-        farsightedness.stop();
-      }
-
-      if (obj.activeSimulation == "tunnelVision") {
-        tunnelVision.stop();
-      } 
-
-      if (obj.activeSimulation == "redGreenColorBlindness") {
-        redGreenColorBlindness.stop();
-      }
-
-      if (obj.activeSimulation == "yellowBlueColorBlindness") {
-        yellowBlueColorBlindness.stop();
-      }
-
-      if (obj.activeSimulation == "totalColorBlindness") {
-        totalColorBlindness.stop();
-      }
-
-      if (obj.activeSimulation == "concentration") {
-        concentration.stop();
-      }
-
-      if (obj.activeSimulation == "parkinsons") {
-        parkinsons.stop();
-      }
-
-      if (obj.activeSimulation == "dyslexia") {
-        dyslexia.stop();
-      }
-
+      simulationLoader.stop(obj.activeSimulation);
     }); 
 
   }
