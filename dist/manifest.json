@@ -9,6 +9,11 @@
     "default_icon": "UI/img/icon.png",
     "default_popup": "UI/app.html"
   },
+"icons": { 
+    "16": "UI/img/icon_16x16.png",
+    "48": "UI/img/icon_48x48.png",
+    "128": "UI/img/icon_128x128.png"
+  },
   "background" : {
     "scripts" : ["background.js"]
   },
