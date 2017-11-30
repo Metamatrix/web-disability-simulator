@@ -3,8 +3,8 @@ import {addCss, removeElement, setStyle} from '../../utils/dom.js';
 
 const name = 'parkinsons';
 const cssUrl = chrome.extension.getURL('/simulations/parkinsons/css/main.css');
-const shakeSpeed = 60;
-const shakePositionInterval = 1500;
+const shakeSpeed = 40;
+const shakePositionInterval = 250;
 const appVersion = navigator.appVersion; 
 
 let cursorImgUrl = '',
