@@ -16,11 +16,7 @@ function resetSimulation(tooltip){
   });
 
   tooltip.removeClass("in");
-  $("#panel1").addClass("in");
-
-  // TODO: Change this    
-  // $("#Syn").text("Syn");
-  // $("#Motorik").text("Motorik"); 
+  $("#panel1").addClass("in"); 
  
   chrome.storage.local.get('activeSimulation', obj => {
     simulationLoader.stop(obj.activeSimulation);

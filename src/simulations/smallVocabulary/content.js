@@ -67,11 +67,19 @@ function processWord(word) {
 }
 
 function start() {
+
+  const tagsToIgnore = ['SCRIPT', 'STYLE', 'NOSCRIPT'];
+
   textNodes = getTextNodes(document.querySelector('body'));
 
-  console.log('start', textNodes);
-
   textNodes.forEach((el) => {
+
+    if(el.textContent.trim().length === 0 ||
+      el.parentElement && tagsToIgnore.includes(el.parentElement.tagName)) {
+      return;
+    }
+
+    console.log(el.parentElement && el.parentElement.tagName, el.textContent);
 
     el._wdsOriginalText = el.textContent;
     el.textContent = processText(el.textContent);
