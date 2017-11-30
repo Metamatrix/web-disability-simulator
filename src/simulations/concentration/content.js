@@ -91,6 +91,9 @@ function start() {
 }
 
 function stop() {
+
+  console.log(circleElement);
+
   if(circleElement) {
     removeElement(circleElement);
   }

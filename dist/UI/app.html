@@ -12,31 +12,48 @@
         <img src="img/logo_disability_simulator.png" alt="Web Disability Simulator" class="logo">
   		</div>
   		<nav class="navbar navbar-default" role="navigation">
+
   			<h2 class="navbar-header"></h2>
+
   			<div class="dropdown">
   				<button class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="menu-sight">
-  					<span class="selected" id="Syn"></span><span class="caret pull-right"></span></a>
+            <span class="selected" id="sight"></span>
+  					<span class="caret pull-right"></span>
   				</button>
   				<ul class="dropdown-menu dropdown-menu-sight" aria-labelledby="menu-sight">
-  					<li><a href="#" class="menu-btn totalColorBlindness" id="totalColorBlindness"></a></li>
-  					<li><a href="#" class="menu-btn yellowBlueColorBlindness" id="yellowBlueColorBlindness"></a></li>
-  					<li><a href="#" class="menu-btn redGreenColorBlindness" id="redGreenColorBlindness"></a></li>
-  					<li><a href="#" class="menu-btn farsightedness" id="farsightedness"></a></li>
-  					<li><a href="#" class="menu-btn tunnelVision" id="tunnelVision"></a></li>
-  				</ul>
-  			</div>
-  			<div class="dropdown">
-  				<button class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="menu-motor">
-  					<span class="selected" id="Motorik"></span><span class="caret pull-right"></span></a>
-  				</button>
-  				<ul class="dropdown-menu dropdown-menu-motor" aria-labelledby="menu-motor">
-  					<li><a href="#" class="menu-btn parkinsons" id="parkinsons"></a></li>
+  					<li><a href="#" role="button" class="menu-btn totalColorBlindness" id="totalColorBlindness"></a></li>
+  					<li><a href="#" role="button" class="menu-btn yellowBlueColorBlindness" id="yellowBlueColorBlindness"></a></li>
+  					<li><a href="#" role="button" class="menu-btn redGreenColorBlindness" id="redGreenColorBlindness"></a></li>
+  					<li><a href="#" role="button" class="menu-btn farsightedness" id="farsightedness"></a></li>
+  					<li><a href="#" role="button" class="menu-btn tunnelVision" id="tunnelVision"></a></li>
   				</ul>
   			</div>
 
-  			<button class="btn btn-default btn-block dropdown-toggle menu-btn dyslexia" type="button" id="dyslexia"><span class="selected" id="Dyslexi"></span></button>
-  			<button class="btn btn-default btn-block dropdown-toggle menu-btn concentration" type="button" id="concentration"><span class="selected" id="Koncentration"></span></button>
-  			<button class="btn btn-default btn-block dropdown-toggle menu-btn memory" type="button" id="memory"><span class="selected" id="Minne"></span></button>
+  			<div class="dropdown">
+  				<button class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="menu-mobility">
+  					<span class="selected" id="mobility"></span>
+            <span class="caret pull-right"></span>
+  				</button>
+  				<ul class="dropdown-menu dropdown-menu-mobility" aria-labelledby="menu-mobility">
+  					<li><a href="#" role="button" class="menu-btn parkinsons" id="parkinsons"></a></li>
+  				</ul>
+  			</div>
+
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="menu-read-write">
+            <span class="selected" id="readWrite"></span>
+            <span class="caret pull-right"></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-read-write" aria-labelledby="menu-read-write">
+            <li><a href="#" role="button" class="menu-btn dyslexia" id="dyslexia"></a></li>
+            <li><a href="#" role="button" class="menu-btn smallVocabularity" id="smallVocabulary"></a></li>
+          </ul>
+        </div>
+
+  			<button class="btn btn-default btn-block dropdown-toggle menu-btn concentration" type="button" id="concentration"><span class="selected" id="concentration"></span></button>
+
+  			<!-- <button class="btn btn-default btn-block dropdown-toggle menu-btn memory" type="button" id="memory"><span class="selected" id="Minne"></span></button> -->
+
   		</nav>
   		<div class="footer">
   			<a href="https://github.com/Metamatrix/Web-Disability-Simulator" class="github-link pull-right">Github</a>
@@ -79,10 +96,10 @@
 
 					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-					<div class="panel panel-default" data-toggle="collapse" href="#adviceCollapse" aria-expanded="false" aria-controls="adviceCollapse">
+					<div class="panel panel-default">
 							<div class="panel-heading" role="tab" id="adviceHeading">
 								<h2 class="panel-title">
-									<a role="button">
+									<a role="button" href="#adviceCollapse" data-toggle="collapse" aria-expanded="false" aria-controls="adviceCollapse">
 										<span id="advice-dropdown"></span>
 										<span class="caret pull-right down-arrow"></span>
 										<span class="dropup pull-right up-arrow">
@@ -93,12 +110,12 @@
 							</div>
 							<div id="adviceCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="adviceHeading">
 								<div class="panel-body">
-									<ul class="advice-list">
+									<ul class="advice-list"></ul>
 								</div>
 							</div>
 						</div>
 
-						<div class="panel panel-default" id="more-info-panel" data-toggle="collapse" href="#infoCollapse" aria-expanded="false" aria-controls="infoCollapse">
+						<div class="panel panel-default hidden" id="more-info-panel" data-toggle="collapse" href="#infoCollapse" aria-expanded="false" aria-controls="infoCollapse">
 							<div class="panel-heading" role="tab" id="infoHeading">
 								<h2 class="panel-title">
 									<a role="button">
@@ -112,7 +129,7 @@
 							</div>
 							<div id="infoCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="infoHeading">
 								<div class="panel-body">
-									<a class="more-info-link"></a>
+									<ul class="more-info-list"></ul>
 								</div>
 							</div>
 						</div>
