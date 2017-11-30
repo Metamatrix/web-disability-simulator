@@ -67,10 +67,11 @@
     "tunnelVision":
     {
       "heading": "Tunnelseende",
-      "fact": "Tunnelseende innebär...",
+      "fact": "Det som i dagligt tal brukar kallas tunnelseende är en synnedsättning som gör att endast en del av synfältet kan ses. Detta kan bero på att personen lider av en sjukdom som gör att cellerna i ögat förstörs men denna typ av synnedsättning kan också tillfälligt uppstå på grund av stress eller depression.",
       "listItems": [
-        "Listitem 1", 	
-        "Listitem 2."
+        "Undvik text i liten storlek.",
+        "Webbsidan ska gå att förstora (zoomas) till minst 200 % så att besökaren kan anpassa innehållets storlek efter sina behov.",
+        "Erbjud uppläsning av innehållet."
       ]
     },
     "concentration":
@@ -78,8 +79,10 @@
       "heading": "Koncentration",
       "fact": "Alla kan ha svårt att koncentrera sig men för vissa kan det bli ett stort problem i vardagslivet. Dessa funktionsnedsättningar kan orsaka svårigheter med att hantera intryck, sortera information och ljudkänslighet.",
       "listItems": [
-        "Listitem 1", 	
-        "Listitem 2."
+        "Ge webbplatsen en enkel och luftig design.",
+        "Var försiktig med animationer och starka färger.",
+        "Undvik att ha för mycket innehåll på samma sida.",
+        "Erbjud ljud- och video-alernativ till textinnehåll."
       ]
     },
     "smallVocabulary":
