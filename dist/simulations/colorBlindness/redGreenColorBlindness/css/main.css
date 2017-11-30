@@ -1,9 +1,0 @@
-
-html, body {
-  -webkit-filter: url(#protanopia) !important;
-  filter: url(#protanopia) !important;
-}
-
-#wds-colorBlindnessFilter {
-  display: none !important; 
-}

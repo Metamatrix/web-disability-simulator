@@ -1,14 +1,16 @@
 import {getTextNodes} from '../../utils/dom.js';
 import {isLetter, isUpperCase} from '../../utils/string.js';
 import {random} from '../../utils/math.js';
-import {words} from './words.sv.json';
 import {randomArrayValue} from '../../utils/array.js';
 
-const name = 'smallVocabulary';
-const vowels = ["a", "e", "i", "o", "u", "y"];
-const consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "r", "s", "t", "v", "w", "x", "y", "z"];
-let textNodes = null;
-const dictionary = {};
+const name = 'smallVocabulary',
+  supportedlanguages = ['en', 'sv'],
+  dictionary = {};
+
+let textNodes = null,
+  words = [],
+  consonants = [],
+  vowels = [];
 
 function randomLetter(letter) {
   var chars = 'abcdefghijklmnopqrstuvwxyz';
@@ -66,23 +68,50 @@ function processWord(word) {
   return newWord;
 }
 
+function getDocumentLanguage() {
+  let lang = document.querySelector('html').getAttribute('lang');
+
+  if(!lang) {
+    return 'en';
+  }
+
+  lang = lang.split('-').shift().toLowerCase();
+
+  if(!supportedlanguages.includes(lang)) {
+    return 'en';
+  }
+
+  return lang;
+}
+
 function start() {
 
   const tagsToIgnore = ['SCRIPT', 'STYLE', 'NOSCRIPT'];
+  const lang = getDocumentLanguage();
+  const rndKey = (new Date()).getTime();
+  const langFileUrl = chrome.extension.getURL(`/simulations/${name}/words.${lang}.json?${rndKey}`);
 
-  textNodes = getTextNodes(document.querySelector('body'));
+  fetch(langFileUrl).then(function(response) { 
+    return response.json();
+  }).then(function(json) {
 
-  textNodes.forEach((el) => {
+    words = json.words;
+    vowels = json.vowels;
+    consonants = json.consonants;
 
-    if(el.textContent.trim().length === 0 ||
-      el.parentElement && tagsToIgnore.includes(el.parentElement.tagName)) {
-      return;
-    }
+    textNodes = getTextNodes(document.querySelector('body'));
 
-    console.log(el.parentElement && el.parentElement.tagName, el.textContent);
+    textNodes.forEach((el) => {
 
-    el._wdsOriginalText = el.textContent;
-    el.textContent = processText(el.textContent);
+      if(el.textContent.trim().length === 0 ||
+        el.parentElement && tagsToIgnore.includes(el.parentElement.tagName)) {
+        return;
+      }
+
+      el._wdsOriginalText = el.textContent;
+      el.textContent = processText(el.textContent);
+
+    });
 
   });
 }

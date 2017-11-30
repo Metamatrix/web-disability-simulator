@@ -1,9 +1,0 @@
-
-html, body {
-  -webkit-filter: url(#achromatopsia) !important;
-  filter: url(#achromatopsia) !important;
-}
-
-#wds-colorBlindnessFilter {
-  display: none !important; 
-}
