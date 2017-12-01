@@ -97,7 +97,7 @@ $(document).ready(() => {
 
   chrome.storage.local.get('lang', obj => {
 
-    lang = obj.lang;
+    lang = obj.lang || 'en';
 
     setTexts();
 
