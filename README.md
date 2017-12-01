@@ -4,4 +4,6 @@ This is an extension to the Google Chrome browser that simulates how users with 
 
 The goal of this project is to raise awareness of the disabilities that exist and what problems users with a disability may encounter when using a web page.
 
-License ISC http://opensource.org/licenses/ISC
+This project was created by [Metamatrix AB](https://www.metamatrix.se/)
+
+License [ISC](http://opensource.org/licenses/ISC)
