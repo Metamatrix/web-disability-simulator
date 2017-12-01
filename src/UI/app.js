@@ -1,5 +1,7 @@
-import * as data from './data/data.json';
+import * as languageData from './data/data.json';
 import * as simulationLoader from '../utils/simulationLoader.js';
+
+let lang = "en";
 
 function startSimulation() {
 
@@ -18,13 +20,21 @@ function resetSimulation(tooltip){
   tooltip.removeClass("in");
   $("#panel1").addClass("in"); 
  
+  setTimeout(() => {
+    tooltip.addClass("hide");
+  }, 250);
+
   chrome.storage.local.get('activeSimulation', obj => {
     simulationLoader.stop(obj.activeSimulation);
+    chrome.storage.local.remove('activeSimulation');
   }); 
 
 }
 
 function setTexts() { 
+
+  const data = languageData[lang];
+
   $(".more-info-link").text(data.UI.moreInfo);
   $("#reset-btn").text(data.UI.reset);
   $(".navbar-header").text(data.UI.selectSimulation);
@@ -46,9 +56,18 @@ function setTexts() {
     });
 
   });
+
+  $('#settings-heading').text(data.UI.changeSettings);
+  $('#language-label').text(data.UI.selectLanguage);
+  $('#btn-save-settings').text(data.UI.saveSettings);
+  $('#btn-cancel-settings').text(data.UI.cancel);
+
 }
 
 function setTooltipTexts(activeSimulation) {
+
+  const data = languageData[lang];
+
   const infoHeading = $(".disability-info-heading");
   const infoParagraph = $(".disability-info-paragraph"); 
   const adviceList = $(".advice-list");
@@ -76,20 +95,28 @@ $(document).ready(() => {
 
   let activeSimulation;
 
-  setTexts();
+  chrome.storage.local.get('lang', obj => {
+
+    lang = obj.lang;
+
+    setTexts();
+
+  });
 
   // Set active state
   chrome.storage.local.get('activeSimulation', obj => {
 
     activeSimulation = obj.activeSimulation;
 
-    if (activeSimulation != null) {
-      tooltip.addClass("in");
+    if(activeSimulation) {
+      tooltip.addClass("in").removeClass("hide");
+      $('#panel1').removeClass("in");
       setTooltipTexts(activeSimulation);
     }
 
   }); 
 
+  // Main view
   $(".menu-btn").click(function(){
 
     const menuBtn = $(this); 
@@ -106,6 +133,7 @@ $(document).ready(() => {
 
     $('#panel1').removeClass("in");
     $('#panel2').removeClass("hide");
+    tooltip.removeClass("hide");
 
     setTimeout(() => {
       $('#panel2').addClass("in");
@@ -126,15 +154,77 @@ $(document).ready(() => {
     
   });
 
-  //btn and links
+  $(".github-link").click(() => {
+    chrome.tabs.create({url: 'https://github.com/Metamatrix/Web-Disability-Simulator'}); 
+  });
+
+  $('.settings-link').on('click', (e) => {
+    e.preventDefault();
+
+    chrome.storage.local.get('lang', obj => {
+      $('#language').val(obj.lang);
+    });
+
+    $('#panel1').removeClass("in");
+    $('#settings').removeClass("hide");
+
+    setTimeout(() => {
+      $('#settings').addClass("in");
+    }, 250);
+
+    setTimeout(() => {
+      $('#panel1').addClass("hide");
+    }, 500);
+
+  });
+
+  // Settings view
+
+  $('#btn-save-settings').on('click', (e) => {
+    e.preventDefault();
+
+    var selectedLang = $('#language').val();
+
+    chrome.storage.local.set({'lang': selectedLang});
+
+    lang = selectedLang;
+
+    setTexts();
+
+    $('#settings').removeClass("in");
+    $('#panel1').removeClass("hide");
+
+    setTimeout(() => {
+      $('#panel1').addClass("in");
+    }, 500);
+
+    setTimeout(() => {
+      $('#settings').addClass("hide");
+    }, 750);
+
+  });
+
+  $('#btn-cancel-settings').on('click', (e) => {
+    e.preventDefault();
+
+    $('#settings').removeClass("in");
+    $('#panel1').removeClass("hide");
+
+    setTimeout(() => {
+      $('#panel1').addClass("in");
+    }, 250);
+
+    setTimeout(() => {
+      $('#settings').addClass("hide");
+    }, 500);
+
+  });
+
+  // Tooltip view
   $("#reset-btn").click(() => {
     resetSimulation(tooltip); 
   });
 
-  $(".github-link").click(() => {
-    chrome.tabs.create({url: 'https://github.com/Metamatrix/Web-Disability-Simulator'}); 
-  });
- 
   $(".more-info-link").click(() => {
     chrome.storage.local.get('linkUrl', obj => {
       chrome.tabs.create({url: `${obj.linkUrl}`}); 
@@ -142,9 +232,9 @@ $(document).ready(() => {
   }); 
 
   //panel collapse, show arrows: 
-  $('.collapse').on('shown.bs.collapse', function(){
+  $('.collapse').on('shown.bs.collapse', () => {
       $(this).parent().find(".down-arrow, .up-arrow").toggle();
-    }).on('hidden.bs.collapse', function(){
+    }).on('hidden.bs.collapse', () => {
       $(this).parent().find(".down-arrow, .up-arrow").toggle();
   });
   

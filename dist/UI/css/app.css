@@ -13,7 +13,7 @@ body {
 }
 
 h2 {
-	font-size: 18px; 
+	font-size: 20px; 
 }
 
 /* Logo and heading */
@@ -56,11 +56,25 @@ h2 {
 	margin: 30px 0 20px 0; 
 }
 
+.btn-primary {
+  background-color: #2e3192;
+  border-color: #21237a;
+}
+
+.btn-primary:hover {
+  background-color: #3a3d9e;
+  border-color: #21237a;
+}
+
 /* Nav */
 
 .navbar {
 	padding: 10px 20px 20px 20px; 
 	margin: 10px; 
+}
+
+.navbar-header {
+  margin-top: 15px;
 }
 
 .caret {
@@ -84,7 +98,8 @@ h2 {
 
 .tool-tip,
 #panel1,
-#panel2 { 
+#panel2,
+#settings { 
   background-color: #fff; 
   width: 100vw; 
   height: 100vh; 
@@ -98,24 +113,14 @@ h2 {
 	width: 100%; 
 	height: 100%; 
 	position: absolute; 
-	left: 100%; 
+  left: 0;
 	top: 0;  
-  transition: transform .3s ease-in-out;
-}
-
-.tool-tip.in {
-  transform: translateX(-100%);
 }
 
 .tool-tip-content {
 	max-height: 400px; 
 	overflow-y: scroll;
 	padding: 0 10px;
-}
-
-.disability-info-heading {
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-	font-size: 21px; 
 }
 
 .disability-info-paragraph {
@@ -143,13 +148,13 @@ h2 {
 }
 
 .panel {
-    border-bottom: 1px solid transparent;
-    border-top-right-radius: 3px;
-    border-top-left-radius: 3px;
-		color: #333;
-    background-color: #f5f5f5;
-    border-color: #ddd;
-		cursor: pointer; 
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+	color: #333;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+	cursor: pointer; 
 }
 
 .panel-title a {
@@ -170,9 +175,38 @@ h2 {
 
 /* footer */
 
+.footer {
+  padding-top: 25px;
+}
+
+.footer-icon {
+  margin: 0 10px 10px 0;
+  width: 24px;
+  height: 24px;
+  fill: #333;
+}
+
 .github-link {
-	padding: 50px 10px 10px 10px; 
 	font-size: 12px; 
+}
+
+/* Misc */
+
+.inner-wrapper {
+  padding: 10px 20px;
+}
+
+.slide {
+  transform: translateX(100vw);
+  transition: transform .3s ease-in-out;
+}
+
+.slide.in {
+  transform: translateX(0);
+}
+
+.m-t-0 {
+  margin-top: 0;
 }
 
 .wds-loading-icon {

@@ -1,152 +1,309 @@
 {
-  "facts": {
-    "dyslexia": 
-    {
-      "heading": "Dyslexi",
-      "fact": "Dyslexi är en nedsättning som gör att hjärnan har svårt att automatisera tolkningen av ord. Detta gör att personer med denna nedsättning kan ha svårt att läsa och skriva. Dyslexi är inte kopplat till syn eller intelligens. Orsakerna till dyslexi är fortfarande oklart.",
-      "listItems": [
-        "Undvik text i liten storlek och långa texter. Se till att ha ordentligt med radavstånd.", 	
-        "Undvik svåra ord och facktermer.",
-        "Erbjud lättlästa versioner av facktexter.",
-        "Undvik typsnitt med krångliga och komplexa figurer."
+  "sv":
+  {
+    "facts": {
+      "dyslexia": 
+      {
+        "heading": "Dyslexi",
+        "fact": "Dyslexi är en nedsättning som gör att hjärnan har svårt att automatisera tolkningen av ord. Detta gör att personer med denna nedsättning kan ha svårt att läsa och skriva. Dyslexi är inte kopplat till syn eller intelligens. Orsakerna till dyslexi är fortfarande oklart.",
+        "listItems": [
+          "Undvik text i liten storlek och långa texter. Se till att ha ordentligt med radavstånd.", 	
+          "Undvik svåra ord och facktermer.",
+          "Erbjud lättlästa versioner av facktexter.",
+          "Undvik typsnitt med krångliga och komplexa figurer."
+          ]
+      },
+      "parkinsons":
+      {
+        "heading": "Parkinsons",
+        "fact": "Vid Parkinsons sjukdom förstörs cellerna i hjärnan som tillverkar dopamin vilket gör att hjärnan får en nedsatt förmåga att skicka signaler. Personer med Parkinsons kan drabbas av symptom som skakningar, stela muskler och sämre rörelseförmåga. Orsakerna till Parkinsons sjukdom är fortfarande oklart.",
+        "listItems": [
+          "Se till att webbplatsen kan användas med andra hjälpmedel än mus, till exempel tangentbordsnavigering.", 	
+          "Ha tillräckligt med luft mellan komponenter",
+          "Ha tillräckligt stora klickytor."
+        ],
+        "moreInfoUrl": "http://www.parkinsonforbundet.se",
+        "moreInfoLinkText" : "Parkinsonsförbundet"
+      },
+      "yellowBlueColorBlindness":
+      {
+        "heading": "Gul-blå färgblindhet",
+        "fact": "Personer med defekt färgseende har svårt att skilja på vissa eller alla färger. Ett fullt fungerande öga har tre olika tappar som tar upp färgerna violett, grön och röd. När en eller flera av tapparna saknas eller är defekta leder det till defekt färgseende. Gul-blå färgblindhet (Tritanopi) är sällsynt. Namnet är missledande då det inte är färgerna gul och blå som förväxlas, utan blå med grön och gul med lila.",
+        "listItems": [
+          "Använd inte färg som det enda sättet att förmedla information, indikera en handling eller identifiera ett element. Markera till exempel inte ett felaktigt formulärfält endast med en röd ram utan komplettera även med text och gärna en ikon.", 	
+          "Erbjud gärna ett högkontrast-läge."
+        ],
+        "moreInfoUrl": "https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende",
+        "moreInfoLinkText" : "Wikipedia om defekt färgseende"
+      },
+      "redGreenColorBlindness":
+      {
+        "heading": "Röd-grön färgblindhet",
+        "fact": "Personer med defekt färgseende har svårt att skilja på vissa eller alla färger. Ett fullt fungerande öga har tre olika tappar som tar upp färgerna violett, grön och röd. När en eller flera av tapparna saknas eller är defekta leder det till defekt färgseende. Röd-grön färgblindhet (Protanopi och Deuteranopi) är den vanligaste typen av färgblindhet. Den är vanligare hos män än kvinnor. Personer röd-grön färgblindhet har svårt att skilja på färgerna röd, grön, brun och orange.",
+        "listItems": 
+        ["Använd inte färg som enda sättet att förmedla information, indikera en handling eller identifiera ett element. Markera till exempel inte ett felaktigt formulärfält endast med röd ram, komplettera även med text och gärna en  ikon.", "Erbjud gärna ett högkontrast-läge."],
+        "moreInfoUrl": "https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende",
+        "moreInfoLinkText" : "Wikipedia om defekt färgseende"
+      },
+      "farsightedness":
+      {
+        "heading": "Långsynthet",
+        "fact": "Personer med Hyperopi ser suddigt på nära håll, men bra på långt håll. Nedsättningen uppstår på grund av att ljuset inte bryts rätt i ögat. Det är en av de vanligaste synnedsättningarna.",
+        "listItems": [
+          "Undvik text i liten storlek.", 	
+          "Webbsidan ska gå att förstora (zoomas) till minst 200 % så att besökaren kan anpassa innehållets storlek efter sina behov.",
+          "Erbjud uppläsning av innehållet."
+        ],
+        "moreInfoUrl": "https://webbriktlinjer.se/r/39-ge-webbplatsen-en-god-lasbarhet/",
+        "moreInfoLinkText" : "Webbriktlinje Ge webbplatsen god läsbarhet"
+      },
+      "totalColorBlindness":
+      {
+        "heading": "Helt färgblind",
+        "fact": "Defekt färgseende innebär att en person har svårt att skilja på vissa eller alla färger. Ett fullt fungerande öga har tre olika typer av tappar som tar upp olika färger: violett, grön och röd. Orsaken till defekt färgseende är att en eller flera av dessa typer av tappar saknas eller är defekta. Helt färgblind (Monokromasi/akromatopsi) är mycket sällsynt. Personer med denna synnedsättning ser inga färger utan ser endast i gråskala.",
+        "listItems": [
+          "Använd inte färg som det enda sättet att förmedla information, indikera en handling eller identifiera element. Markera t.ex. inte ett felaktigt formulärfält endast med röd ram, komplettera även med text eller ikon.", 	
+          "Det kan vara en bra idé att erbjuda ett högkontrast-läge."
         ]
+      },
+      "tunnelVision":
+      {
+        "heading": "Tunnelseende",
+        "fact": "Det som i dagligt tal brukar kallas tunnelseende är en synnedsättning som gör att endast en del av synfältet kan ses. Detta kan bero på att personen lider av en sjukdom som gör att cellerna i ögat förstörs men denna typ av synnedsättning kan också tillfälligt uppstå på grund av stress eller depression.",
+        "listItems": [
+          "Undvik text i liten storlek.",
+          "Webbsidan ska gå att förstora (zoomas) till minst 200 % så att besökaren kan anpassa innehållets storlek efter sina behov.",
+          "Erbjud uppläsning av innehållet."
+        ]
+      },
+      "concentration":
+      {
+        "heading": "Koncentration",
+        "fact": "Alla kan ha svårt att koncentrera sig men för vissa kan det bli ett stort problem i vardagslivet. Dessa funktionsnedsättningar kan orsaka svårigheter med att hantera intryck, sortera information och ljudkänslighet.",
+        "listItems": [
+          "Ge webbplatsen en enkel och luftig design.",
+          "Var försiktig med animationer och starka färger.",
+          "Undvik att ha för mycket innehåll på samma sida.",
+          "Erbjud ljud- och video-alernativ till textinnehåll."
+        ]
+      },
+      "smallVocabulary":
+      {
+        "heading": "Litet ordförråd",
+        "fact": "En stor del av jordens befolkning kan inte läsa alls och många vuxna läser inte så bra som förväntas efter grundskoleutbildningen.",
+        "listItems": [
+          "Undvik krångliga ord och facktermer.",   
+          "Erbjud lättläst version av krångliga texter.",
+          "Erbjud texter på olika språk."
+        ]
+      }
     },
-    "parkinsons":
-    {
-      "heading": "Parkinsons",
-      "fact": "Vid Parkinsons sjukdom förstörs cellerna i hjärnan som tillverkar dopamin vilket gör att hjärnan får en nedsatt förmåga att skicka signaler. Personer med Parkinsons kan drabbas av symptom som skakningar, stela muskler och sämre rörelseförmåga. Orsakerna till Parkinsons sjukdom är fortfarande oklart.",
-      "listItems": [
-        "Se till att webbplatsen kan användas med andra hjälpmedel än mus, till exempel tangentbordsnavigering.", 	
-        "Ha tillräckligt med luft mellan komponenter",
-        "Ha tillräckligt stora klickytor.",
-        "Undvik typsnitt med krångliga och komplexa figurer."
-      ],
-      "moreInfoUrl": "http://www.parkinsonforbundet.se",
-      "moreInfoLinkText" : "Parkinsonsförbundet"
-    },
-    "yellowBlueColorBlindness":
-    {
-      "heading": "Gul-blå färgblindhet",
-      "fact": "Personer med defekt färgseende har svårt att skilja på vissa eller alla färger. Ett fullt fungerande öga har tre olika tappar som tar upp färgerna violett, grön och röd. När en eller flera av tapparna saknas eller är defekta leder det till defekt färgseende. Gul-blå färgblindhet (Tritanopi) är sällsynt. Namnet är missledande då det inte är färgerna gul och blå som förväxlas, utan blå med grön och gul med lila.",
-      "listItems": [
-        "Använd inte färg som det enda sättet att förmedla information, indikera en handling eller identifiera ett element. Markera till exempel inte ett felaktigt formulärfält endast med en röd ram utan komplettera även med text och gärna en ikon.", 	
-        "Erbjud gärna ett högkontrast-läge."
-      ],
-      "moreInfoUrl": "https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende",
-      "moreInfoLinkText" : "Wikipedia om defekt färgseende"
-    },
-    "redGreenColorBlindness":
-    {
-      "heading": "Röd-grön färgblindhet",
-      "fact": "Personer med defekt färgseende har svårt att skilja på vissa eller alla färger. Ett fullt fungerande öga har tre olika tappar som tar upp färgerna violett, grön och röd. När en eller flera av tapparna saknas eller är defekta leder det till defekt färgseende. Röd-grön färgblindhet (Protanopi och Deuteranopi) är den vanligaste typen av färgblindhet. Den är vanligare hos män än kvinnor. Personer röd-grön färgblindhet har svårt att skilja på färgerna röd, grön, brun och orange.",
-      "listItems": ["Använd inte färg som enda sättet att förmedla information, indikera en handling eller identifiera ett element. Markera till exempel inte ett felaktigt formulärfält endast med röd ram, komplettera även med text och gärna en  ikon.", "Erbjud gärna ett högkontrast-läge."],
-      "moreInfoUrl": "https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende",
-      "moreInfoLinkText" : "Wikipedia om defekt färgseende"
-    },
-    "farsightedness":
-    {
-      "heading": "Långsynthet",
-      "fact": "Personer med Hyperopi ser suddigt på nära håll, men bra på långt håll. Nedsättningen uppstår på grund av att ljuset inte bryts rätt i ögat. Det är en av de vanligaste synnedsättningarna.",
-      "listItems": [
-        "Undvik text i liten storlek.", 	
-        "Webbsidan ska gå att förstora (zoomas) till minst 200 % så att besökaren kan anpassa innehållets storlek efter sina behov.",
-        "Erbjud uppläsning av innehållet."
-      ],
-      "moreInfoUrl": "https://webbriktlinjer.se/r/39-ge-webbplatsen-en-god-lasbarhet/",
-      "moreInfoLinkText" : "Webbriktlinje Ge webbplatsen god läsbarhet"
-    },
-    "totalColorBlindness":
-    {
-      "heading": "Helt färgblind",
-      "fact": "Defekt färgseende innebär att en person har svårt att skilja på vissa eller alla färger. Ett fullt fungerande öga har tre olika typer av tappar som tar upp olika färger: violett, grön och röd. Orsaken till defekt färgseende är att en eller flera av dessa typer av tappar saknas eller är defekta. Helt färgblind (Monokromasi/akromatopsi) är mycket sällsynt. Personer med denna synnedsättning ser inga färger utan ser endast i gråskala.",
-      "listItems": [
-        "Använd inte färg som det enda sättet att förmedla information, indikera en handling eller identifiera element. Markera t.ex. inte ett felaktigt formulärfält endast med röd ram, komplettera även med text eller ikon.", 	
-        "Det kan vara en bra idé att erbjuda ett högkontrast-läge."
-      ]
-    },
-    "tunnelVision":
-    {
-      "heading": "Tunnelseende",
-      "fact": "Det som i dagligt tal brukar kallas tunnelseende är en synnedsättning som gör att endast en del av synfältet kan ses. Detta kan bero på att personen lider av en sjukdom som gör att cellerna i ögat förstörs men denna typ av synnedsättning kan också tillfälligt uppstå på grund av stress eller depression.",
-      "listItems": [
-        "Undvik text i liten storlek.",
-        "Webbsidan ska gå att förstora (zoomas) till minst 200 % så att besökaren kan anpassa innehållets storlek efter sina behov.",
-        "Erbjud uppläsning av innehållet."
-      ]
-    },
-    "concentration":
-    {
-      "heading": "Koncentration",
-      "fact": "Alla kan ha svårt att koncentrera sig men för vissa kan det bli ett stort problem i vardagslivet. Dessa funktionsnedsättningar kan orsaka svårigheter med att hantera intryck, sortera information och ljudkänslighet.",
-      "listItems": [
-        "Ge webbplatsen en enkel och luftig design.",
-        "Var försiktig med animationer och starka färger.",
-        "Undvik att ha för mycket innehåll på samma sida.",
-        "Erbjud ljud- och video-alernativ till textinnehåll."
-      ]
-    },
-    "smallVocabulary":
-    {
-      "heading": "Litet ordförråd",
-      "fact": "En stor del av jordens befolkning kan inte läsa alls och många vuxna läser inte så bra som förväntas efter grundskoleutbildningen.",
-      "listItems": [
-        "Undvik krångliga ord och facktermer.",   
-        "Erbjud lättläst version av krångliga texter.",
-        "Erbjud texter på olika språk."
+    "UI": {
+      "selectSimulation": "Välj simulering:",
+      "reset": "Återställ",
+      "advice": "Tänk på detta",
+      "moreInfo": "Mer information",
+      "sight": "Syn",
+      "totalColorBlindness": "Helt färgblind",
+      "yellowBlueColorBlindness": "Gul-blå färgblindhet",    
+      "redGreenColorBlindness": "Röd-grön färgblindhet",
+      "farsightedness": "Långsynthet, översynthet",
+      "tunnelVision": "Tunnelseende",
+      "mobility": "Motorik",
+      "parkinsons": "Parkinsons",
+      "readAndWrite": "Läsa och skriva",
+      "dyslexia": "Dyslexi",
+      "smallVocabulary": "Litet ordförråd",
+      "concentration": "Koncentration",
+      "changeSettings": "Change settings",
+      "selectLanguage": "Select language",
+      "saveSettings": "Save settings",
+      "cancel": "Cancel",
+      "simulations": [
+        {
+          "heading": "Syn",
+          "choices": [
+            { "totalColorBlindness": "Helt färgblind" },
+            { "yellowBlueColorBlindness": "Gul-blå färgblindhet" },
+            { "redGreenColorBlindness": "Röd-grön färgblindhet" },
+            { "farsightedness": "Långsynthet, översynthet" },
+            { "tunnelVision": "Tunnelseende" }
+          ]
+        },
+        {
+          "heading": "Motorik",
+          "choices": [ 
+            { "parkinsons": "Parkinsons" }
+    
+            ]
+        },
+        {
+          "heading": "Läsa och skriva",
+          "choices": [
+            { "dyslexia": "Dyslexi" },
+            { "smallVocabulary": "Litet ordförråd" },
+          ]
+        },
+        {
+          "heading": "Koncentration",
+          "choices": []
+        },
+        {
+          "heading": "Minne",
+          "choices": []
+        }
+
       ]
     }
   },
-  "UI": {
-    "selectSimulation": "Välj simulering:",
-    "reset": "Återställ",
-    "advice": "Tänk på detta",
-    "moreInfo": "Mer information",
-    "sight": "Syn",
-    "totalColorBlindness": "Helt färgblind",
-    "yellowBlueColorBlindness": "Gul-blå färgblindhet",    
-    "redGreenColorBlindness": "Röd-grön färgblindhet",
-    "farsightedness": "Långsynthet, översynthet",
-    "tunnelVision": "Tunnelseende",
-    "mobility": "Motorik",
-    "parkinsons": "Parkinsons",
-    "readAndWrite": "Läsa och skriva",
-    "dyslexia": "Dyslexi",
-    "smallVocabulary": "Litet ordförråd",
-    "concentration": "Koncentration",
-    "simulations": [
+  "en":
+  {
+    "facts": {
+      "dyslexia": 
       {
-        "heading": "Syn",
-        "choices": [
-          { "totalColorBlindness": "Helt färgblind" },
-          { "yellowBlueColorBlindness": "Gul-blå färgblindhet" },
-          { "redGreenColorBlindness": "Röd-grön färgblindhet" },
-          { "farsightedness": "Långsynthet, översynthet" },
-          { "tunnelVision": "Tunnelseende" }
+        "heading": "Dyslexia",
+        "fact": "Dyslexia is a disability that makes it difficult for the brain to automate the interpretation of words. This makes it hard for people with this disability to read and write. Dyslexia is has no connection with vision or intelligence. The causes of dyslexia are still unclear.",
+        "listItems": [
+          "Avoid text in small font sizes and long texts. Use proper spacing and line height.",
+          "Avoid difficult words and terms.",
+          "Offer easy to read texts, images, video or audio alternatives.",
+          "Avoid fonts with complicated and complex characters."
         ]
       },
+      "parkinsons":
       {
-        "heading": "Motorik",
-        "choices": [ 
-          { "parkinsons": "Parkinsons" }
-  
-          ]
-      },
-      {
-        "heading": "Läsa och skriva",
-        "choices": [
-          { "dyslexia": "Dyslexi" },
-          { "smallVocabulary": "Litet ordförråd" },
+        "heading": "Parkinsons",
+        "fact": "Parkinson's disease destroys the cells in the brain that produce dopamine, which causes the brain to have a reduced ability to send signals. Persons with Parkinson's may suffer from symptoms such as shaking, stiff muscles, and reduced mobility. The causes of Parkinson's disease are still unclear.",
+        "listItems": [
+          "Make sure the website can be used with other tools other than a mouse, such as keyboard navigation.",
+          "Have enough space between components.",
+          "Make sure click areas are big enough.",
         ]
       },
+      "yellowBlueColorBlindness":
       {
-        "heading": "Koncentration",
-        "choices": []
+        "heading": "Yellow-blue color blindness",
+        "fact": "People with lowered color vision have difficulty distinguishing some or all colors. Yellow-blue color blindness (Tritanopia) is rare. The name can be misleading. It's not the colors yellow and blue that are confused but blue with green and yellow with purple.",
+        "listItems": [
+          "Do not use color as the only way to convey information, indicate an action or identify an element. For example, do not mark an incorrect form field with a red border only, also supplement with a text and preferably an icon.",
+          "Consider offering a high contrast mode."
+        ]
       },
+      "redGreenColorBlindness":
       {
-        "heading": "Minne",
-        "choices": []
+        "heading": "Red-green color blindness",
+        "fact": "People with lowered color vision have difficulty distinguishing some or all colors. Red-green color blindness (Protanopia and Deuteranopia) is the most common type of color blindness. It is more common among men than women. People with red-green color blindness have difficulty distinguishing the colors red, green, brown and orange.",
+        "listItems": [
+          "Do not use color as the only way to convey information, indicate an action or identify an element. For example, do not mark an incorrect form field with a red border only, also supplement with a text and preferably an icon.",
+          "Consider offering a high contrast mode."
+        ]
+      },
+      "farsightedness":
+      {
+        "heading": "Far-sightedness",
+        "fact": "Far-sightedness (Hyperopia) is one of the most common visual impairments. People with Hyperopia have difficulty focusing on objects at close range which makes them appear blurry.",
+        "listItems": [
+          "Avoid text in small font sizes and long texts. Use proper spacing and line height.",  
+          "Make sure the website can be zoomed to at least 200%.",
+          "Offer a text to speech reader."
+        ]
+      },
+      "totalColorBlindness":
+      {
+        "heading": "Total color blindness",
+        "fact": "People with lowered color vision have difficulty distinguishing some or all colors. Total color blindness (Monochromatic / Achromatopsy) is very rare. People with this visual impairment can not percieve any colors, only different shades of gray.",
+        "listItems": [
+          "Do not use color as the only way to convey information, indicate an action or identify an element. For example, do not mark an incorrect form field with a red border only, also supplement with a text and preferably an icon.",
+          "Consider offering a high contrast mode."
+        ]
+      },
+      "tunnelVision":
+      {
+        "heading": "Tunnel Vision",
+        "fact": "What is commonly called Tunnel Vision is loss of peripheral vision. This may be because the person suffers from a disease that affects they cells in the eye, but may also occur temporarily due to stress or depression.",
+        "listItems": [
+          "Avoid text in small font sizes and long texts. Use proper spacing and line height.",
+          "Make sure the website can be zoomed to at least 200%.",
+          "Offer a text to speech reader."
+        ]
+      },
+      "concentration":
+      {
+        "heading": "Concentration",
+        "fact": "Everyone can have a hard time concentrating, but for some it can be a big problem in everyday life. Disabilities like ADHD and Autism can cause difficulty in handling impressions, sorting information and sensitivity to sound.",        "listItems": [
+          "Give the website a simple and clean design.",
+          "Be careful with animations and strong colors.",
+          "Avoid having too much content on the same page.",
+          "Offer image, audio and video alernatives to text content."
+        ]
+      },
+      "smallVocabulary":
+      {
+        "heading": "Small vocabulary",
+        "fact": "A large part of the world's population can't read at all and many adults don't read as well as expected after finishing grade school.",
+        "listItems": [
+          "Avoid difficult words and terms.",
+          "Offer easy to read texts, images, video or audio alternatives.",
+          "Offer texts in different languages."
+        ]
       }
+    },
+    "UI": {
+      "selectSimulation": "Select simulation:",
+      "reset": "Reset",
+      "advice": "Think about this",
+      "moreInfo": "More information",
+      "sight": "Sight",
+      "totalColorBlindness": "Total color blindness",
+      "yellowBlueColorBlindness": "Yellow-Blue color blindness",    
+      "redGreenColorBlindness": "Red-Green color blindness",
+      "farsightedness": "Far-sightedness",
+      "tunnelVision": "Tunnel vision",
+      "mobility": "Mobility",
+      "parkinsons": "Parkinsons",
+      "readAndWrite": "Read and write",
+      "dyslexia": "Dyslexia",
+      "smallVocabulary": "Small vocabulary",
+      "concentration": "Concentration",
+      "changeSettings": "Change settings",
+      "selectLanguage": "Select language",
+      "saveSettings": "Save settings",
+      "cancel": "Cancel",
+      "simulations": [
+        {
+          "heading": "Sight",
+          "choices": [
+            { "totalColorBlindness": "Total color blindness" },
+            { "yellowBlueColorBlindness": "Yellow-Blue color blindness" },
+            { "redGreenColorBlindness": "Red-Green color blindness" },
+            { "farsightedness": "Far-sightedness" },
+            { "tunnelVision": "Tunnel vision" }
+          ]
+        },
+        {
+          "heading": "Mobility",
+          "choices": [ 
+            { "parkinsons": "Parkinsons" }
+    
+            ]
+        },
+        {
+          "heading": "Read and write",
+          "choices": [
+            { "dyslexia": "Dyslexia" },
+            { "smallVocabulary": "Small vocabulary" },
+          ]
+        },
+        {
+          "heading": "Concentration",
+          "choices": []
+        },
+        {
+          "heading": "Memory",
+          "choices": []
+        }
 
-    ]
+      ]
+    }
   }
 }
