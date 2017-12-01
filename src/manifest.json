@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Web Disability Simulator (Beta)",
-  "description": "Simulates how people with disabilities sees the web",
+  "description": "Simulates how people with disabilities see the web",
   "version": "0.1.1",
 
   "browser_action": {
