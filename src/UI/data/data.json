@@ -141,7 +141,7 @@
           "heading": "Läsa och skriva",
           "choices": [
             { "dyslexia": "Dyslexi" },
-            { "smallVocabulary": "Litet ordförråd" },
+            { "smallVocabulary": "Litet ordförråd" }
           ]
         },
         {
@@ -177,8 +177,10 @@
         "listItems": [
           "Make sure the website can be used with other tools other than a mouse, such as keyboard navigation.",
           "Have enough space between components.",
-          "Make sure click areas are big enough.",
-        ]
+          "Make sure click areas are big enough."
+        ],
+        "moreInfoUrl": "http://www.parkinsonforbundet.se",
+        "moreInfoLinkText" : "Parkinson's Association"
       },
       "yellowBlueColorBlindness":
       {
@@ -187,7 +189,9 @@
         "listItems": [
           "Do not use color as the only way to convey information, indicate an action or identify an element. For example, do not mark an incorrect form field with a red border only, also supplement with a text and preferably an icon.",
           "Consider offering a high contrast mode."
-        ]
+        ],
+        "moreInfoUrl": "https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende",
+        "moreInfoLinkText" : "Wikipedia about defective color vision"
       },
       "redGreenColorBlindness":
       {
@@ -196,7 +200,9 @@
         "listItems": [
           "Do not use color as the only way to convey information, indicate an action or identify an element. For example, do not mark an incorrect form field with a red border only, also supplement with a text and preferably an icon.",
           "Consider offering a high contrast mode."
-        ]
+        ],
+        "moreInfoUrl": "https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende",
+        "moreInfoLinkText" : "Wikipedia about defective color vision"
       },
       "farsightedness":
       {
@@ -206,7 +212,9 @@
           "Avoid text in small font sizes and long texts. Use proper spacing and line height.",  
           "Make sure the website can be zoomed to at least 200%.",
           "Offer a text to speech reader."
-        ]
+        ],
+        "moreInfoUrl": "https://webbriktlinjer.se/r/39-ge-webbplatsen-en-god-lasbarhet/",
+        "moreInfoLinkText" : "Good readability"
       },
       "totalColorBlindness":
       {
@@ -291,7 +299,7 @@
           "heading": "Read and write",
           "choices": [
             { "dyslexia": "Dyslexia" },
-            { "smallVocabulary": "Small vocabulary" },
+            { "smallVocabulary": "Small vocabulary" }
           ]
         },
         {
