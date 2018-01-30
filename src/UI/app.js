@@ -1,7 +1,16 @@
 import * as languageData from './data/data.json';
 import * as simulationLoader from '../utils/simulationLoader.js';
 
-let lang = "en";
+let lang = "en"; 
+
+//detect browser deafult language
+
+/*var uiLanguage = chrome.i18n.getUILanguage();
+
+if(uiLanguage.indexOf('sv') !== -1){
+  lang = "sv";
+}
+*/
 
 function startSimulation() {
 
