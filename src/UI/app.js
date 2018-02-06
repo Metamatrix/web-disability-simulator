@@ -78,6 +78,7 @@ function setTooltipTexts(activeSimulation) {
   const data = languageData[lang];
 
   const simulationStatus = $(".simulation-started-paragraph");
+  const simulationStatusAlert = $(".simulation-started-alert" )
   const infoHeading = $(".disability-info-heading");
   const infoParagraph = $(".disability-info-paragraph"); 
   const adviceList = $(".advice-list");
@@ -92,6 +93,8 @@ function setTooltipTexts(activeSimulation) {
   moreInfoLink.empty(); 
 
   simulationStatus.text(texts.simulationStatus);
+  simulationStatusAlert.removeClass("hide");
+
   infoHeading.text(texts.heading);
   infoParagraph.text(texts.fact);
 
