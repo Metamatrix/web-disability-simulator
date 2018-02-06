@@ -27,6 +27,16 @@ h2 {
  height: 100%; 
 }
 
+.tagline-container {
+	height: 20px;
+	margin: 20px;
+}
+
+.tagline {
+	height: 100%; 
+  font-size: 16px; 
+}
+
 /* Buttons */
 
 .dropdown-toggle {
