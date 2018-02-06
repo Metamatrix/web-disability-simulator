@@ -133,6 +133,11 @@ h2 {
 	padding: 0 10px;
 }
 
+.simulation-started-alert {
+  margin-top: 20px;
+  font-size: 18px; 
+}
+
 .disability-info-paragraph {
 	margin-bottom: 20px;  
 }
