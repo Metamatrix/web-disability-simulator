@@ -17,12 +17,6 @@
   "background" : {
     "scripts" : ["background.js"]
   },
-  "content_scripts": [
-    {
-      "matches": ["http://*/*"],
-      "js": ["utils/simulationLoader.js"]
-    }
-  ],
   "web_accessible_resources": [
     "simulations/totalColorBlindness/img/filters.svg",
     "simulations/totalColorBlindness/css/main.css",

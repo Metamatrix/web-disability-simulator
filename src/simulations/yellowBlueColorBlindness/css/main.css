@@ -1,5 +1,5 @@
 
-html, body {
+html {
   -webkit-filter: url(#tritanopia) !important;
   filter: url(#tritanopia) !important;
 }

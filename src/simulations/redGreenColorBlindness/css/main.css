@@ -1,5 +1,5 @@
 
-html, body {
+html {
   -webkit-filter: url(#protanopia) !important;
   filter: url(#protanopia) !important;
 }
