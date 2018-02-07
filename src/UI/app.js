@@ -102,8 +102,6 @@ function setTooltipTexts(activeSimulation) {
     adviceList.append(`<li>${value}</li>`);
   });
 
-  console.log(texts.moreInfoUrl); 
-
   if(texts.moreInfoUrl !== undefined) { 
     moreInfoPanel.removeClass("hidden");
     moreInfoLink.append(texts.moreInfoLinkText);
@@ -137,6 +135,7 @@ $(document).ready(() => {
       tooltip.addClass("in").removeClass("hide");
       $('#panel1').removeClass("in");
       setTooltipTexts(activeSimulation);
+      simulationLoader.start(activeSimulation);
     }
 
   }); 
@@ -267,5 +266,6 @@ $(document).ready(() => {
     }).on('hidden.bs.collapse', () => {
       $(this).parent().find(".down-arrow, .up-arrow").toggle();
   });
+  
   
 });
