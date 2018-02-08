@@ -109,13 +109,13 @@ $(document).ready(() => {
 
   let activeSimulation;
 
-  chrome.storage.local.get('lang', obj => {
+  //chrome.storage.local.get('lang', obj => {
 
-    lang = obj.lang || 'en';
+  lang = 'en';
 
-    setTexts();
+  setTexts();
 
-  });
+  //});
 
   // Set active state
   chrome.storage.local.get('activeSimulation', obj => {
@@ -194,7 +194,7 @@ $(document).ready(() => {
 
   // Settings view
 
-  $('#btn-save-settings').on('click', (e) => {
+ /* $('#btn-save-settings').on('click', (e) => {
     e.preventDefault();
 
     var selectedLang = $('#language').val();
@@ -232,7 +232,7 @@ $(document).ready(() => {
       $('#settings').addClass("hide");
     }, 500);
 
-  });
+  });*/
 
   // Tooltip view
 
