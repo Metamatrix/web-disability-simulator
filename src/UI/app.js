@@ -3,15 +3,6 @@ import * as simulationLoader from '../utils/simulationLoader.js';
 
 let lang = "en"; 
 
-//detect browser deafult language
-
-/*var uiLanguage = chrome.i18n.getUILanguage();
-
-if(uiLanguage.indexOf('sv') !== -1){
-  lang = "sv";
-}
-*/
-
 function startSimulation() {
 
   chrome.storage.local.get('activeSimulation', obj => {
@@ -135,7 +126,6 @@ $(document).ready(() => {
       tooltip.addClass("in").removeClass("hide");
       $('#panel1').removeClass("in");
       setTooltipTexts(activeSimulation);
-      simulationLoader.start(activeSimulation);
     }
 
   }); 
