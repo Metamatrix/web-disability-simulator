@@ -2,6 +2,8 @@
 
 This is an extension to the Google Chrome browser that simulates how users with disabilities can experience a webpage. The application tries to simulate how a user will experience the web page or create a simular experience.
 
+Included simulations are for example color blindness, low vision, dyslexia and sunshine. 
+
 [Install the extension from the Google Chrome Web Store.](https://chrome.google.com/webstore/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla/) 
 
 ## About the project
