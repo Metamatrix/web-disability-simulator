@@ -31,7 +31,8 @@
     "simulations/parkinsons/img/cursor_mac.svg",
     "simulations/smallVocabulary/words.en.json",
     "simulations/smallVocabulary/words.sv.json",
-    "simulations/tunnelVision/css/main.css"
+    "simulations/tunnelVision/css/main.css",
+     "simulations/sunshine/css/main.css"
   ],
   "permissions": [
     "tabs", "http://*/*", "https://*/*", "storage", "activeTab"

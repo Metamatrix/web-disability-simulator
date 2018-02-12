@@ -83,6 +83,17 @@
           "Erbjud uppläsning av innehållet."
         ]
       },
+      "sunshine":
+      {
+        "simulationStatus": "Simulering aktiv!",
+        "heading": "Solsken",
+        "fact": "Lorem ipsum",
+        "listItems": [
+          "Lorem ipsum.",
+          "Lorem ipsum.",
+          "Lorem ipsum"
+        ]
+      },
       "concentration":
       {
         "simulationStatus": "Simulering aktiv!",
@@ -136,7 +147,8 @@
             { "yellowBlueColorBlindness": "Gul-blå färgblindhet" },
             { "redGreenColorBlindness": "Röd-grön färgblindhet" },
             { "farsightedness": "Långsynthet, översynthet" },
-            { "tunnelVision": "Tunnelseende" }
+            { "tunnelVision": "Tunnelseende" },
+            { "sunshine": "Solsken" }
           ]
         },
         {
@@ -251,6 +263,17 @@
           "Offer a text to speech reader."
         ]
       },
+      "sunshine":
+      {
+        "simulationStatus": "Simulation active!",
+        "heading": "Sunshine",
+        "fact": "Lorem ipsum",
+        "listItems": [
+          "Lorem ipsum.",
+          "Lorem ipsum.",
+          "Lorem ipsum"
+        ]
+      },
       "concentration":
       {
         "simulationStatus": "Simulation active!",
@@ -303,7 +326,8 @@
             { "yellowBlueColorBlindness": "Yellow-Blue color blindness" },
             { "redGreenColorBlindness": "Red-Green color blindness" },
             { "farsightedness": "Far-sightedness" },
-            { "tunnelVision": "Tunnel vision" }
+            { "tunnelVision": "Tunnel vision" },
+            { "sunshine": "Sunshine" }
           ]
         },
         {
