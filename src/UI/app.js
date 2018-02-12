@@ -250,12 +250,12 @@ $(document).ready(() => {
     }); 
   }); 
 
-  //panel collapse, show arrows: 
-  $('.collapse').on('shown.bs.collapse', () => {
-      $(this).parent().find(".down-arrow, .up-arrow").toggle();
+ //panel collapse, show arrows: 
+  $('.collapse').on('shown.bs.collapse', (event) => {
+    console.log('collapse!', event.target); 
+      $(".down-arrow, .up-arrow").toggle();
     }).on('hidden.bs.collapse', () => {
       $(this).parent().find(".down-arrow, .up-arrow").toggle();
   });
-  
   
 });
