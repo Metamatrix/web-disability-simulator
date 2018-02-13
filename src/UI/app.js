@@ -19,6 +19,7 @@ function resetSimulation(tooltip){
 
   tooltip.removeClass("in");
   $("#panel1").addClass("in"); 
+  $('#panel1').removeClass("hide");
  
   setTimeout(() => {
     tooltip.addClass("hide");
@@ -146,6 +147,7 @@ $(document).ready(() => {
     setTooltipTexts(activeSimulation);
 
     $('#panel1').removeClass("in");
+    $('#panel1').addClass("hide");
     $('#panel2').removeClass("hide");
     tooltip.removeClass("hide");
 
@@ -251,9 +253,8 @@ $(document).ready(() => {
   }); 
 
  //panel collapse, show arrows: 
-  $('.collapse').on('shown.bs.collapse', (event) => {
-    console.log('collapse!', event.target); 
-      $(".down-arrow, .up-arrow").toggle();
+  $('.collapse').on('shown.bs.collapse', () => {
+      $(this).parent().find(".down-arrow, .up-arrow").toggle();
     }).on('hidden.bs.collapse', () => {
       $(this).parent().find(".down-arrow, .up-arrow").toggle();
   });
