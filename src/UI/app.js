@@ -74,7 +74,7 @@ function setTooltipTexts(activeSimulation) {
   const infoHeading = $(".disability-info-heading");
   const infoParagraph = $(".disability-info-paragraph"); 
   const adviceList = $(".advice-list");
-  const moreInfoLink = $(".more-info-link");
+  const moreInfoLinks = $(".more-info-links");
   const moreInfoPanel =  $('#more-info-panel'); 
   const texts = data.facts[activeSimulation];
 
@@ -82,7 +82,7 @@ function setTooltipTexts(activeSimulation) {
   infoHeading.empty();
   infoParagraph.empty();
   adviceList.empty();
-  moreInfoLink.empty(); 
+  moreInfoLinks.empty(); 
 
   simulationStatus.text(texts.simulationStatus);
   simulationStatusAlert.removeClass("hide");
@@ -94,10 +94,14 @@ function setTooltipTexts(activeSimulation) {
     adviceList.append(`<li>${value}</li>`);
   });
 
-  if(texts.moreInfoUrl !== undefined) { 
+  if(texts.moreInfoUrls !== undefined) { 
     moreInfoPanel.removeClass("hidden");
-    moreInfoLink.append(texts.moreInfoLinkText);
-    chrome.storage.local.set({'linkUrl': texts.moreInfoUrl});
+
+  $.each(texts.moreInfoLinkText, (i, value) => {
+    moreInfoLinks.append(`<li>${value}</li>`);
+  });
+  chrome.storage.local.set({'linkUrl': texts.moreInfoUrls});
+
   } else {
     moreInfoPanel.addClass("hidden");
   }
@@ -246,7 +250,7 @@ $(document).ready(() => {
     resetSimulation(tooltip); 
   });
 
-  $(".more-info-link").click(() => {
+  $(".more-info-links").click(() => {
     chrome.storage.local.get('linkUrl', obj => {
       chrome.tabs.create({url: `${obj.linkUrl}`}); 
     }); 

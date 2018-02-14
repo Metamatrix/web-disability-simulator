@@ -24,7 +24,7 @@
           "Ha tillräckligt med luft mellan komponenter",
           "Ha tillräckligt stora klickytor."
         ],
-        "moreInfoUrl": "http://www.parkinsonforbundet.se",
+        "moreInfoUrls": "http://www.parkinsonforbundet.se",
         "moreInfoLinkText" : "Parkinsonsförbundet"
       },
       "yellowBlueColorBlindness":
@@ -36,7 +36,7 @@
           "Använd inte färg som det enda sättet att förmedla information, indikera en handling eller identifiera ett element. Markera till exempel inte ett felaktigt formulärfält endast med en röd ram utan komplettera även med text och gärna en ikon.", 	
           "Erbjud gärna ett högkontrast-läge."
         ],
-        "moreInfoUrl": "https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende",
+        "moreInfoUrls": "https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende",
         "moreInfoLinkText" : "Wikipedia om defekt färgseende"
       },
       "redGreenColorBlindness":
@@ -46,7 +46,7 @@
         "fact": "Personer med defekt färgseende har svårt att skilja på vissa eller alla färger. Ett fullt fungerande öga har tre olika tappar som tar upp färgerna violett, grön och röd. När en eller flera av tapparna saknas eller är defekta leder det till defekt färgseende. Röd-grön färgblindhet (Protanopi och Deuteranopi) är den vanligaste typen av färgblindhet. Den är vanligare hos män än kvinnor. Personer röd-grön färgblindhet har svårt att skilja på färgerna röd, grön, brun och orange.",
         "listItems": 
         ["Använd inte färg som enda sättet att förmedla information, indikera en handling eller identifiera ett element. Markera till exempel inte ett felaktigt formulärfält endast med röd ram, komplettera även med text och gärna en  ikon.", "Erbjud gärna ett högkontrast-läge."],
-        "moreInfoUrl": "https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende",
+        "moreInfoUrls": "https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende",
         "moreInfoLinkText" : "Wikipedia om defekt färgseende"
       },
       "farsightedness":
@@ -59,7 +59,7 @@
           "Webbsidan ska gå att förstora (zoomas) till minst 200 % så att besökaren kan anpassa innehållets storlek efter sina behov.",
           "Erbjud uppläsning av innehållet."
         ],
-        "moreInfoUrl": "https://webbriktlinjer.se/r/39-ge-webbplatsen-en-god-lasbarhet/",
+        "moreInfoUrls": "https://webbriktlinjer.se/r/39-ge-webbplatsen-en-god-lasbarhet/",
         "moreInfoLinkText" : "Webbriktlinje Ge webbplatsen god läsbarhet"
       },
       "totalColorBlindness":
@@ -190,7 +190,9 @@
           "Avoid difficult words and terms.",
           "Offer easy to read texts, images, video or audio alternatives.",
           "Avoid fonts with complicated and complex characters."
-        ]
+        ],
+        "moreInfoUrls": ["http://inclusivedesignprinciples.org/#prioritise-content"],
+        "moreInfoLinkText" : ["Prioritise content"]
       },
       "parkinsons":
       {
@@ -202,8 +204,8 @@
           "Have enough space between components.",
           "Make sure click areas are big enough."
         ],
-        "moreInfoUrl": "http://www.parkinsonforbundet.se",
-        "moreInfoLinkText" : "Parkinson's Association"
+        "moreInfoUrls": ["http://inclusivedesignprinciples.org/#offer-choice"],
+        "moreInfoLinkText" : ["Offer choice"]
       },
       "yellowBlueColorBlindness":
       {
@@ -214,8 +216,8 @@
           "Do not use color as the only way to convey information, indicate an action or identify an element. For example, do not mark an incorrect form field with a red border only, also supplement with a text and preferably an icon.",
           "Consider offering a high contrast mode."
         ],
-        "moreInfoUrl": "https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende",
-        "moreInfoLinkText" : "Wikipedia about defective color vision"
+        "moreInfoUrls": ["https://accessibility.blog.gov.uk/2016/06/17/colour-contrast-why-does-it-matter/"],
+        "moreInfoLinkText" : ["Why colour contrast matters"]
       },
       "redGreenColorBlindness":
       {
@@ -226,8 +228,8 @@
           "Do not use color as the only way to convey information, indicate an action or identify an element. For example, do not mark an incorrect form field with a red border only, also supplement with a text and preferably an icon.",
           "Consider offering a high contrast mode."
         ],
-        "moreInfoUrl": "https://sv.wikipedia.org/wiki/Defekt_f%C3%A4rgseende",
-        "moreInfoLinkText" : "Wikipedia about defective color vision"
+        "moreInfoUrls": ["https://developer.paciellogroup.com/resources/contrastanalyser/", "http://www.inclusivedesigntoolkit.com/UCvision/vision.html#colour" ],
+        "moreInfoLinkText" : ["Colour Contrast Analyser", "Ensure sufficient contrast"]
       },
       "farsightedness":
       {
@@ -239,8 +241,8 @@
           "Make sure the website can be zoomed to at least 200%.",
           "Offer a text to speech reader."
         ],
-        "moreInfoUrl": "https://webbriktlinjer.se/r/39-ge-webbplatsen-en-god-lasbarhet/",
-        "moreInfoLinkText" : "Good readability"
+        "moreInfoUrls": ["http://inclusivedesignprinciples.org/#provide-comparable-experience","http://www.inclusivedesigntoolkit.com/UCvision/vision.html#shape"],
+        "moreInfoLinkText" : ["Provide comparable experience", "Consider size"]
       },
       "totalColorBlindness":
       {
@@ -250,6 +252,16 @@
         "listItems": [
           "Do not use color as the only way to convey information, indicate an action or identify an element. For example, do not mark an incorrect form field with a red border only, also supplement with a text and preferably an icon.",
           "Consider offering a high contrast mode."
+        ],
+       "moreInfoUrls": [
+          "https://www.w3.org/WAI/gettingstarted/tips/designing.html#provide-sufficient-contrast-between-foreground-and-background",
+          "https://www.w3.org/WAI/gettingstarted/tips/designing.html#dont-use-color-alone-to-convey-information",
+          "https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html#visual-audio-contrast-contrast-resources-head "
+        ],
+        "moreInfoLinkText" : [
+          "Provide sufficient contrast between foreground and background", 
+          "Don’t use color alone to convey information", 
+          "List of tools to help determine contrast ratio"
         ]
       },
       "tunnelVision":
@@ -261,7 +273,9 @@
           "Avoid text in small font sizes and long texts. Use proper spacing and line height.",
           "Make sure the website can be zoomed to at least 200%.",
           "Offer a text to speech reader."
-        ]
+        ],
+        "moreInfoUrls": ["http://inclusivedesignprinciples.org/#give-control","http://www.inclusivedesigntoolkit.com/UCvision/vision.html#layout"],
+        "moreInfoLinkText" : ["Allow zoom", "Consider visual field loss"]
       },
       "sunshine":
       {
@@ -272,18 +286,28 @@
           "Lorem ipsum.",
           "Lorem ipsum.",
           "Lorem ipsum"
-        ]
+        ],
+        "moreInfoUrls": ["http://inclusivedesignprinciples.org/#consider-situation","http://www.inclusivedesigntoolkit.com/UCvision/vision.html#lighting"],
+        "moreInfoLinkText" : ["Consider situation", "Consider lighting conditions"]
       },
       "concentration":
       {
         "simulationStatus": "Simulation active!",
         "heading": "Concentration",
-        "fact": "Everyone can have a hard time concentrating, but for some it can be a big problem in everyday life. Disabilities like ADHD and Autism can cause difficulty in handling impressions, sorting information and sensitivity to sound.",        "listItems": [
+        "fact": "Everyone can have a hard time concentrating, but for some it can be a big problem in everyday life. Disabilities like ADHD and Autism can cause difficulty in handling impressions, sorting information and sensitivity to sound.",        
+        "listItems": [
           "Give the website a simple and clean design.",
           "Be careful with animations and strong colors.",
           "Avoid having too much content on the same page.",
           "Offer image, audio and video alernatives to text content."
-        ]
+        ],
+        "moreInfoUrls": [
+          "http://inclusivedesignprinciples.org/#be-consistent",
+          "http://www.inclusivedesigntoolkit.com/UCthinking/thinking.html#interface_navigation_and_nested_menus",
+          "http://www.inclusivedesigntoolkit.com/UCthinking/thinking.html#structuring_information",
+          "http://www.inclusivedesigntoolkit.com/UCthinking/thinking.html#attention"
+        ],
+        "moreInfoLinkText" : ["Be consistent", "Avoid deep hierarchies", "Reduce memory load", "Avoid multiple focuses of attention" ]
       },
       "smallVocabulary":
       {
