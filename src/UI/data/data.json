@@ -191,8 +191,13 @@
           "Offer easy to read texts, images, video or audio alternatives.",
           "Avoid fonts with complicated and complex characters."
         ],
-        "moreInfoUrls": ["http://inclusivedesignprinciples.org/#prioritise-content"],
-        "moreInfoLinkText" : ["Prioritise content"]
+        "moreInfo": 
+          [
+            {
+              "moreInfoUrl":"http://inclusivedesignprinciples.org/#prioritise-content",
+              "moreInfoLinkText":"Prioritise content" 
+            }
+          ]
       },
       "parkinsons":
       {
@@ -204,8 +209,13 @@
           "Have enough space between components.",
           "Make sure click areas are big enough."
         ],
-        "moreInfoUrls": ["http://inclusivedesignprinciples.org/#offer-choice"],
-        "moreInfoLinkText" : ["Offer choice"]
+        "moreInfo": 
+          [
+            {
+              "moreInfoUrl":"http://inclusivedesignprinciples.org/#offer-choice",
+              "moreInfoLinkText":"Offer choice" 
+            }
+          ]
       },
       "yellowBlueColorBlindness":
       {
@@ -216,8 +226,13 @@
           "Do not use color as the only way to convey information, indicate an action or identify an element. For example, do not mark an incorrect form field with a red border only, also supplement with a text and preferably an icon.",
           "Consider offering a high contrast mode."
         ],
-        "moreInfoUrls": ["https://accessibility.blog.gov.uk/2016/06/17/colour-contrast-why-does-it-matter/"],
-        "moreInfoLinkText" : ["Why colour contrast matters"]
+        "moreInfo": 
+          [
+            {
+              "moreInfoUrl":"https://accessibility.blog.gov.uk/2016/06/17/colour-contrast-why-does-it-matter/",
+              "moreInfoLinkText":"Why colour contrast matters" 
+            }
+          ]
       },
       "redGreenColorBlindness":
       {
@@ -228,8 +243,17 @@
           "Do not use color as the only way to convey information, indicate an action or identify an element. For example, do not mark an incorrect form field with a red border only, also supplement with a text and preferably an icon.",
           "Consider offering a high contrast mode."
         ],
-        "moreInfoUrls": ["https://developer.paciellogroup.com/resources/contrastanalyser/", "http://www.inclusivedesigntoolkit.com/UCvision/vision.html#colour" ],
-        "moreInfoLinkText" : ["Colour Contrast Analyser", "Ensure sufficient contrast"]
+        "moreInfo": 
+          [
+            {
+              "moreInfoUrl":"https://developer.paciellogroup.com/resources/contrastanalyser/",
+              "moreInfoLinkText":"Colour Contrast Analyser" 
+            },
+            {
+              "moreInfoUrl":"http://www.inclusivedesigntoolkit.com/UCvision/vision.html#colour",
+              "moreInfoLinkText":"Ensure sufficient contrast" 
+            }
+          ]
       },
       "farsightedness":
       {
@@ -241,8 +265,17 @@
           "Make sure the website can be zoomed to at least 200%.",
           "Offer a text to speech reader."
         ],
-        "moreInfoUrls": ["http://inclusivedesignprinciples.org/#provide-comparable-experience","http://www.inclusivedesigntoolkit.com/UCvision/vision.html#shape"],
-        "moreInfoLinkText" : ["Provide comparable experience", "Consider size"]
+        "moreInfo": 
+          [
+            {
+              "moreInfoUrl":"http://inclusivedesignprinciples.org/#provide-comparable-experience",
+              "moreInfoLinkText":"Provide comparable experience" 
+            },
+            {
+              "moreInfoUrl":"http://www.inclusivedesigntoolkit.com/UCvision/vision.html#shape",
+              "moreInfoLinkText":"Consider size" 
+            }
+          ]
       },
       "totalColorBlindness":
       {
@@ -253,17 +286,23 @@
           "Do not use color as the only way to convey information, indicate an action or identify an element. For example, do not mark an incorrect form field with a red border only, also supplement with a text and preferably an icon.",
           "Consider offering a high contrast mode."
         ],
-       "moreInfoUrls": [
-          "https://www.w3.org/WAI/gettingstarted/tips/designing.html#provide-sufficient-contrast-between-foreground-and-background",
-          "https://www.w3.org/WAI/gettingstarted/tips/designing.html#dont-use-color-alone-to-convey-information",
-          "https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html#visual-audio-contrast-contrast-resources-head "
-        ],
-        "moreInfoLinkText" : [
-          "Provide sufficient contrast between foreground and background", 
-          "Don’t use color alone to convey information", 
-          "List of tools to help determine contrast ratio"
-        ]
+        "moreInfo": 
+          [
+            {
+              "moreInfoUrl":"https://www.w3.org/WAI/gettingstarted/tips/designing.html#provide-sufficient-contrast-between-foreground-and-background",
+              "moreInfoLinkText":"Provide sufficient contrast between foreground and background" 
+            },
+            {
+              "moreInfoUrl":"https://www.w3.org/WAI/gettingstarted/tips/designing.html#dont-use-color-alone-to-convey-information",
+              "moreInfoLinkText":"Don’t use color alone to convey information" 
+            },
+            {
+              "moreInfoUrl":"https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html#visual-audio-contrast-contrast-resources-head",
+              "moreInfoLinkText":"List of tools to help determine contrast ratio" 
+            }
+          ]
       },
+
       "tunnelVision":
       {
         "simulationStatus": "Simulation active! move the mouse pointer on the web page and see what's happening.",
@@ -274,8 +313,17 @@
           "Make sure the website can be zoomed to at least 200%.",
           "Offer a text to speech reader."
         ],
-        "moreInfoUrls": ["http://inclusivedesignprinciples.org/#give-control","http://www.inclusivedesigntoolkit.com/UCvision/vision.html#layout"],
-        "moreInfoLinkText" : ["Allow zoom", "Consider visual field loss"]
+        "moreInfo": 
+          [
+            {
+              "moreInfoUrl":"http://inclusivedesignprinciples.org/#give-control",
+              "moreInfoLinkText":"Allow zoom" 
+            },
+            {
+              "moreInfoUrl":"http://www.inclusivedesigntoolkit.com/UCvision/vision.html#layout",
+              "moreInfoLinkText":"Consider visual field loss" 
+            }
+          ]
       },
       "sunshine":
       {
@@ -287,8 +335,17 @@
           "Lorem ipsum.",
           "Lorem ipsum"
         ],
-        "moreInfoUrls": ["http://inclusivedesignprinciples.org/#consider-situation","http://www.inclusivedesigntoolkit.com/UCvision/vision.html#lighting"],
-        "moreInfoLinkText" : ["Consider situation", "Consider lighting conditions"]
+        "moreInfo": 
+          [
+            {
+              "moreInfoUrl":"http://inclusivedesignprinciples.org/#consider-situation",
+              "moreInfoLinkText":"Consider situation" 
+            },
+            {
+              "moreInfoUrl":"http://www.inclusivedesigntoolkit.com/UCvision/vision.html#lighting",
+              "moreInfoLinkText":"Consider lighting conditions" 
+            }
+          ]
       },
       "concentration":
       {
@@ -301,13 +358,25 @@
           "Avoid having too much content on the same page.",
           "Offer image, audio and video alernatives to text content."
         ],
-        "moreInfoUrls": [
-          "http://inclusivedesignprinciples.org/#be-consistent",
-          "http://www.inclusivedesigntoolkit.com/UCthinking/thinking.html#interface_navigation_and_nested_menus",
-          "http://www.inclusivedesigntoolkit.com/UCthinking/thinking.html#structuring_information",
-          "http://www.inclusivedesigntoolkit.com/UCthinking/thinking.html#attention"
-        ],
-        "moreInfoLinkText" : ["Be consistent", "Avoid deep hierarchies", "Reduce memory load", "Avoid multiple focuses of attention" ]
+        "moreInfo": 
+          [
+            {
+              "moreInfoUrl":"http://inclusivedesignprinciples.org/#be-consistent",
+              "moreInfoLinkText":"Be consistent" 
+            },
+            {
+              "moreInfoUrl":"http://www.inclusivedesigntoolkit.com/UCthinking/thinking.html#interface_navigation_and_nested_menus",
+              "moreInfoLinkText":"Avoid deep hierarchies" 
+            },
+           {
+              "moreInfoUrl":"http://www.inclusivedesigntoolkit.com/UCthinking/thinking.html#structuring_information",
+              "moreInfoLinkText":"Reduce memory load" 
+            },
+            {
+              "moreInfoUrl":"http://www.inclusivedesigntoolkit.com/UCthinking/thinking.html#attention",
+              "moreInfoLinkText":"Avoid multiple focuses of attention" 
+            }
+          ]
       },
       "smallVocabulary":
       {

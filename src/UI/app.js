@@ -65,6 +65,28 @@ function setTexts() {
 
 }
 
+function readMoreLinks(){
+
+  const readMoreLink = $('.more-info-links').find('li'); 
+  
+  readMoreLink.click((event) => {
+
+    const currentLink = event.target.innerText; 
+
+    chrome.storage.local.get('moreInfo', obj => {
+
+      $.each(obj.moreInfo, (i, value) => {
+          if(currentLink == obj.moreInfo[i].moreInfoLinkText) {
+            chrome.tabs.create({url: `${obj.moreInfo[i].moreInfoUrl}`}); 
+          }
+      });
+
+    });
+
+  }); 
+
+}
+
 function setTooltipTexts(activeSimulation) {
 
   const data = languageData[lang];
@@ -94,13 +116,14 @@ function setTooltipTexts(activeSimulation) {
     adviceList.append(`<li>${value}</li>`);
   });
 
-  if(texts.moreInfoUrls !== undefined) { 
+  if(texts.moreInfo !== undefined) { 
     moreInfoPanel.removeClass("hidden");
 
-  $.each(texts.moreInfoLinkText, (i, value) => {
-    moreInfoLinks.append(`<li>${value}</li>`);
-  });
-  chrome.storage.local.set({'linkUrl': texts.moreInfoUrls});
+    $.each(texts.moreInfo, (i, value) => {
+      console.log(texts.moreInfo[i].moreInfoLinkText);
+      moreInfoLinks.append(`<li><a>${texts.moreInfo[i].moreInfoLinkText}</a></li>`);
+    });
+    chrome.storage.local.set({'moreInfo': texts.moreInfo});
 
   } else {
     moreInfoPanel.addClass("hidden");
@@ -131,6 +154,7 @@ $(document).ready(() => {
       tooltip.addClass("in").removeClass("hide");
       $('#panel1').removeClass("in");
       setTooltipTexts(activeSimulation);
+      readMoreLinks(); 
     }
 
   }); 
@@ -171,7 +195,9 @@ $(document).ready(() => {
     setTimeout(() => {
       $('#panel2').addClass("hide");
     }, 1500);
-    
+
+    readMoreLinks(); 
+
   });
 
   $(".github-link").click(() => {
@@ -249,12 +275,6 @@ $(document).ready(() => {
   $("#reset-btn").click(() => {
     resetSimulation(tooltip); 
   });
-
-  $(".more-info-links").click(() => {
-    chrome.storage.local.get('linkUrl', obj => {
-      chrome.tabs.create({url: `${obj.linkUrl}`}); 
-    }); 
-  }); 
 
  //panel collapse, show arrows: 
   $('.collapse').on('shown.bs.collapse', () => {
