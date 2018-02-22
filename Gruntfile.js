@@ -63,6 +63,9 @@ module.exports = function(grunt) {
           {expand: true, cwd: 'src/', src: ['manifest.json'], dest: 'dist/', filter: 'isFile'}
         ]
       }
+    },
+    eslint: {         
+        src: ["src/**/*.js"]
     }
 
   });
@@ -72,8 +75,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks("grunt-eslint");
 
   // Default task(s).
-  grunt.registerTask('default', [ 'copy:build', 'babel', 'browserify', 'copy:main','watch']);
+  grunt.registerTask('default', [ 'eslint','copy:build', 'babel', 'browserify', 'copy:main', 'watch']);
 
 };
