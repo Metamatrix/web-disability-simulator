@@ -81,8 +81,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-eslint');
+  grunt.loadNpmTasks('grunt-force');
 
   // Default task(s).
-  grunt.registerTask('default', ['eslint', 'copy:build', 'babel', 'browserify', 'copy:main', 'watch']);
+  grunt.registerTask('default', ['force:on','eslint','force:off', 'copy:build', 'babel', 'browserify', 'copy:main', 'watch']);
 
 };
