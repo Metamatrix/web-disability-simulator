@@ -64,8 +64,13 @@ module.exports = function(grunt) {
         ]
       }
     },
-    eslint: {         
-        src: ["src/**/*.js"]
+    eslint: {
+      options: {
+          config: '.eslintrc.json',
+          reset: false,
+          outputFile: 'eslint/report/eslintreport.txt'
+      },
+      target: ['src/**/*.js']
     }
 
   });
@@ -75,9 +80,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks("grunt-eslint");
+  grunt.loadNpmTasks('grunt-eslint');
 
   // Default task(s).
-  grunt.registerTask('default', [ 'eslint','copy:build', 'babel', 'browserify', 'copy:main', 'watch']);
+  grunt.registerTask('default', ['eslint', 'copy:build', 'babel', 'browserify', 'copy:main', 'watch']);
 
 };

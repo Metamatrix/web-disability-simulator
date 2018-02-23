@@ -1,0 +1,17 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "globals": {
+        "$": true,
+        "chrome": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "rules": {
+        //define rules beside the recommended here
+    }
+}

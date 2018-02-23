@@ -1,0 +1,6 @@
+# ignore everything in the packages folders
+src/ui/vendor
+ 
+# ignore everything in Scripts except files beginning with "myapp"
+**/Scripts
+!**/Scripts/myapp*
