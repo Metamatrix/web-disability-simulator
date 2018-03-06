@@ -31,7 +31,7 @@ function stop() {
   }
 }
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((request) => {
   if (request.action === 'startSimulation' && request.simulation === name) {
     start(request.simulation);
   }

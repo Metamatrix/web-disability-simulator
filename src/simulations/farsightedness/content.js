@@ -1,6 +1,5 @@
 import {addCss, removeElement} from '../../utils/dom.js';
 
-const name = 'farsightedness';
 const cssUrl = chrome.extension.getURL('/simulations/farsightedness/css/main.css');
 
 let css = null;
@@ -15,7 +14,7 @@ function stop() {
   }
 }
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((request) => {
   if (request.action === 'startSimulation' && request.simulation === 'farsightedness') {
     start();
   }

@@ -1,4 +1,4 @@
-chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+chrome.tabs.onUpdated.addListener(function () {
 
   // Reset the icon if the page reloads or on onavigation
   chrome.browserAction.setIcon({

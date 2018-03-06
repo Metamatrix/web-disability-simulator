@@ -1,49 +1,21 @@
 
-C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\background.js
-  1:64  error  'tab' is defined but never used  no-unused-vars
-
-C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\simulations\concentration\content.js
-    2:9   error  'addCss' is defined but never used        no-unused-vars
-  107:56  error  'sendResponse' is defined but never used  no-unused-vars
-
-C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\simulations\dyslexia\content.js
-  58:15  error  'lettersToKeep' is assigned a value but never used  no-unused-vars
-  84:56  error  'sendResponse' is defined but never used            no-unused-vars
-
-C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\simulations\farsightedness\content.js
-   3:7   error  'name' is assigned a value but never used  no-unused-vars
-  18:56  error  'sendResponse' is defined but never used   no-unused-vars
-
 C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\simulations\parkinsons\content.js
-    1:17  error  'pointInRect' is defined but never used            no-unused-vars
-    1:30  error  'inRange' is defined but never used                no-unused-vars
-   10:5   error  'cursorImgUrl' is assigned a value but never used  no-unused-vars
-  102:56  error  'sendResponse' is defined but never used           no-unused-vars
-
-C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\simulations\redGreenColorBlindness\content.js
-  34:56  error  'sendResponse' is defined but never used  no-unused-vars
+   1:17  error  'pointInRect' is defined but never used            no-unused-vars
+   1:30  error  'inRange' is defined but never used                no-unused-vars
+  10:5   error  'cursorImgUrl' is assigned a value but never used  no-unused-vars
 
 C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\simulations\smallVocabulary\content.js
-   15:10  error  'randomLetter' is defined but never used  no-unused-vars
-  128:56  error  'sendResponse' is defined but never used  no-unused-vars
+  15:10  error  'randomLetter' is defined but never used  no-unused-vars
 
 C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\simulations\sunshine\content.js
-   4:7   error  'url' is assigned a value but never used  no-unused-vars
-  21:56  error  'sendResponse' is defined but never used  no-unused-vars
-
-C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\simulations\totalColorBlindness\content.js
-  34:56  error  'sendResponse' is defined but never used  no-unused-vars
+  4:7  error  'url' is assigned a value but never used  no-unused-vars
 
 C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\simulations\tunnelVision\content.js
-   1:9   error  'random' is defined but never used        no-unused-vars
-   1:17  error  'pointInRect' is defined but never used   no-unused-vars
-   1:30  error  'inRange' is defined but never used       no-unused-vars
-   2:32  error  'setStyle' is defined but never used      no-unused-vars
-  14:18  error  'e' is defined but never used             no-unused-vars
-  76:56  error  'sendResponse' is defined but never used  no-unused-vars
-
-C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\simulations\yellowBlueColorBlindness\content.js
-  34:56  error  'sendResponse' is defined but never used  no-unused-vars
+   1:9   error  'random' is defined but never used       no-unused-vars
+   1:17  error  'pointInRect' is defined but never used  no-unused-vars
+   1:30  error  'inRange' is defined but never used      no-unused-vars
+   2:32  error  'setStyle' is defined but never used     no-unused-vars
+  14:18  error  'e' is defined but never used            no-unused-vars
 
 C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\UI\app.js
    78:32  error  'value' is defined but never used  no-unused-vars
@@ -56,4 +28,4 @@ C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\UI\
 C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\UI\vendor\jquery\jquery-3.3.1.min.js
   0:0  warning  File ignored because of a matching ignore pattern. Use "--no-ignore" to override
 
-✖ 29 problems (27 errors, 2 warnings)
+✖ 15 problems (13 errors, 2 warnings)

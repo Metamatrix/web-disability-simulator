@@ -55,8 +55,6 @@ function start() {
           return shuffle(word);
         }
 
-        const lettersToKeep = Math.max(Math.round(word.length / 5), 1);
-
         return word.substring(0, 2) +
           shuffle(word.substring(2, word.length - 2)) +
           word.substring(word.length - 2)
@@ -81,7 +79,7 @@ function stop() {
 
 }
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((request) => {
   if (request.action === 'startSimulation' && request.simulation === 'dyslexia') {
     start();
   }

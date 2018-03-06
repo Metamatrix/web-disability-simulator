@@ -1,5 +1,5 @@
 import {random} from '../../utils/math.js';
-import {addCss, removeElement, setStyle} from '../../utils/dom.js';
+import {removeElement, setStyle} from '../../utils/dom.js';
 
 const name = 'concentration';
 const width = document.documentElement.clientWidth;
@@ -104,7 +104,7 @@ function stop() {
 
 }
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((request) => {
   if (request.action === 'startSimulation' && request.simulation === name) {
     start();
   }
