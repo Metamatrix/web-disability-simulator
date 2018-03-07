@@ -1,4 +1,4 @@
-import {random, pointInRect, inRange} from '../../utils/math.js';
+import {random} from '../../utils/math.js';
 import {addCss, removeElement, setStyle} from '../../utils/dom.js';
 
 const name = 'parkinsons';
@@ -7,8 +7,7 @@ const shakeSpeed = 40;
 const shakePositionInterval = 250;
 const appVersion = navigator.appVersion; 
 
-let cursorImgUrl = '',
-  cursor = null,
+let cursor = null,
   posInterval = null,
   cursorPosX = 0,
   cursorPosY = 0,

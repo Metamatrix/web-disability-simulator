@@ -1,5 +1,4 @@
-import {random, pointInRect, inRange} from '../../utils/math.js';
-import {addCss, removeElement, setStyle} from '../../utils/dom.js';
+import {addCss, removeElement} from '../../utils/dom.js';
 
 const name = 'tunnelVision';
 const cssUrl = chrome.extension.getURL('/simulations/tunnelVision/css/main.css');
@@ -11,7 +10,7 @@ let mouseY = 0;
 let size = 0;
 let css = null;
 
-function setSize(e) {
+function setSize() {
   canvas.setAttribute('width', document.documentElement.clientWidth);
   canvas.setAttribute('height', document.documentElement.clientHeight);
   size = Math.min(window.innerWidth * .3, 300);

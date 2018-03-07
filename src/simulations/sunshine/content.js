@@ -1,7 +1,6 @@
 import {addCss, removeElement} from '../../utils/dom.js';
 
 const name = 'sunshine';
-const url = chrome.extension.getURL(`/simulations/${name}/img/filters.svg`);
 
 let css = null;
 

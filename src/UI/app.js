@@ -75,7 +75,7 @@ function readMoreLinks(){
 
     chrome.storage.local.get('moreInfo', obj => {
 
-      $.each(obj.moreInfo, (i, value) => {
+      $.each(obj.moreInfo, (i) => {
           if(currentLink == obj.moreInfo[i].moreInfoLinkText) {
             chrome.tabs.create({url: `${obj.moreInfo[i].moreInfoUrl}`}); 
           }
@@ -119,8 +119,7 @@ function setTooltipTexts(activeSimulation) {
   if(texts.moreInfo !== undefined) { 
     moreInfoPanel.removeClass("hidden");
 
-    $.each(texts.moreInfo, (i, value) => {
-      console.log(texts.moreInfo[i].moreInfoLinkText);
+    $.each(texts.moreInfo, (i) => {
       moreInfoLinks.append(`<li><a>${texts.moreInfo[i].moreInfoLinkText}</a></li>`);
     });
     chrome.storage.local.set({'moreInfo': texts.moreInfo});
@@ -137,13 +136,10 @@ $(document).ready(() => {
 
   let activeSimulation;
 
-  //chrome.storage.local.get('lang', obj => {
-
   lang = 'en';
 
   setTexts();
 
-  //});
 
   // Set active state
   chrome.storage.local.get('activeSimulation', obj => {

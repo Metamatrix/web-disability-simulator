@@ -12,14 +12,6 @@ let textNodes = null,
   consonants = [],
   vowels = [];
 
-function randomLetter(letter) {
-  var chars = 'abcdefghijklmnopqrstuvwxyz';
-  var i = Math.floor(Math.random() * chars.length);
-  var value = chars.substring(i, i + 1);
-
-  return isUpperCase(letter) ? value.toUpperCase() : value;
-}
-
 function processText(text) {
 
   return text.split(/\s/).map((word) => {

@@ -1,31 +1,8 @@
 
-C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\simulations\parkinsons\content.js
-   1:17  error  'pointInRect' is defined but never used            no-unused-vars
-   1:30  error  'inRange' is defined but never used                no-unused-vars
-  10:5   error  'cursorImgUrl' is assigned a value but never used  no-unused-vars
-
-C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\simulations\smallVocabulary\content.js
-  15:10  error  'randomLetter' is defined but never used  no-unused-vars
-
-C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\simulations\sunshine\content.js
-  4:7  error  'url' is assigned a value but never used  no-unused-vars
-
-C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\simulations\tunnelVision\content.js
-   1:9   error  'random' is defined but never used       no-unused-vars
-   1:17  error  'pointInRect' is defined but never used  no-unused-vars
-   1:30  error  'inRange' is defined but never used      no-unused-vars
-   2:32  error  'setStyle' is defined but never used     no-unused-vars
-  14:18  error  'e' is defined but never used            no-unused-vars
-
-C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\UI\app.js
-   78:32  error  'value' is defined but never used  no-unused-vars
-  122:32  error  'value' is defined but never used  no-unused-vars
-  123:7   error  Unexpected console statement       no-console
-
 C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\UI\vendor\bootstrap\bootstrap.min.js
   0:0  warning  File ignored because of a matching ignore pattern. Use "--no-ignore" to override
 
 C:\Users\Sandra.Widmark.MMX-STHLM\Documents\MMX\web-disability-simulator\src\UI\vendor\jquery\jquery-3.3.1.min.js
   0:0  warning  File ignored because of a matching ignore pattern. Use "--no-ignore" to override
 
-✖ 15 problems (13 errors, 2 warnings)
+✖ 2 problems (0 errors, 2 warnings)
