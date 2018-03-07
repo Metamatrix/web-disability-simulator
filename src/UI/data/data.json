@@ -194,10 +194,19 @@
         "moreInfo": 
           [
             {
+              "moreInfoUrl":"https://www.w3.org/TR/WCAG20/#minimize-error",
+              "moreInfoLinkText":"WCAG 3.3 Input Assistance: Help users avoid and correct mistakes. (W3C)" 
+            },
+            {
+              "moreInfoUrl":"https://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-refs",
+              "moreInfoLinkText":"2.4.4 Link Purpose (In Context)" 
+            },
+            {
               "moreInfoUrl":"http://inclusivedesignprinciples.org/#prioritise-content",
               "moreInfoLinkText":"Prioritise content" 
             }
           ]
+          
       },
       "parkinsons":
       {
@@ -211,6 +220,10 @@
         ],
         "moreInfo": 
           [
+            {
+              "moreInfoUrl":"https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation.html",
+              "moreInfoLinkText":"WCAG 2.1 Keyboard Accessible: Make all functionality available from a keyboard. (W3C)" 
+            },
             {
               "moreInfoUrl":"http://inclusivedesignprinciples.org/#offer-choice",
               "moreInfoLinkText":"Offer choice" 
@@ -229,8 +242,32 @@
         "moreInfo": 
           [
             {
+              "moreInfoUrl":"https://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-without-color",
+              "moreInfoLinkText":"WCAG 1.4.1 Use of Color (W3C)" 
+            },
+            {
+              "moreInfoUrl":"https://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-contrast",
+              "moreInfoLinkText":"WCAG1.4.3 Contrast (Minimum) (W3C)" 
+            },
+            {
+              "moreInfoUrl":"https://www.usability.gov/get-involved/blog/2010/02/color-blindness.html",
+              "moreInfoLinkText":"Color Blindness & Web Design (Usability.gov)" 
+            },
+            {
               "moreInfoUrl":"https://accessibility.blog.gov.uk/2016/06/17/colour-contrast-why-does-it-matter/",
-              "moreInfoLinkText":"Why colour contrast matters" 
+              "moreInfoLinkText":"Colour contrast - why does it matter? (gov.uk)" 
+            },
+            {
+              "moreInfoUrl":"https://developer.paciellogroup.com/resources/contrastanalyser/",
+              "moreInfoLinkText":"Colour Contrast Analyser" 
+            },
+            {
+              "moreInfoUrl":"http://www.inclusivedesigntoolkit.com/UCvision/vision.html#colour",
+              "moreInfoLinkText":"Ensure sufficient contrast" 
+            },
+           {
+              "moreInfoUrl":"http://www.color-blindness.com/rgb-anomaloscope-color-blindness-test/",
+              "moreInfoLinkText":"Color blindness test" 
             }
           ]
       },
@@ -244,7 +281,23 @@
           "Consider offering a high contrast mode."
         ],
         "moreInfo": 
-          [
+            [
+            {
+              "moreInfoUrl":"https://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-without-color",
+              "moreInfoLinkText":"WCAG 1.4.1 Use of Color (W3C)" 
+            },
+            {
+              "moreInfoUrl":"https://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-contrast",
+              "moreInfoLinkText":"WCAG1.4.3 Contrast (Minimum) (W3C)" 
+            },
+            {
+              "moreInfoUrl":"https://www.usability.gov/get-involved/blog/2010/02/color-blindness.html",
+              "moreInfoLinkText":"Color Blindness & Web Design (Usability.gov)" 
+            },
+            {
+              "moreInfoUrl":"https://accessibility.blog.gov.uk/2016/06/17/colour-contrast-why-does-it-matter/",
+              "moreInfoLinkText":"Colour contrast - why does it matter? (gov.uk)" 
+            },
             {
               "moreInfoUrl":"https://developer.paciellogroup.com/resources/contrastanalyser/",
               "moreInfoLinkText":"Colour Contrast Analyser" 
@@ -252,6 +305,10 @@
             {
               "moreInfoUrl":"http://www.inclusivedesigntoolkit.com/UCvision/vision.html#colour",
               "moreInfoLinkText":"Ensure sufficient contrast" 
+            },
+            {
+              "moreInfoUrl":"http://www.color-blindness.com/rgb-anomaloscope-color-blindness-test/",
+              "moreInfoLinkText":"Color blindness test" 
             }
           ]
       },
@@ -267,6 +324,10 @@
         ],
         "moreInfo": 
           [
+            {
+              "moreInfoUrl":"https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=144#qr-visual-audio-contrast-scale",
+              "moreInfoLinkText":"WCAG 1.4.4 Resize text (W3C)" 
+            },
             {
               "moreInfoUrl":"http://inclusivedesignprinciples.org/#provide-comparable-experience",
               "moreInfoLinkText":"Provide comparable experience" 
@@ -287,18 +348,34 @@
           "Consider offering a high contrast mode."
         ],
         "moreInfo": 
-          [
+              [
             {
-              "moreInfoUrl":"https://www.w3.org/WAI/gettingstarted/tips/designing.html#provide-sufficient-contrast-between-foreground-and-background",
-              "moreInfoLinkText":"Provide sufficient contrast between foreground and background" 
+              "moreInfoUrl":"https://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-without-color",
+              "moreInfoLinkText":"WCAG 1.4.1 Use of Color (W3C)" 
             },
             {
-              "moreInfoUrl":"https://www.w3.org/WAI/gettingstarted/tips/designing.html#dont-use-color-alone-to-convey-information",
-              "moreInfoLinkText":"Don’t use color alone to convey information" 
+              "moreInfoUrl":"https://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-contrast",
+              "moreInfoLinkText":"WCAG1.4.3 Contrast (Minimum) (W3C)" 
             },
             {
-              "moreInfoUrl":"https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html#visual-audio-contrast-contrast-resources-head",
-              "moreInfoLinkText":"List of tools to help determine contrast ratio" 
+              "moreInfoUrl":"https://www.usability.gov/get-involved/blog/2010/02/color-blindness.html",
+              "moreInfoLinkText":"Color Blindness & Web Design (Usability.gov)" 
+            },
+            {
+              "moreInfoUrl":"https://accessibility.blog.gov.uk/2016/06/17/colour-contrast-why-does-it-matter/",
+              "moreInfoLinkText":"Colour contrast - why does it matter? (gov.uk)" 
+            },
+            {
+              "moreInfoUrl":"https://developer.paciellogroup.com/resources/contrastanalyser/",
+              "moreInfoLinkText":"Colour Contrast Analyser" 
+            },
+            {
+              "moreInfoUrl":"http://www.inclusivedesigntoolkit.com/UCvision/vision.html#colour",
+              "moreInfoLinkText":"Ensure sufficient contrast" 
+            },
+           {
+              "moreInfoUrl":"http://www.color-blindness.com/rgb-anomaloscope-color-blindness-test/",
+              "moreInfoLinkText":"Color blindness test" 
             }
           ]
       },
@@ -329,11 +406,10 @@
       {
         "simulationStatus": "Simulation active!",
         "heading": "Sunshine",
-        "fact": "Lorem ipsum",
+        "fact": "A lot of people has to use their computers outside in bright sunshine. It can make it harder to see what’s on the screen.",
         "listItems": [
-          "Lorem ipsum.",
-          "Lorem ipsum.",
-          "Lorem ipsum"
+          "Provide enough contrast between text and its background. Use a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text.",
+          "Check the Contrast with Colour Contrast Analyser or Contrast ratio."
         ],
         "moreInfo": 
           [
@@ -387,7 +463,18 @@
           "Avoid difficult words and terms.",
           "Offer easy to read texts, images, video or audio alternatives.",
           "Offer texts in different languages."
-        ]
+        ],
+        "moreInfo": 
+          [
+            {
+              "moreInfoUrl":"https://www.w3.org/TR/WCAG20/#minimize-error",
+              "moreInfoLinkText":"WCAG 3.3 Input Assistance: Help users avoid and correct mistakes. (W3C)" 
+            },
+            {
+              "moreInfoUrl":"https://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-refs",
+              "moreInfoLinkText":"2.4.4 Link Purpose (In Context)" 
+            }
+          ]
       }
     },
     "UI": {
