@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+
 /* General */
 
 html,
 body {
   width: 100%;
   height: 100%;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 18px; 
 }
 
 body {
@@ -12,11 +17,11 @@ body {
 	position: relative; 
 }
 
-h2 {
-	font-size: 20px; 
-}
+/* Logo and headings */
 
-/* Logo and heading */
+h2 {
+  font-size: 18px;  
+}
 
 .logo-container {
 	height: 50px;
@@ -34,7 +39,6 @@ h2 {
 
 .tagline {
 	height: 100%; 
-  font-size: 16px; 
 }
 
 /* Buttons */
@@ -43,19 +47,41 @@ h2 {
 	text-align: left; 
 	padding: 10px 0 10px 10px; 
 	margin-bottom: 15px; 
+  font-size: 16px; 
 }
 
 .dropdown-toggle:hover,
 .dropdown-toggle:active,
 .dropdown-toggle:focus,
+.dropdown-toggle:active:focus,
 .dropdown-toggle:visited {
 	box-shadow: none; 
+  background-color: white;   
 }
+
+.open .dropdown-toggle:hover,
+.open .dropdown-toggle:active,
+.open .dropdown-toggle:focus,
+.open .dropdown-toggle:visited,
+.open .dropdown-toggle:active:focus {
+
+  background-color: white;   
+}
+
+.open>.dropdown-toggle.btn-default,
+.open>.dropdown-toggle.btn-default:hover,
+.open>.dropdown-toggle.btn-default:active,
+.open>.dropdown-toggle.btn-default:focus {
+  background-color: white; 
+  border-color: #9ed355; 
+}
+
 
 .btn-default:hover, 
 .btn-default:focus, 
-.btn-default:active, 
 .btn-default.active, 
+.btn-default.active:focus,
+.btn-default:active:focus
 .open .dropdown-toggle.btn-default {
 	background-color: #fff; 
 }
@@ -102,6 +128,7 @@ h2 {
 
 .dropdown-menu li a {
 	white-space: normal; 
+  font-size: 18px; 
 }
 
 /* tool-tip with info */
@@ -135,7 +162,10 @@ h2 {
 
 .simulation-started-alert {
   margin-top: 20px;
-  font-size: 18px; 
+}
+
+.disability-info-heading {
+  font-weight: bold; 
 }
 
 .disability-info-paragraph {
@@ -186,6 +216,7 @@ h2 {
 
 .panel-heading {
 	padding: 10px 0 10px 15px; 
+  font-size: 18px; 
 }
 
 /* footer */
@@ -196,13 +227,9 @@ h2 {
 
 .footer-icon {
   margin: 0 10px 10px 0;
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   fill: #333;
-}
-
-.github-link {
-	font-size: 12px; 
 }
 
 /* Misc */
