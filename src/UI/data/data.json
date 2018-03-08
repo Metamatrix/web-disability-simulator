@@ -409,10 +409,18 @@
         "fact": "A lot of people has to use their computers outside in bright sunshine. It can make it harder to see what’s on the screen.",
         "listItems": [
           "Provide enough contrast between text and its background. Use a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text.",
-          "Check the Contrast with Colour Contrast Analyser or Contrast ratio."
+          "Check the Contrast with <em>Colour Contrast Analyser</em> or <em>Contrast ratio</em> (see links below)."
         ],
         "moreInfo": 
           [
+            {
+              "moreInfoUrl":"https://developer.paciellogroup.com/resources/contrastanalyser/",
+              "moreInfoLinkText":"Colour Contrast Analyser" 
+            },
+            {
+              "moreInfoUrl":"http://leaverou.github.io/contrast-ratio/",
+              "moreInfoLinkText":"Contrast ratio" 
+            },
             {
               "moreInfoUrl":"http://inclusivedesignprinciples.org/#consider-situation",
               "moreInfoLinkText":"Consider situation" 
@@ -481,7 +489,7 @@
       "selectSimulation": "Select simulation:",
       "reset": "Reset",
       "advice": "Think about this",
-      "moreInfo": "More information",
+      "moreInfo": "Links for better understanding",
       "sight": "Sight",
       "totalColorBlindness": "Total color blindness",
       "yellowBlueColorBlindness": "Yellow-Blue color blindness",    
