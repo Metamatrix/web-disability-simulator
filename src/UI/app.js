@@ -272,12 +272,5 @@ $(document).ready(() => {
   $("#reset-btn").click(() => {
     resetSimulation(tooltip); 
   });
-
- //panel collapse, show arrows: 
-  $('.collapse').on('shown.bs.collapse', () => {
-      $(this).parent().find(".down-arrow, .up-arrow").toggle();
-    }).on('hidden.bs.collapse', () => {
-      $(this).parent().find(".down-arrow, .up-arrow").toggle();
-  });
   
 });
