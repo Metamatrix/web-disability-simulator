@@ -296,12 +296,7 @@ a, a:hover, a:active, a:focus {
 }
 
 .panel {
-  border-bottom: none;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-	color: #333;
-  background-color: #f5f5f5;
-  border: none; 
+
 }
 
 .panel-title a {
