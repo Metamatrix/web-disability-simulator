@@ -44,6 +44,7 @@ h2 {
 .tagline {
 	height: 100%; 
   margin: 20px; 
+  font-size: 16px; 
 }
 
 /* Buttons and links */
@@ -161,7 +162,7 @@ a, a:hover, a:active, a:focus {
 
 .navbar-header {
   margin-top: 15px;
-  font-size: 18px; 
+  font-size: 16px; 
 }
 
 .caret {
