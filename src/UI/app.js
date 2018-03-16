@@ -272,5 +272,19 @@ $(document).ready(() => {
   $("#reset-btn").click(() => {
     resetSimulation(tooltip); 
   });
+
+
+//panel collapse
+
+$('#myCollapsible').on('shown.bs.collapse', function () {
+  // do something…
+})
+
+ //panel collapse, show arrows: 
+  $('.collapse').on('shown.bs.collapse', function () {
+    $(this).parent().find(".down-arrow").css('transform', 'rotate(-180deg)' );
+  }).on('hidden.bs.collapse', function () {
+    $(this).parent().find(".down-arrow").css('transform', 'rotate(-360deg)' );
+  });
   
 });
