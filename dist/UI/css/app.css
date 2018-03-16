@@ -55,18 +55,7 @@ a, a:hover, a:active, a:focus {
 }
 
 .btn {
-    margin-bottom: 0;
-    font-weight: normal;
-    text-align: center;
-    vertical-align: middle;
-    touch-action: manipulation;
-    cursor: pointer;
-    background-image: none;
-    white-space: nowrap;
-    padding: 15px 20px;
-    font-size: 20px;
-    line-height: 1.55;
-    border-radius: 4px;
+  font-size: 18px; 
 }
 
 
@@ -128,9 +117,18 @@ a, a:hover, a:active, a:focus {
   border-color: #9ed355; 
 }
 
+
+.btn-default  {
+    color: #3d3d3d;
+    background-color: transparent;
+    border-color: #9ed355;
+}
+
+
 .btn-default:hover {
-	color: #3d3d3d;
-  background-color: white;
+    color: #3d3d3d;
+    background-color: transparent;
+    border-color: #80bb30;
 }
 
  
@@ -146,7 +144,6 @@ a, a:hover, a:active, a:focus {
 
 .reset-btn  {  
 	float: right; 
-	padding: 8px 25px; 
 	margin: 30px 0 20px 0; 
 }
 
@@ -295,9 +292,6 @@ a, a:hover, a:active, a:focus {
     margin-top: 15px;
 }
 
-.panel {
-
-}
 
 .panel-title a {
 	display: block;
