@@ -1,8 +1,57 @@
-import {random} from '../../utils/math.js';
-import {removeElement, setStyle} from '../../utils/dom.js';
+import * as math from '../../utils/math.js';
+import {getTextNodes, addCss, removeElement} from '../../utils/dom.js';
+import {isLetter} from '../../utils/string.js';
 
 const name = 'concentration';
-const width = document.documentElement.clientWidth;
+let css = null;
+
+function start() {
+
+  const cssUrl = chrome.extension.getURL(`/simulations/${name}/css/main.css`);
+
+  css = addCss(cssUrl);
+
+
+  function updateTransition() {
+    var el = document.querySelector("body");
+    
+    if (el) {
+      el.classList.toggle("wds-concentration-body");
+    } 
+    
+    return el;
+  }
+
+  var animationInterval = window.setInterval(updateTransition, math.random(750, 7000));
+
+  
+  function updateParagraph() {
+    var paragraphEl = document.querySelector('p'); 
+    
+    if (paragraphEl) {
+
+      paragraphEl.classList.toggle("wds-concentration-paragraph");
+
+    } 
+    
+    return paragraphEl;
+  }
+
+  var paragraphInterval = window.setInterval(updateParagraph, math.random(750, 7000));
+
+
+}
+
+function stop() {
+
+  clearInterval(animationInterval);
+
+  removeElement(css);
+
+}
+
+
+/*const width = document.documentElement.clientWidth;
 const height = document.documentElement.clientHeight;
 const velocity = 15;
 const size = width * .225;
@@ -102,7 +151,7 @@ function stop() {
 
   circle = null;
 
-}
+}*/
 
 chrome.runtime.onMessage.addListener((request) => {
   if (request.action === 'startSimulation' && request.simulation === name) {
