@@ -25,8 +25,93 @@
     to {top: 200px;}
 }*/
 
+.wds-img-element, 
+.wds-text-element-meal,
+.wds-text-element-work {
+  width: 500px; 
+  height: 300px; 
+  position: fixed; 
+  left: 0; 
+  background-repeat: no-repeat;
+  background-size: contain; 
+}
 
-.wds-concentration-body {
+.wds-img-element.meal-img {
+  background-image: url("../img/meal.jpg"); 
+  animation: move 5s infinite;
+}
+
+
+@keyframes move {
+    from {
+      top: -300px;
+      left: 0px; 
+    }
+    to {
+      top: 500px;
+      left: 80%;
+      
+      }
+}
+
+.wds-text-element-meal.meal-text {
+  color: red; 
+  font-weight: bold; 
+  font-size: 80px; 
+  background-color: white; 
+  padding: 20px; 
+  width: auto; 
+  height: auto; 
+  top: 20%;
+  left: 50%;  
+  animation-name: stretch;
+  animation-duration: 1.5s; 
+  animation-timing-function: ease-out; 
+  animation-delay: 0s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running; 
+}
+
+.wds-text-element-work.work-text {
+  color: blue; 
+  font-weight: bold; 
+  font-size: 70px; 
+  background-color: white; 
+  padding: 20px; 
+  width: auto; 
+  height: auto; 
+  top: 60%;
+  left: 10%;  
+  animation-name: stretch;
+  animation-duration: 2s; 
+  animation-timing-function: ease-out; 
+  animation-delay: 0s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running; 
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(1.0);
+  }
+  100% {
+    transform: scale(1.3);
+  }
+}
+
+.wds-concentration-background-img {
+  background-image: url("../img/pattern.jpg"); 
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  background-position: 50% 50%; 
+}
+
+
+.wds-concentration-shake-body {
   animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) infinite;
 }
 

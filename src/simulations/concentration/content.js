@@ -1,5 +1,5 @@
 import * as math from '../../utils/math.js';
-import {getTextNodes, addCss, removeElement} from '../../utils/dom.js';
+import {getTextNodes, addCss, removeElement, appendHTML} from '../../utils/dom.js';
 import {isLetter} from '../../utils/string.js';
 
 const name = 'concentration';
@@ -11,42 +11,106 @@ function start() {
 
   css = addCss(cssUrl);
 
+  function createElement(element, classname, textNode) {
+    const el = document.createElement(element); 
+    el.setAttribute('class', classname);
+    document.body.appendChild(el);
+    if(textNode){
+      el.appendChild(document.createTextNode(textNode));
+    }
+  }
 
-  function updateTransition() {
-    var el = document.querySelector("body");
+  createElement('div', 'wds-img-element'); 
+  createElement('h2', 'wds-text-element-meal','Did I eat lunch?');
+  createElement('h2', 'wds-text-element-work','I have to get back to work soon...');  
+
+
+  //skriv om detta så att allt exekveras i ordning, något efter 3 sekunder, något efter 5 sek, något efter 10 etc.
+  //Gör sedan så att det loopas och börjar om igen efter alla sekvenser.  
+
+  function addClass(element, classname) {
+    var el = document.querySelector(element);
     
     if (el) {
-      el.classList.toggle("wds-concentration-body");
+      el.classList.toggle(classname);
     } 
     
     return el;
   }
 
-  var animationInterval = window.setInterval(updateTransition, math.random(750, 7000));
-
-  
-  function updateParagraph() {
-    var paragraphEl = document.querySelector('p'); 
+  function removeClass(element, classname) {
+    var el = document.querySelector(element);
     
-    if (paragraphEl) {
-
-      paragraphEl.classList.toggle("wds-concentration-paragraph");
-
+    if (el) {
+      el.classList.remove(classname);
     } 
     
-    return paragraphEl;
+    return el;
   }
 
-  var paragraphInterval = window.setInterval(updateParagraph, math.random(750, 7000));
+  const backgroundImg = "wds-concentration-background-img",
+  body = "body",
+  imgEl = ".wds-img-element",
+  mealImg = "meal-img",
+  textElMeal = ".wds-text-element-meal",
+  textElWork = ".wds-text-element-work",
+  mealText = "meal-text",
+  workText = "work-text"; 
+ 
 
+  setTimeout(function(){ 
+      removeClass(body, backgroundImg);
+      addClass(imgEl, mealImg); 
+  }, 500);
+
+  setTimeout(function(){ 
+      removeClass(imgEl, mealImg); 
+      addClass(textElMeal, mealText);  
+  }, 6000);
+
+  setTimeout(function(){ 
+      removeClass(imgEl, mealImg); 
+      removeClass(textElMeal, mealText); 
+      addClass(textElWork, workText);  
+  }, 14000);
+
+  setTimeout(function(){ 
+      removeClass(textElWork, workText);  
+  }, 22000);
+
+  setTimeout(function(){  
+      addClass(body, backgroundImg);
+  }, 25000);
+
+  
+
+  //var animationInterval = window.setInterval(updateTransition, math.random(750, 7000));
+
+/*
+function loopInIntervals() {
+  var min = 2,
+      max = 10;
+  var rand = Math.floor(Math.random() * (max - min + 1) + min);
+
+  setTimeout(loopInIntervals, rand * 1000);
+}
+
+loopInIntervals(); */
 
 }
 
+
+
 function stop() {
 
-  clearInterval(animationInterval);
+ //TODO: remove dom elements. 
+ //const element = document.getElementById('wds-colorBlindnessFilter');
+
+  clearInterval();
 
   removeElement(css);
+
+  removeElement()
 
 }
 
