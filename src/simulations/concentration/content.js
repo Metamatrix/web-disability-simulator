@@ -25,31 +25,41 @@ function start() {
   createElement('h2', 'wds-text-element-work','I have to get back to work soon...');  
 
 
-  //skriv om detta så att allt exekveras i ordning, något efter 3 sekunder, något efter 5 sek, något efter 10 etc.
-  //Gör sedan så att det loopas och börjar om igen efter alla sekvenser.  
+ 
 
   function addClass(element, classname) {
-    var el = document.querySelector(element);
+    var el = document.querySelectorAll(element);
+
+    for (var i = 0; i < el.length; i++) {
+        el[i].classList.toggle(classname);
+    }
     
-    if (el) {
-      el.classList.toggle(classname);
-    } 
-    
-    return el;
   }
 
   function removeClass(element, classname) {
-    var el = document.querySelector(element);
+       var el = document.querySelectorAll(element);
+
+    for (var i = 0; i < el.length; i++) {
+        el[i].classList.remove(classname);
+    }
     
-    if (el) {
-      el.classList.remove(classname);
-    } 
-    
-    return el;
   }
 
-  const backgroundImg = "wds-concentration-background-img",
+  const backgroundImg = "wds-background-img",
   body = "body",
+  h1 = "h1",
+  h2 = "h2",
+  h3 = "h3",
+  p = "p",
+  a = "a",
+  img = "img",
+  div = "div",
+  divEl = "wds-div-element",
+  bodyEL = "wds-body-element",
+  paragraphEl = "wds-paragraph-element",
+  heading1El = "wds-heading1-element",
+  heading2El = "wds-heading2-element",
+  heading3El = "wds-heading3-element",
   imgEl = ".wds-img-element",
   mealImg = "meal-img",
   textElMeal = ".wds-text-element-meal",
@@ -59,8 +69,12 @@ function start() {
  
 
   setTimeout(function(){ 
-      removeClass(body, backgroundImg);
       addClass(imgEl, mealImg); 
+      addClass(p, paragraphEl); 
+      addClass(h1, heading1El); 
+      addClass(h2, heading2El); 
+      addClass(h2, heading3El); 
+      addClass(div, divEl); 
   }, 500);
 
   setTimeout(function(){ 
@@ -82,29 +96,22 @@ function start() {
       addClass(body, backgroundImg);
   }, 25000);
 
-  
 
-  //var animationInterval = window.setInterval(updateTransition, math.random(750, 7000));
-
-/*
 function loopInIntervals() {
   var min = 2,
       max = 10;
   var rand = Math.floor(Math.random() * (max - min + 1) + min);
-
+  addClass(body, bodyEL);
   setTimeout(loopInIntervals, rand * 1000);
 }
 
-loopInIntervals(); */
-
+loopInIntervals();
 }
-
 
 
 function stop() {
 
  //TODO: remove dom elements. 
- //const element = document.getElementById('wds-colorBlindnessFilter');
 
   clearInterval();
 

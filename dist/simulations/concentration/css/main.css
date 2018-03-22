@@ -34,6 +34,7 @@
   left: 0; 
   background-repeat: no-repeat;
   background-size: contain; 
+  z-index: 1000; 
 }
 
 .wds-img-element.meal-img {
@@ -72,6 +73,7 @@
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-play-state: running; 
+  z-index: 1000; 
 }
 
 .wds-text-element-work.work-text {
@@ -92,6 +94,20 @@
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-play-state: running; 
+  z-index: 1000; 
+}
+
+
+img {
+  animation-name: stretch;
+  animation-duration: 2s; 
+  animation-timing-function: ease-out; 
+  animation-delay: 0s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running; 
+
 }
 
 @keyframes stretch {
@@ -103,15 +119,16 @@
   }
 }
 
-.wds-concentration-background-img {
+.wds-background-img {
   background-image: url("../img/pattern.jpg"); 
+  position: relative; 
   background-repeat: no-repeat; 
   background-attachment: fixed;
   background-position: 50% 50%; 
 }
 
 
-.wds-concentration-shake-body {
+.wds-body-element {
   animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) infinite;
 }
 
@@ -133,7 +150,7 @@
   }
 }
 
-.wds-concentration-paragraph {
+.wds-paragraph-element {
     animation: flickerAnimation .5s infinite;
 }
 
@@ -141,4 +158,25 @@
   0%   { opacity:1; }
   50%  { opacity:0; }
   100% { opacity:1; }
+}
+
+
+.wds-heading2-element {
+  animation-name: smallPulse;
+  animation-duration: 2s; 
+  animation-timing-function: ease-out; 
+  animation-delay: 0s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running; 
+}
+
+@keyframes smallPulse {
+  0% {
+    transform: scale(1.0);
+  }
+  100% {
+    transform: scale(1.1);
+  }
 }
