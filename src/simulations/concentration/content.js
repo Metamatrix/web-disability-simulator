@@ -25,8 +25,6 @@ function start() {
   createElement('h2', 'wds-text-element-work','I have to get back to work soon...');  
 
 
- 
-
   function addClass(element, classname) {
     var el = document.querySelectorAll(element);
 
@@ -44,6 +42,13 @@ function start() {
     }
     
   }
+
+  function loopInIntervals(min, max, domEl, classname) {
+    var rand = Math.floor(Math.random() * (max - min + 1) + min);
+    addClass(domEl, classname);
+    setTimeout(loopInIntervals, rand * 1000);
+  }
+
 
   const backgroundImg = "wds-background-img",
   body = "body",
@@ -66,11 +71,10 @@ function start() {
   textElWork = ".wds-text-element-work",
   mealText = "meal-text",
   workText = "work-text"; 
- 
 
   setTimeout(function(){ 
+      loopInIntervals(2, 10, body, bodyEl); 
       addClass(imgEl, mealImg); 
-      addClass(p, paragraphEl); 
       addClass(h1, heading1El); 
       addClass(h2, heading2El); 
       addClass(h2, heading3El); 
@@ -92,20 +96,28 @@ function start() {
       removeClass(textElWork, workText);  
   }, 22000);
 
-  setTimeout(function(){  
-      addClass(body, backgroundImg);
-  }, 25000);
 
-
-function loopInIntervals() {
+function blinkInIntervals() {
   var min = 2,
       max = 10;
   var rand = Math.floor(Math.random() * (max - min + 1) + min);
-  addClass(body, bodyEL);
-  setTimeout(loopInIntervals, rand * 1000);
+  addClass(p, paragraphEl); 
+  setTimeout(blinkInIntervals, rand * 1000);
 }
 
-loopInIntervals();
+blinkInIntervals();
+
+
+function addPatternInIntervals() {
+  var min = 2,
+      max = 10;
+  var rand = Math.floor(Math.random() * (max - min + 1) + min);
+  addClass(body, backgroundImg);
+  setTimeout(addPatternInIntervals, rand * 1000);
+}
+
+addPatternInIntervals();
+
 }
 
 
@@ -113,11 +125,10 @@ function stop() {
 
  //TODO: remove dom elements. 
 
-  clearInterval();
-
   removeElement(css);
 
-  removeElement()
+  removeElement(textElWork);
+  removeElement(textElMeal);  
 
 }
 
