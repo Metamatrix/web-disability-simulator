@@ -25,10 +25,8 @@
     to {top: 200px;}
 }*/
 
-.wds-img-element, 
-.wds-text-element-meal,
-.wds-text-element-work {
-  display: none !important; 
+.wds-img-element {
+   display: none !important; 
   width: 500px !important; 
   height: 300px !important; 
   position: fixed !important; 
@@ -38,7 +36,7 @@
   z-index: 10000 !important; 
 }
 
-.wds-img-element.meal-img {
+.wds-img-element.wds-img-animation-0 {
   display: block !important;
   background-image: url("../img/meal.jpg") !important; 
   animation: move 5s infinite !important;
@@ -57,17 +55,11 @@
       }
 }
 
-.wds-text-element-meal.meal-text {
-  display: block !important;
-  color: red !important; 
-  font-weight: bold !important; 
-  font-size: 80px !important; 
-  background-color: white !important; 
-  padding: 20px !important; 
-  width: auto !important; 
-  height: auto !important; 
-  top: 20% !important;
-  left: 50% !important;  
+[class^="wds-text-element"] {
+  display: none !important; 
+  position: fixed !important; 
+  z-index: 10000 !important; 
+
   animation-name: stretch !important;
   animation-duration: 1.5s !important; 
   animation-timing-function: ease-out !important; 
@@ -79,30 +71,79 @@
   z-index: 10000 !important; 
 }
 
-.wds-text-element-work.work-text {
+
+.wds-text-element-0.wds-text-animation-0 {
+  position: fixed !important; 
   display: block !important;
-  color: blue !important; 
+  color: red !important; 
   font-weight: bold !important; 
-  font-size: 70px !important; 
+  font-size: 80px !important; 
   background-color: white !important; 
   padding: 20px !important; 
   width: auto !important; 
   height: auto !important; 
-  top: 60% !important;
+  top: 20% !important;
+  left: 40% !important;  
+}
+
+.wds-text-element-1.wds-text-animation-1  {
+  position: fixed !important; 
+  display: block !important;
+  color: blue !important; 
+  font-weight: bold !important; 
+  font-size: 60px !important; 
+  background-color: white !important; 
+  padding: 20px !important; 
+  width: auto !important; 
+  height: auto !important; 
+  top: 30% !important;
+  left: 30% !important;  
+}
+
+.wds-text-element-2.wds-text-animation-2  {
+  position: fixed !important;  
+  display: block !important;
+  color: green !important; 
+  font-weight: bold !important; 
+  font-size: 60px !important; 
+  background-color: white !important; 
+  padding: 20px !important; 
+  width: auto !important; 
+  height: auto !important; 
+  top: 20% !important;
+  left: 20% !important;  
+}
+
+.wds-text-element-3.wds-text-animation-3  {
+  position: fixed !important; 
+  display: block !important;
+  color: purple !important; 
+  font-weight: bold !important; 
+  font-size: 50px !important; 
+  background-color: white !important; 
+  padding: 20px !important; 
+  width: auto !important; 
+  height: auto !important; 
+  top: 25% !important;
+  left: 20% !important;  
+}
+
+.wds-text-element-4.wds-text-animation-4  {
+  position: fixed !important; 
+  display: block !important;
+  color: black !important; 
+  font-weight: bold !important; 
+  font-size: 50px !important; 
+  background-color: white !important; 
+  padding: 20px !important; 
+  width: auto !important; 
+  height: auto !important; 
+  top: 20% !important;
   left: 10% !important;  
-  animation-name: stretch !important;
-  animation-duration: 2s !important; 
-  animation-timing-function: ease-out !important; 
-  animation-delay: 0s !important;
-  animation-direction: alternate !important;
-  animation-iteration-count: infinite !important;
-  animation-fill-mode: none !important;
-  animation-play-state: running !important; 
-  z-index: 10000 !important; 
 }
 
 
-img {
+.wds-img-animation-1 {
   animation-name: stretch !important;
   animation-duration: 2s !important; 
   animation-timing-function: ease-out !important; 
@@ -119,44 +160,12 @@ img {
     transform: scale(1.0);
   }
   100% {
-    transform: scale(1.3);
+    transform: scale(1.2);
   }
 }
 
-.wds-background-img {
-  background-image: url("../img/pattern.jpg") !important; 
-  position: relative !important; 
-  background-repeat: no-repeat !important; 
-  background-attachment: fixed !important;
-  background-position: 50% 50% !important; 
-  z-index: 10000 !important; 
-}
-
-
-.wds-body-element {
-  animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) infinite !important;
-}
-
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-  
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
-}
-
-.wds-paragraph-element {
-    animation: flickerAnimation .5s infinite !important;
+.wds-paragraph-animation {
+    animation: flickerAnimation 1.2s infinite !important;
 }
 
 @keyframes flickerAnimation {
@@ -166,7 +175,7 @@ img {
 }
 
 
-.wds-heading2-element {
+.wds-heading-animation {
   animation-name: smallPulse !important;
   animation-duration: 2s !important; 
   animation-timing-function: ease-out !important; 

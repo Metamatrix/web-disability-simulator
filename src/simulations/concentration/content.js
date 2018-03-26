@@ -21,10 +21,18 @@ function start() {
   }
 
   createElement('div', 'wds-img-element'); 
-  createElement('h2', 'wds-text-element-meal','Did I eat lunch?');
-  createElement('h2', 'wds-text-element-work','I have to get back to work soon...');  
 
+  function createTextNodes(text, index, array) {
+    createElement('span', `wds-text-element-${index}`, text);
+  }
 
+  ['Did I eat lunch?', 
+  'I have to get back to work soon...',
+  'The ventilation sounds a lot today. bzzzzzz', 
+  'Should I answer that text message?', 
+  'Must concentrate, must concentrate, must concentrate'].forEach(createTextNodes);
+
+  
   function addClass(element, classname) {
     var el = document.querySelectorAll(element);
 
@@ -50,73 +58,60 @@ function start() {
   }
 
 
-  const backgroundImg = "wds-background-img",
-  body = "body",
-  h1 = "h1",
+  const body = "body",
   h2 = "h2",
-  h3 = "h3",
   p = "p",
-  a = "a",
   img = "img",
-  div = "div",
-  divEl = "wds-div-element",
-  bodyEL = "wds-body-element",
-  paragraphEl = "wds-paragraph-element",
-  heading1El = "wds-heading1-element",
-  heading2El = "wds-heading2-element",
-  heading3El = "wds-heading3-element",
-  imgEl = ".wds-img-element",
-  mealImg = "meal-img",
-  textElMeal = ".wds-text-element-meal",
-  textElWork = ".wds-text-element-work",
-  mealText = "meal-text",
-  workText = "work-text"; 
+  imgEl_0 = ".wds-img-element",
+  paragraphAnimation = "wds-paragraph-animation",
+  headingAnimation = "wds-heading-animation",
+  imgAnimation_0 = "wds-img-animation-0",
+  imgAnimation_1 = "wds-img-animation-1",
+
+  textEl_0 = ".wds-text-element-0",
+  textEl_1 = ".wds-text-element-1", 
+  textEl_2 = ".wds-text-element-2", 
+  textEl_3 = ".wds-text-element-3", 
+  textEl_4 = ".wds-text-element-4",
+
+  textAnimation_0 = "wds-text-animation-0",
+  textAnimation_1 = "wds-text-animation-1", 
+  textAnimation_2 = "wds-text-animation-2", 
+  textAnimation_3 = "wds-text-animation-3", 
+  textAnimation_4 = "wds-text-animation-4"
 
   setTimeout(function(){ 
-      loopInIntervals(2, 10, body, bodyEl); 
-      addClass(imgEl, mealImg); 
-      addClass(h1, heading1El); 
-      addClass(h2, heading2El); 
-      addClass(h2, heading3El); 
-      addClass(div, divEl); 
+      loopInIntervals(2, 8, p, paragraphAnimation); 
+      addClass(imgEl_0, imgAnimation_0); 
+      addClass(img, imgAnimation_1); 
+      addClass(h2, headingAnimation); 
   }, 500);
 
   setTimeout(function(){ 
-      removeClass(imgEl, mealImg); 
-      addClass(textElMeal, mealText);  
-  }, 6000);
+      removeClass(imgEl_0, imgAnimation_0); 
+      addClass(textEl_0 , textAnimation_0);  
+  }, 5000);
 
   setTimeout(function(){ 
-      removeClass(imgEl, mealImg); 
-      removeClass(textElMeal, mealText); 
-      addClass(textElWork, workText);  
-  }, 14000);
+      removeClass(textEl_0, textAnimation_0); 
+      addClass(textEl_1, textAnimation_1);  
+  }, 12000);
 
   setTimeout(function(){ 
-      removeClass(textElWork, workText);  
-  }, 22000);
+      removeClass(textEl_1, textAnimation_1);  
+      addClass(textEl_2, textAnimation_2);
+  }, 20000);
 
+  setTimeout(function(){ 
+      removeClass(textEl_2, textAnimation_2); 
+      addClass(textEl_3, textAnimation_3);
+  }, 26000);
 
-function blinkInIntervals() {
-  var min = 2,
-      max = 10;
-  var rand = Math.floor(Math.random() * (max - min + 1) + min);
-  addClass(p, paragraphEl); 
-  setTimeout(blinkInIntervals, rand * 1000);
-}
+  setTimeout(function(){ 
+      removeClass(textEl_3, textAnimation_3); 
+      addClass(textEl_4, textAnimation_4);
+  }, 32000);
 
-blinkInIntervals();
-
-
-function addPatternInIntervals() {
-  var min = 2,
-      max = 10;
-  var rand = Math.floor(Math.random() * (max - min + 1) + min);
-  addClass(body, backgroundImg);
-  setTimeout(addPatternInIntervals, rand * 1000);
-}
-
-addPatternInIntervals();
 
 }
 
