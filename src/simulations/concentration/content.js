@@ -51,13 +51,6 @@ function start() {
     
   }
 
-  function loopInIntervals(min, max, domEl, classname) {
-    var rand = Math.floor(Math.random() * (max - min + 1) + min);
-    addClass(domEl, classname);
-    setTimeout(loopInIntervals, rand * 1000);
-  }
-
-
   const body = "body",
   h2 = "h2",
   p = "p",
@@ -80,8 +73,11 @@ function start() {
   textAnimation_3 = "wds-text-animation-3", 
   textAnimation_4 = "wds-text-animation-4"
 
+
+function loopAnimations(){
+
   setTimeout(function(){ 
-      loopInIntervals(2, 8, p, paragraphAnimation); 
+      addClass(p, paragraphAnimation); 
       addClass(imgEl_0, imgAnimation_0); 
       addClass(img, imgAnimation_1); 
       addClass(h2, headingAnimation); 
@@ -112,6 +108,16 @@ function start() {
       addClass(textEl_4, textAnimation_4);
   }, 32000);
 
+  setTimeout(function(){ 
+      removeClass(textEl_4, textAnimation_4); 
+      removeClass(p, paragraphAnimation); 
+      removeClass(img, imgAnimation_1); 
+      removeClass(h2, headingAnimation); 
+      loopAnimations();
+  }, 38000);
+
+}
+loopAnimations(); 
 
 }
 
@@ -122,8 +128,15 @@ function stop() {
 
   removeElement(css);
 
-  removeElement(textElWork);
-  removeElement(textElMeal);  
+  function removeTextElements(text, index, array) {
+    const element = document.querySelector(`wds-text-element-${index}`); 
+    if(element){
+    console.log(element); 
+    removeElement(element); 
+    }
+  }
+
+  ['0', '1', '2', '3', '4'].forEach(removeTextElements);
 
 }
 
