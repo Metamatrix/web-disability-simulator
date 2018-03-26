@@ -1,9 +1,33 @@
-import * as math from '../../utils/math.js';
-import {getTextNodes, addCss, removeElement, appendHTML} from '../../utils/dom.js';
-import {isLetter} from '../../utils/string.js';
+import {addCss, removeElement} from '../../utils/dom.js';
 
 const name = 'concentration';
+
+//dom elements to apply animations on
+const h2 = "h2";
+const p = "p";
+const img = "img";
+
+//dom elements to be created
+const imgEl_0 = ".wds-img-element";
+const textEl_0 = ".wds-text-element-0";
+const textEl_1 = ".wds-text-element-1";
+const textEl_2 = ".wds-text-element-2";
+const textEl_3 = ".wds-text-element-3";
+const textEl_4 = ".wds-text-element-4";
+
+//classes for css animations
+const paragraphAnimation = "wds-paragraph-animation";
+const headingAnimation = "wds-heading-animation";
+const imgAnimation_0 = "wds-img-animation-0";
+const imgAnimation_1 = "wds-img-animation-1";
+const textAnimation_0 = "wds-text-animation-0";
+const textAnimation_1 = "wds-text-animation-1";
+const textAnimation_2 = "wds-text-animation-2";
+const textAnimation_3 = "wds-text-animation-3";
+const textAnimation_4 = "wds-text-animation-4";
+
 let css = null;
+
 
 function start() {
 
@@ -22,93 +46,74 @@ function start() {
 
   createElement('div', 'wds-img-element'); 
 
-  function createTextNodes(text, index, array) {
+  function createTextElements(text, index) {
     createElement('span', `wds-text-element-${index}`, text);
   }
 
-  ['Did I eat lunch?', 
+  const texts = ['Did I eat lunch?', 
   'I have to get back to work soon...',
   'The ventilation sounds a lot today. bzzzzzz', 
   'Should I answer that text message?', 
-  'Must concentrate, must concentrate, must concentrate'].forEach(createTextNodes);
+  'Must concentrate, must concentrate, must concentrate'];
+  
+  texts.forEach(createTextElements);
 
   
   function addClass(element, classname) {
-    var el = document.querySelectorAll(element);
+    const el = document.querySelectorAll(element);
 
-    for (var i = 0; i < el.length; i++) {
+    for (let i = 0; i < el.length; i++) {
         el[i].classList.toggle(classname);
     }
     
   }
 
   function removeClass(element, classname) {
-       var el = document.querySelectorAll(element);
+    const el = document.querySelectorAll(element);
 
-    for (var i = 0; i < el.length; i++) {
+    for (let i = 0; i < el.length; i++) {
         el[i].classList.remove(classname);
     }
     
   }
 
-  const body = "body",
-  h2 = "h2",
-  p = "p",
-  img = "img",
-  imgEl_0 = ".wds-img-element",
-  paragraphAnimation = "wds-paragraph-animation",
-  headingAnimation = "wds-heading-animation",
-  imgAnimation_0 = "wds-img-animation-0",
-  imgAnimation_1 = "wds-img-animation-1",
-
-  textEl_0 = ".wds-text-element-0",
-  textEl_1 = ".wds-text-element-1", 
-  textEl_2 = ".wds-text-element-2", 
-  textEl_3 = ".wds-text-element-3", 
-  textEl_4 = ".wds-text-element-4",
-
-  textAnimation_0 = "wds-text-animation-0",
-  textAnimation_1 = "wds-text-animation-1", 
-  textAnimation_2 = "wds-text-animation-2", 
-  textAnimation_3 = "wds-text-animation-3", 
-  textAnimation_4 = "wds-text-animation-4"
-
+//add and remove animation classes, then loop
 
 function loopAnimations(){
 
-  setTimeout(function(){ 
+  setTimeout(() => { 
       addClass(p, paragraphAnimation); 
       addClass(imgEl_0, imgAnimation_0); 
       addClass(img, imgAnimation_1); 
       addClass(h2, headingAnimation); 
   }, 500);
 
-  setTimeout(function(){ 
+  setTimeout(() => { 
       removeClass(imgEl_0, imgAnimation_0); 
       addClass(textEl_0 , textAnimation_0);  
   }, 5000);
 
-  setTimeout(function(){ 
+  setTimeout(() => { 
       removeClass(textEl_0, textAnimation_0); 
       addClass(textEl_1, textAnimation_1);  
   }, 12000);
 
-  setTimeout(function(){ 
+  setTimeout(() => { 
       removeClass(textEl_1, textAnimation_1);  
       addClass(textEl_2, textAnimation_2);
   }, 20000);
 
-  setTimeout(function(){ 
+  setTimeout(() => { 
       removeClass(textEl_2, textAnimation_2); 
       addClass(textEl_3, textAnimation_3);
   }, 26000);
 
-  setTimeout(function(){ 
+  setTimeout(() => { 
       removeClass(textEl_3, textAnimation_3); 
       addClass(textEl_4, textAnimation_4);
   }, 32000);
 
-  setTimeout(function(){ 
+  setTimeout(() => { 
       removeClass(textEl_4, textAnimation_4); 
       removeClass(p, paragraphAnimation); 
       removeClass(img, imgAnimation_1); 
@@ -124,124 +129,21 @@ loopAnimations();
 
 function stop() {
 
- //TODO: remove dom elements. 
-
   removeElement(css);
 
-  function removeTextElements(text, index, array) {
-    const element = document.querySelector(`wds-text-element-${index}`); 
-    if(element){
-    console.log(element); 
-    removeElement(element); 
+  function removeElements(element) {
+    const domElement = document.querySelector(`${element}`); 
+    if(domElement){
+    removeElement(domElement); 
     }
   }
 
-  ['0', '1', '2', '3', '4'].forEach(removeTextElements);
+  const elements = [textEl_0, textEl_1, textEl_2, textEl_3, textEl_4, imgEl_0 ]; 
+  
+  elements.forEach(removeElements);
 
 }
 
-
-/*const width = document.documentElement.clientWidth;
-const height = document.documentElement.clientHeight;
-const velocity = 15;
-const size = width * .225;
-
-let circleElement = null;
-let circle = null;
-let raf = null;
-
-function randomVelocity() {
-  return random(velocity - 2, velocity + 2);
-}
-
-class Circle {
-  constructor(x, y, velX, velY, size) {
-    this.x = x;
-    this.y = y; 
-    this.velX = velX;
-    this.velY = velY; 
-    this.size = size; 
-
-    circleElement.style.left = 0;
-    circleElement.style.top = 0;
-
-    circleElement.style.width = `${size}px`;
-    circleElement.style.height = `${size}px`;
-
-  }
-
-  move() {
-    circleElement.style.transform = `translate3d(${this.x}px, ${this.y}px, 0)`;
-  }
-
-  update() {
-    if ((this.x + this.size) >= width - 2) {
-      this.velX = -randomVelocity();
-    }
-
-    if ((this.x) <= 0) {
-      this.velX = randomVelocity();
-    }
-
-    if ((this.y + this.size) >= height - 2) {
-      this.velY = -randomVelocity();
-    }
-
-    if ((this.y) <= 0) {
-      this.velY = randomVelocity();
-    }
-
-    this.x += this.velX;
-    this.y += this.velY;
-  }
-}
-
-//animation loop
-function loop() {
-  circle.move();
-  circle.update();
-
-  raf = requestAnimationFrame(loop);
-}
-
-function start() {
-
-  circleElement = document.createElement('div');
-  circleElement.setAttribute('id', 'wds-concentrationCircle');
-
-  setStyle(circleElement, {
-    position: 'fixed', 
-    backgroundColor: 'red',
-    zIndex: '9999999',
-    borderRadius: '50%'
-  });
-
-  document.body.appendChild(circleElement);
-
-  circle = new Circle(
-    random(0, width),
-    random(0, height),
-    velocity,
-    velocity,
-    size
-  );
-
-  loop();
-}
-
-function stop() {
-
-  if(circleElement) {
-    removeElement(circleElement);
-  }
-
-  if(raf) {
-    cancelAnimationFrame(raf);
-  }
-
-  circle = null;
-
-}*/
 
 chrome.runtime.onMessage.addListener((request) => {
   if (request.action === 'startSimulation' && request.simulation === name) {
