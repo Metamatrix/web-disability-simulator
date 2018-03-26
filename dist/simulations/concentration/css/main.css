@@ -1,32 +1,5 @@
-/*#wds-concentrationCircle { 
-  position: fixed !important; 
-  background-color: red; 
-  z-index: 9999999 !important;
-  border-radius: 50%; 
-}*/
-
-
-/*h1 {
-    width: 100px;
-    height: 100px;
-    background: red;
-    position :relative;
-    animation: mymove 5s infinite;
-}
-
-@-webkit-keyframes mymove {
-    from {top: 0px;}
-    to {top: 200px;}
-}
-
-
-@keyframes mymove {
-    from {top: 0px;}
-    to {top: 200px;}
-}*/
-
 .wds-img-element {
-   display: none !important; 
+  display: none !important; 
   width: 500px !important; 
   height: 300px !important; 
   position: fixed !important; 

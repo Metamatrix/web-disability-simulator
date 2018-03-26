@@ -151,7 +151,6 @@ $(document).ready(() => {
       $('#panel1').removeClass("in");
       setTooltipTexts(activeSimulation);
       readMoreLinks(); 
-      adviceLinks(); 
     }
 
   }); 
