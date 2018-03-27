@@ -23,6 +23,9 @@ function start(name, subName) {
 
       chrome.tabs.sendMessage(activeTab.id, 
         { action: 'startSimulation', simulation: name, subSimulation: subName });
+
+        chrome.storage.local.set({'activeTab': activeTab.id});
+
     });
   }
   else {
@@ -32,6 +35,8 @@ function start(name, subName) {
 
         chrome.tabs.sendMessage(activeTab.id, 
           { action: 'startSimulation', simulation: name, subSimulation: subName });
+
+          chrome.storage.local.set({'activeTab': activeTab.id});
       });    
     });  
   }

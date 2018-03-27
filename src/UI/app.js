@@ -28,6 +28,7 @@ function resetSimulation(tooltip){
   chrome.storage.local.get('activeSimulation', obj => {
     simulationLoader.stop(obj.activeSimulation);
     chrome.storage.local.remove('activeSimulation');
+    chrome.storage.local.remove('activeTab');
   }); 
 
 }
@@ -77,7 +78,9 @@ function readMoreLinks(){
 
       $.each(obj.moreInfo, (i) => {
           if(currentLink == obj.moreInfo[i].moreInfoLinkText) {
-            chrome.tabs.create({url: `${obj.moreInfo[i].moreInfoUrl}`}); 
+            chrome.tabs.create({url: `${obj.moreInfo[i].moreInfoUrl}`, active: false}, function(tab){
+              chrome.tabs.update(tab.id, {active:true}); 
+            }); 
           }
       });
 
