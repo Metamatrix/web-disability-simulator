@@ -2,7 +2,7 @@
 
 Web Disability Simulator is an Google Chrome extension that simulates how users with disabilities can experience a webpage. The simulator creates a experience that gives you a better understanding for the importance of web accessibility.
 
-Web Disability Simulator contains the following simulators:
+### Web Disability Simulator contains the following simulators:
 *	different types of Color vision defects,
 *	tunnel vision or far-sightedness,
 *	web in strong sunshine,
@@ -10,7 +10,7 @@ Web Disability Simulator contains the following simulators:
 *	dyslexia or small vocabulary,
 *	concentration difficulties.
 
-Web Disability Simulator gives you
+### Web Disability Simulator gives you
 *	brief facts about different types of obstacles that people experience,
 *	tips on how to build accessible websites,
 *	links to websites where you can learn more about digital accessibility.
