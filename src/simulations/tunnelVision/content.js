@@ -24,6 +24,7 @@ function setMousePosition(e) {
 }
 
 function update() {
+
   context.clearRect(0, 0, window.innerWidth, window.innerHeight);
   
   context.fillStyle = 'black';
@@ -33,13 +34,11 @@ function update() {
   context.save();
   
   context.globalCompositeOperation='destination-out';
-  
-  const gradient = context.createRadialGradient(mouseX, mouseY, size / 2, mouseX, mouseY, 0);
-  gradient.addColorStop(0, 'transparent');
-  gradient.addColorStop(.25, 'white');
-  gradient.addColorStop(1, 'white');
-  context.fillStyle = gradient;
-  context.fillRect(mouseX - size / 2, mouseY - size / 2, size, size);
+
+  context.beginPath();
+  context.arc(mouseX, mouseY, size / 2, 0, 2 * Math.PI);
+
+  context.fill();
 
   context.restore();
 }
@@ -69,7 +68,8 @@ function stop() {
     removeElement(canvas);
   }
 
-  // TODO: remove listeners
+  window.removeEventListener("resize", setSize, false);
+  canvas.removeEventListener("mousemove", setMousePosition, false);
 }
 
 chrome.runtime.onMessage.addListener((request) => {
