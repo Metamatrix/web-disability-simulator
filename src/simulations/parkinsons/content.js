@@ -60,7 +60,7 @@ function setOffset() {
 
 function start() {
 
-  const cursorType = appVersion.includes('Mac') ? 'mac' : 'windows';
+  const cursorType = appVersion.includes('Windows') ? 'windows' : 'mac';
 
   css = addCss(cssUrl);
   
