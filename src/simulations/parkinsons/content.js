@@ -28,7 +28,7 @@ function mousemoveHandler(e) {
   viewportPosX = e.clientX + offsetX;
   viewportPosY = e.clientY + offsetY;
 
-  setStyle(cursor, {left: cursorPosX + 'px', top: cursorPosY + 'px', transition: 'left 0.05s, top 0.05s'});
+  setStyle(cursor, {left: cursorPosX + 'px', top: cursorPosY + 'px'});
 }
 
 function elementClickHandler(e) {
@@ -60,15 +60,14 @@ function setOffset() {
 
 function start() {
 
-  let cursorImg = appVersion.includes('Mac') ? 'cursor_mac.svg' : 'cursor_windows.svg';
-  const cursorImgUrl = chrome.extension.getURL('/simulations/parkinsons/img/' + cursorImg);
+  const cursorType = appVersion.includes('Mac') ? 'mac' : 'windows';
 
   css = addCss(cssUrl);
   
   cursor = document.createElement('div');
 
-  cursor.style.backgroundImage = `url(${cursorImgUrl})`
   cursor.setAttribute('id', 'wds-parkinsonsCursor');
+  cursor.setAttribute('class', cursorType);
 
   document.body.appendChild(cursor);
   
