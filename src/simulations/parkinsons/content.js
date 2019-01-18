@@ -67,7 +67,7 @@ function start() {
   
   cursor = document.createElement('div');
 
-  cursor.style.background = `url(${cursorImgUrl})`
+  cursor.style.backgroundImage = `url(${cursorImgUrl})`
   cursor.setAttribute('id', 'wds-parkinsonsCursor');
 
   document.body.appendChild(cursor);
