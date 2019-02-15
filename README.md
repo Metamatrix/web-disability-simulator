@@ -27,4 +27,5 @@ License [ISC](http://opensource.org/licenses/ISC)
 
 ## Version History
 
+2019-02-15 - Version 1.0.3 Bug fix for Parkinsons simulation
 2017-12-01 - Version 0.1.1 Beta
