@@ -27,5 +27,6 @@ License [ISC](http://opensource.org/licenses/ISC)
 
 ## Version History
 
-* 2019-02-15 - Version 1.0.3 Bug fix for Parkinsons simulation
-* 2017-12-01 - Version 0.1.1 Beta
+* 2024-10-21 - Version 1.1.0 Migrated extension to manifest version 3. Changed to use service worker instead of background script. Updated API calls.
+* 2019-02-15 - Version 1.0.3 Bug fix for Parkinsons simulation.
+* 2017-12-01 - Version 0.1.1 Beta.

@@ -1,13 +1,13 @@
 import {appendHTML, addCss, removeElement} from '../../utils/dom.js';
 
 const name = 'yellowBlueColorBlindness';
-const url = chrome.extension.getURL(`/simulations/${name}/img/filters.svg`);
+const url = chrome.runtime.getURL(`/simulations/${name}/img/filters.svg`);
 
 let css = null;
 
 function start() {
 
-  const cssUrl = chrome.extension.getURL(`/simulations/${name}/css/main.css`);
+  const cssUrl = chrome.runtime.getURL(`/simulations/${name}/css/main.css`);
 
   css = addCss(cssUrl);
 

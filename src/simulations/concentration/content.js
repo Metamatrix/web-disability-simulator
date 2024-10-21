@@ -31,7 +31,7 @@ let css = null;
 
 function start() {
 
-  const cssUrl = chrome.extension.getURL(`/simulations/${name}/css/main.css`);
+  const cssUrl = chrome.runtime.getURL(`/simulations/${name}/css/main.css`);
 
   css = addCss(cssUrl);
 

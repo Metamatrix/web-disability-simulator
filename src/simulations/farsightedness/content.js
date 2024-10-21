@@ -1,6 +1,6 @@
 import {addCss, removeElement} from '../../utils/dom.js';
 
-const cssUrl = chrome.extension.getURL('/simulations/farsightedness/css/main.css');
+const cssUrl = chrome.runtime.getURL('/simulations/farsightedness/css/main.css');
 
 let css = null;
 

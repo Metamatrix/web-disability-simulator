@@ -9,7 +9,7 @@ var css = null;
 
 function start() {
 
-  var cssUrl = chrome.extension.getURL('/simulations/' + name + '/css/main.css');
+  var cssUrl = chrome.runtime.getURL('/simulations/' + name + '/css/main.css');
 
   css = (0, _dom.addCss)(cssUrl);
 }

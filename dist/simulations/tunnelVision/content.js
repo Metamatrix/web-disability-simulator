@@ -4,7 +4,7 @@
 var _dom = require('../../utils/dom.js');
 
 var name = 'tunnelVision';
-var cssUrl = chrome.extension.getURL('/simulations/tunnelVision/css/main.css');
+var cssUrl = chrome.runtime.getURL('/simulations/tunnelVision/css/main.css');
 
 var canvas = null;
 var context = null;

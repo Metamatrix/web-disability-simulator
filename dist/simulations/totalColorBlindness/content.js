@@ -4,13 +4,13 @@
 var _dom = require('../../utils/dom.js');
 
 var name = 'totalColorBlindness';
-var url = chrome.extension.getURL('/simulations/' + name + '/img/filters.svg');
+var url = chrome.runtime.getURL('/simulations/' + name + '/img/filters.svg');
 
 var css = null;
 
 function start() {
 
-  var cssUrl = chrome.extension.getURL('/simulations/' + name + '/css/main.css');
+  var cssUrl = chrome.runtime.getURL('/simulations/' + name + '/css/main.css');
 
   css = (0, _dom.addCss)(cssUrl);
 

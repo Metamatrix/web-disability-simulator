@@ -6,7 +6,7 @@ var _math = require('../../utils/math.js');
 var _dom = require('../../utils/dom.js');
 
 var name = 'parkinsons';
-var cssUrl = chrome.extension.getURL('/simulations/parkinsons/css/main.css');
+var cssUrl = chrome.runtime.getURL('/simulations/parkinsons/css/main.css');
 var shakeSpeed = 40;
 var shakePositionInterval = 250;
 var appVersion = navigator.appVersion;

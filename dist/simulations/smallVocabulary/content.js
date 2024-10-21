@@ -84,7 +84,7 @@ function start() {
   var tagsToIgnore = ['SCRIPT', 'STYLE', 'NOSCRIPT'];
   var lang = getDocumentLanguage();
   var rndKey = new Date().getTime();
-  var langFileUrl = chrome.extension.getURL('/simulations/' + name + '/words.' + lang + '.json?' + rndKey);
+  var langFileUrl = chrome.runtime.getURL('/simulations/' + name + '/words.' + lang + '.json?' + rndKey);
 
   fetch(langFileUrl).then(function (response) {
     return response.json();

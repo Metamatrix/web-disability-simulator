@@ -3,7 +3,7 @@
 
 var _dom = require('../../utils/dom.js');
 
-var cssUrl = chrome.extension.getURL('/simulations/farsightedness/css/main.css');
+var cssUrl = chrome.runtime.getURL('/simulations/farsightedness/css/main.css');
 
 var css = null;
 

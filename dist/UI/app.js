@@ -32,7 +32,7 @@ function startSimulation() {
 
 function resetSimulation(tooltip) {
 
-  chrome.browserAction.setIcon({
+  chrome.action.setIcon({
     path: "img/icon.png"
   });
 
@@ -171,7 +171,7 @@ $(document).ready(function () {
     var menuBtn = $(this);
     var menuBtnId = menuBtn[0].id;
 
-    chrome.browserAction.setIcon({
+    chrome.action.setIcon({
       path: "img/icon_active.png"
     });
 
@@ -856,11 +856,14 @@ function load(name, subName, callback) {
     var activeTab = tabs[0],
         scriptFile = subName ? 'simulations/' + name + '/' + subName + '/content.js' : 'simulations/' + name + '/content.js';
 
-    chrome.tabs.executeScript(activeTab.id, { file: scriptFile }, function () {
+    chrome.scripting.executeScript({
+      target: {tabId: activeTab.id},
+      files: [scriptFile]
+    }).then(() => {
       loadedSimulations.push(name);
-      if (callback) {
-        callback(name, subName);
-      }
+        if (callback) {
+          callback(name, subName);
+        }
     });
   });
 }

@@ -13,7 +13,7 @@ function startSimulation() {
 
 function resetSimulation(tooltip){
   
-  chrome.browserAction.setIcon({
+  chrome.action.setIcon({
     path : "img/icon.png"
   });
 
@@ -162,7 +162,7 @@ $(document).ready(() => {
     const menuBtn = $(this); 
     const menuBtnId = menuBtn[0].id;
 
-    chrome.browserAction.setIcon({
+    chrome.action.setIcon({
       path : "img/icon_active.png"
     });
 

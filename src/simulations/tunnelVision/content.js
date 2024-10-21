@@ -1,7 +1,7 @@
 import {addCss, removeElement} from '../../utils/dom.js';
 
 const name = 'tunnelVision';
-const cssUrl = chrome.extension.getURL('/simulations/tunnelVision/css/main.css');
+const cssUrl = chrome.runtime.getURL('/simulations/tunnelVision/css/main.css');
 
 let canvas = null;
 let context = null;
