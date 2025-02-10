@@ -498,10 +498,6 @@ module.exports={
             {
               "moreInfoUrl":"https://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-refs",
               "moreInfoLinkText":"2.4.4 Link Purpose (In Context)" 
-            },
-            {
-              "moreInfoUrl":"http://inclusivedesignprinciples.org/#prioritise-content",
-              "moreInfoLinkText":"Prioritise content" 
             }
           ]
           
